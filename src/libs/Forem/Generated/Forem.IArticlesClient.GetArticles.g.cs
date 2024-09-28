@@ -1,0 +1,44 @@
+#nullable enable
+
+namespace Forem
+{
+    public partial interface IArticlesClient
+    {
+        /// <summary>
+        /// Published articles<br/>
+        /// This endpoint allows the client to retrieve a list of articles.<br/>
+        /// "Articles" are all the posts that users create on DEV that typically<br/>
+        /// show up in the feed. They can be a blog post, a discussion question,<br/>
+        /// a help thread etc. but is referred to as article within the code.<br/>
+        /// By default it will return featured, published articles ordered<br/>
+        /// by descending popularity.<br/>
+        /// It supports pagination, each page will contain `30` articles by default.
+        /// </summary>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
+        /// <param name="tag"></param>
+        /// <param name="tags"></param>
+        /// <param name="tagsExclude"></param>
+        /// <param name="username"></param>
+        /// <param name="state"></param>
+        /// <param name="top"></param>
+        /// <param name="collectionId"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>> GetArticlesAsync(
+            int? page = 1,
+            int? perPage = 30,
+            string? tag = default,
+            string? tags = default,
+            string? tagsExclude = default,
+            string? username = default,
+            global::Forem.GetArticlesState? state = default,
+            int? top = default,
+            int? collectionId = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

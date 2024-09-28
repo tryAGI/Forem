@@ -1,8 +1,8 @@
 dotnet tool install --global autosdk.cli --prerelease
 
 autosdk init \
-  SolutionName \
-  SomeClient \
-  https://raw.githubusercontent.com/api/openapi.json \
-  CompanyName \
+  Forem \
+  ForemClient \
+  https://developers.forem.com/redocusaurus/plugin-redoc-1.yaml \
+  tryAGI \
   --output .
