@@ -29,7 +29,7 @@ paths:
                 id: 251
                 title: New article
                 description: New post example
-                readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                 slug: new-article-4aca
                 path: /username383/new-article-4aca
                 url: http://localhost:3000/username383/new-article-4aca
@@ -146,7 +146,7 @@ paths:
                   id: 254
                   title: All the King's Men175
                   description: Typewriter crucifix forage. Pug put a bird on it art party taxidermy asymmetrical xoxo. Sustainable...
-                  readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                  readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                   slug: all-the-kings-men175-794
                   path: /username387/all-the-kings-men175-794
                   url: http://localhost:3000/username387/all-the-kings-men175-794
@@ -210,7 +210,7 @@ paths:
                   id: 257
                   title: East of Eden178
                   description: Readymade diy ennui humblebrag 8-bit. Brooklyn hoodie pickled art party vinyl small batch roof. 8-bit...
-                  readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                  readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                   slug: east-of-eden178-3on4
                   path: /username390/east-of-eden178-3on4
                   url: http://localhost:3000/username390/east-of-eden178-3on4
@@ -250,7 +250,7 @@ paths:
                   id: 256
                   title: A Many-Splendoured Thing177
                   description: Letterpress neutra vice raw denim mumblecore organic small batch. Bushwick viral freegan photo booth...
-                  readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                  readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                   slug: a-many-splendoured-thing177-314b
                   path: /username389/a-many-splendoured-thing177-314b
                   url: http://localhost:3000/username389/a-many-splendoured-thing177-314b
@@ -290,7 +290,7 @@ paths:
                   id: 255
                   title: What's Become of Waring176
                   description: Whatever church-key irony next level tacos banh mi. Brooklyn wayfarers occupy tacos austin marfa...
-                  readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                  readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                   slug: whats-become-of-waring176-2lgk
                   path: /username388/whats-become-of-waring176-2lgk
                   url: http://localhost:3000/username388/whats-become-of-waring176-2lgk
@@ -353,7 +353,7 @@ paths:
                 id: 258
                 title: Pale Kings and Princes179
                 description: Etsy you probably haven't heard of them carry humblebrag 90's try-hard. Distillery asymmetrical...
-                readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                 slug: pale-kings-and-princes179-381c
                 path: /username391/pale-kings-and-princes179-381c
                 url: http://localhost:3000/username391/pale-kings-and-princes179-381c
@@ -427,7 +427,7 @@ paths:
                 id: 259
                 title: Noli Me Tangere180
                 description: Hoodie meh knausgaard bespoke actually shabby chic polaroid. Tumblr ennui semiotics freegan diy...
-                readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                 slug: noli-me-tangere180-55bp
                 path: /username392/noli-me-tangere180-55bp
                 url: http://localhost:3000/username392/noli-me-tangere180-55bp
@@ -511,7 +511,7 @@ paths:
                 id: 262
                 title: Noli Me Tangere183
                 description: Normcore williamsburg try-hard artisan. Vinyl park shoreditch gastropub vegan knausgaard.  Ethical...
-                readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                 slug: noli-me-tangere183-1lj5
                 path: /username396/noli-me-tangere183-1lj5
                 url: http://localhost:3000/username396/noli-me-tangere183-1lj5
@@ -1226,7 +1226,7 @@ paths:
                   summary: 
                   location: 
                   website_url: 
-                  joined_at: '2023-04-14T00:00:00.0000000+04:00'
+                  joined_at: '2023-04-14T00:00:00.0000000+00:00'
                   profile_image: /uploads/user/profile_image/1390/7b885cdf-c1c6-481a-a6d8-19f0404da87a.jpeg
                 - type_of: user
                   id: 1391
@@ -1237,7 +1237,7 @@ paths:
                   summary: 
                   location: 
                   website_url: 
-                  joined_at: '2023-04-14T00:00:00.0000000+04:00'
+                  joined_at: '2023-04-14T00:00:00.0000000+00:00'
                   profile_image: /uploads/user/profile_image/1391/273ffa06-dc97-4b84-ba4c-43d24efb55e5.jpeg
         '404':
           description: Not Found
@@ -1276,7 +1276,7 @@ paths:
                   id: 276
                   title: Down to a Sunless Sea195
                   description: Scenester occupy swag. Yr godard single-origin coffee biodiesel beard artisan. Wes anderson yolo...
-                  readable_publish_date: '2024-04-14T00:00:00.0000000+04:00'
+                  readable_publish_date: '2024-04-14T00:00:00.0000000+00:00'
                   slug: down-to-a-sunless-sea195-51d4
                   path: /org81/down-to-a-sunless-sea195-51d4
                   url: http://localhost:3000/org81/down-to-a-sunless-sea195-51d4
@@ -1854,7 +1854,7 @@ paths:
                 summary: 
                 location: 
                 website_url: 
-                joined_at: '2023-04-14T00:00:00.0000000+04:00'
+                joined_at: '2023-04-14T00:00:00.0000000+00:00'
                 profile_image: /uploads/user/profile_image/1431/b547e3a6-5076-44dd-a4f6-9b85022b4e76.jpeg
         '401':
           description: Unauthorized
