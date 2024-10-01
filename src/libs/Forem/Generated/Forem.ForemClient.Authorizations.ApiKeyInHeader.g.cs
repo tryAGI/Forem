@@ -9,12 +9,16 @@ namespace Forem
         /// Authorize using ApiKey authentication.
         /// </summary>
         /// <param name="apiKey"></param>
-        public void AuthorizeUsingApiKey(
+        public void AuthorizeUsingApiKeyInHeader(
             string apiKey)
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _httpClient.DefaultRequestHeaders.Add("api-key", apiKey);
+            _authorization = new global::Forem.EndPointAuthorization
+            {
+                Name = "api-key",
+                Value = apiKey,
+            };
         }
     }
 }
