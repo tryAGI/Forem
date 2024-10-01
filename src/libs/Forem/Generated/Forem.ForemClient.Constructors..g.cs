@@ -5,12 +5,12 @@ namespace Forem
 {
     public sealed partial class ForemClient
     {
-        /// <inheritdoc cref="ForemClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::Forem.EndPointAuthorization?)"/>
+        /// <inheritdoc cref="ForemClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Forem.EndPointAuthorization}?)"/>
         public ForemClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::Forem.EndPointAuthorization? authorization = null) : this(httpClient, baseUri, authorization)
+            global::System.Collections.Generic.List<global::Forem.EndPointAuthorization>? authorizations = null) : this(httpClient, baseUri, authorizations)
         {
             Authorizing(_httpClient, ref apiKey);
 

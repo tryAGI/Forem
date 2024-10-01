@@ -21,7 +21,7 @@ namespace Forem
         public const string BaseUrl = "https://dev.to/api";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::Forem.EndPointAuthorization? _authorization;
+        private global::System.Collections.Generic.List<global::Forem.EndPointAuthorization> _authorizations;
 
         /// <summary>
         /// 
@@ -32,7 +32,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ArticlesClient Articles => new ArticlesClient(_httpClient, authorization: _authorization)
+        public ArticlesClient Articles => new ArticlesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -40,7 +40,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
+        public UsersClient Users => new UsersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -48,7 +48,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient, authorization: _authorization)
+        public CommentsClient Comments => new CommentsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -56,7 +56,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public DisplayAdsClient DisplayAds => new DisplayAdsClient(_httpClient, authorization: _authorization)
+        public DisplayAdsClient DisplayAds => new DisplayAdsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -64,7 +64,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public FollowedTagsClient FollowedTags => new FollowedTagsClient(_httpClient, authorization: _authorization)
+        public FollowedTagsClient FollowedTags => new FollowedTagsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -72,7 +72,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public TagsClient Tags => new TagsClient(_httpClient, authorization: _authorization)
+        public TagsClient Tags => new TagsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -80,7 +80,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public FollowersClient Followers => new FollowersClient(_httpClient, authorization: _authorization)
+        public FollowersClient Followers => new FollowersClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -88,7 +88,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationsClient Organizations => new OrganizationsClient(_httpClient, authorization: _authorization)
+        public OrganizationsClient Organizations => new OrganizationsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -96,7 +96,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public PagesClient Pages => new PagesClient(_httpClient, authorization: _authorization)
+        public PagesClient Pages => new PagesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -104,7 +104,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(_httpClient, authorization: _authorization)
+        public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -112,7 +112,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ProfileImagesClient ProfileImages => new ProfileImagesClient(_httpClient, authorization: _authorization)
+        public ProfileImagesClient ProfileImages => new ProfileImagesClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -120,7 +120,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ReactionsClient Reactions => new ReactionsClient(_httpClient, authorization: _authorization)
+        public ReactionsClient Reactions => new ReactionsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -128,7 +128,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ReadinglistClient Readinglist => new ReadinglistClient(_httpClient, authorization: _authorization)
+        public ReadinglistClient Readinglist => new ReadinglistClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -136,7 +136,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public VideosClient Videos => new VideosClient(_httpClient, authorization: _authorization)
+        public VideosClient Videos => new VideosClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -148,15 +148,15 @@ namespace Forem
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
-        /// <param name="authorization"></param>
+        /// <param name="authorizations"></param>
         public ForemClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::Forem.EndPointAuthorization? authorization = null)
+            global::System.Collections.Generic.List<global::Forem.EndPointAuthorization>? authorizations = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorization = authorization;
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::Forem.EndPointAuthorization>();
 
             Initialized(_httpClient);
         }
