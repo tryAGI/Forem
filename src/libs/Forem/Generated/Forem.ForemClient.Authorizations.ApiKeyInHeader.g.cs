@@ -14,11 +14,14 @@ namespace Forem
         {
             apiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
 
-            _authorization = new global::Forem.EndPointAuthorization
+            _authorizations.Clear();
+            _authorizations.Add(new global::Forem.EndPointAuthorization
             {
+                Type = "ApiKey",
+                Location = "Header",
                 Name = "api-key",
                 Value = apiKey,
-            };
+            });
         }
     }
 }
