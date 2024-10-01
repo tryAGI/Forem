@@ -21,6 +21,7 @@ namespace Forem
         public const string BaseUrl = "https://dev.to/api";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::Forem.EndPointAuthorization? _authorization;
 
         /// <summary>
         /// 
@@ -31,7 +32,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ArticlesClient Articles => new ArticlesClient(_httpClient)
+        public ArticlesClient Articles => new ArticlesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -39,7 +40,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient)
+        public UsersClient Users => new UsersClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -47,7 +48,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient)
+        public CommentsClient Comments => new CommentsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -55,7 +56,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public DisplayAdsClient DisplayAds => new DisplayAdsClient(_httpClient)
+        public DisplayAdsClient DisplayAds => new DisplayAdsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -63,7 +64,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public FollowedTagsClient FollowedTags => new FollowedTagsClient(_httpClient)
+        public FollowedTagsClient FollowedTags => new FollowedTagsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -71,7 +72,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public TagsClient Tags => new TagsClient(_httpClient)
+        public TagsClient Tags => new TagsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -79,7 +80,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public FollowersClient Followers => new FollowersClient(_httpClient)
+        public FollowersClient Followers => new FollowersClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -87,7 +88,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public OrganizationsClient Organizations => new OrganizationsClient(_httpClient)
+        public OrganizationsClient Organizations => new OrganizationsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -95,7 +96,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public PagesClient Pages => new PagesClient(_httpClient)
+        public PagesClient Pages => new PagesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -103,7 +104,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(_httpClient)
+        public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -111,7 +112,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ProfileImagesClient ProfileImages => new ProfileImagesClient(_httpClient)
+        public ProfileImagesClient ProfileImages => new ProfileImagesClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -119,7 +120,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ReactionsClient Reactions => new ReactionsClient(_httpClient)
+        public ReactionsClient Reactions => new ReactionsClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -127,7 +128,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public ReadinglistClient Readinglist => new ReadinglistClient(_httpClient)
+        public ReadinglistClient Readinglist => new ReadinglistClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -135,7 +136,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public VideosClient Videos => new VideosClient(_httpClient)
+        public VideosClient Videos => new VideosClient(_httpClient, authorization: _authorization)
         {
             JsonSerializerContext = JsonSerializerContext,
         };
@@ -146,13 +147,16 @@ namespace Forem
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param> 
+        /// <param name="baseUri"></param>
+        /// <param name="authorization"></param>
         public ForemClient(
             global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null)
+            global::System.Uri? baseUri = null,
+            global::Forem.EndPointAuthorization? authorization = null)
         {
             _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
             _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorization = authorization;
 
             Initialized(_httpClient);
         }
