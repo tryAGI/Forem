@@ -8,12 +8,12 @@ namespace Forem
         partial void PreparePutDisplayAdsIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id,
-            global::Forem.Request2 request);
+            object request);
         partial void PreparePutDisplayAdsIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int id,
-            global::Forem.Request2 request);
+            object request);
         partial void ProcessPutDisplayAdsIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,9 +31,9 @@ namespace Forem
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Forem.Response2> PutDisplayAdsIdAsync(
+        public async global::System.Threading.Tasks.Task<object> PutDisplayAdsIdAsync(
             int id,
-            global::Forem.Request2 request,
+            object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -117,7 +117,7 @@ namespace Forem
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Forem.Response2), JsonSerializerContext) as global::Forem.Response2 ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -128,11 +128,11 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Forem.Response2> PutDisplayAdsIdAsync(
+        public async global::System.Threading.Tasks.Task<object> PutDisplayAdsIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::Forem.Request2
+            var request = new object
             {
             };
 

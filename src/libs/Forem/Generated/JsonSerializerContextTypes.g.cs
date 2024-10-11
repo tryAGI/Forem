@@ -94,7 +94,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.PageSocialImage? Type19 { get; set; }
+        public object? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -146,114 +146,74 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Request? Type32 { get; set; }
+        public global::Forem.Request3? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Request2? Type33 { get; set; }
+        public global::Forem.RequestTemplate? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Request3? Type34 { get; set; }
+        public global::Forem.GetArticlesState? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.RequestTemplate? Type35 { get; set; }
+        public global::Forem.Category? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.GetArticlesState? Type36 { get; set; }
+        public global::Forem.ReactableType? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Category? Type37 { get; set; }
+        public global::Forem.Category2? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.ReactableType? Type38 { get; set; }
+        public global::Forem.ReactableType2? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Category2? Type39 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.ArticleIndex>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.ReactableType2? Type40 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.Comment>? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.ArticleIndex>? Type41 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.DisplayAd>? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.GetArticleByIdResponse? Type42 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.FollowedTag>? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.GetArticleByPathResponse? Type43 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.GetFollowersResponseItem>? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.Comment>? Type44 { get; set; }
+        public global::Forem.GetFollowersResponseItem? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.DisplayAd>? Type45 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.User>? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Response? Type46 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.Page>? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Response2? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.PodcastEpisodeIndex>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.FollowedTag>? Type48 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.Tag>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.GetFollowersResponseItem>? Type49 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Forem.GetFollowersResponseItem? Type50 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Forem.GetOrganizationResponse? Type51 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.User>? Type52 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.Page>? Type53 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.PodcastEpisodeIndex>? Type54 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Forem.GetProfileImageResponse? Type55 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.Tag>? Type56 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Forem.GetUserMeResponse? Type57 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::Forem.GetUserResponse? Type58 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::Forem.VideoArticle>? Type59 { get; set; }
+        public global::System.Collections.Generic.IList<global::Forem.VideoArticle>? Type49 { get; set; }
     }
 }

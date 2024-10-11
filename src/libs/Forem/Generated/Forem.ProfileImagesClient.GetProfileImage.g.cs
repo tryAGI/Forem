@@ -29,7 +29,7 @@ namespace Forem
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Forem.GetProfileImageResponse> GetProfileImageAsync(
+        public async global::System.Threading.Tasks.Task<object> GetProfileImageAsync(
             string username,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -104,7 +104,7 @@ namespace Forem
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Forem.GetProfileImageResponse), JsonSerializerContext) as global::Forem.GetProfileImageResponse ??
+                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

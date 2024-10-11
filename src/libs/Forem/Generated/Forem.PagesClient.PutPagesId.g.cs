@@ -160,7 +160,7 @@ namespace Forem
             string? bodyMarkdown = default,
             string? bodyJson = default,
             bool? isTopLevelPath = default,
-            global::Forem.PageSocialImage? socialImage = default,
+            object? socialImage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::Forem.Page

@@ -51,7 +51,7 @@ namespace Forem
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("social_image")]
-        public global::Forem.PageSocialImage? SocialImage { get; set; }
+        public object? SocialImage { get; set; }
 
         /// <summary>
         /// Controls what kind of layout the page is rendered in<br/>
