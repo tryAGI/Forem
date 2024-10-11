@@ -10,7 +10,7 @@ namespace Forem
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Forem.GetUserMeResponse> GetUserMeAsync(
+        global::System.Threading.Tasks.Task<object> GetUserMeAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -12,7 +12,7 @@ namespace Forem
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Forem.GetProfileImageResponse> GetProfileImageAsync(
+        global::System.Threading.Tasks.Task<object> GetProfileImageAsync(
             string username,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
