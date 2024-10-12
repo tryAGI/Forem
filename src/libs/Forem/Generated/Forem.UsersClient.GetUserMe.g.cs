@@ -25,7 +25,7 @@ namespace Forem
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<object> GetUserMeAsync(
+        public async global::System.Threading.Tasks.Task<string> GetUserMeAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -96,9 +96,7 @@ namespace Forem
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(object), JsonSerializerContext) as object ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }
