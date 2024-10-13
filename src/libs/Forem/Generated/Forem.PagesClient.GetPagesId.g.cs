@@ -103,7 +103,7 @@ namespace Forem
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::Forem.Page), JsonSerializerContext) as global::Forem.Page ??
+                global::Forem.Page.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
