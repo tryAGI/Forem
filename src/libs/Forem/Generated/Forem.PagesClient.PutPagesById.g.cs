@@ -3,50 +3,50 @@
 
 namespace Forem
 {
-    public partial class DisplayAdsClient
+    public partial class PagesClient
     {
-        partial void PreparePutDisplayAdsIdArguments(
+        partial void PreparePutPagesByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id,
-            object request);
-        partial void PreparePutDisplayAdsIdRequest(
+            global::Forem.Page request);
+        partial void PreparePutPagesByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int id,
-            object request);
-        partial void ProcessPutDisplayAdsIdResponse(
+            global::Forem.Page request);
+        partial void ProcessPutPagesByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessPutDisplayAdsIdResponseContent(
+        partial void ProcessPutPagesByIdResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// display ads<br/>
-        /// This endpoint allows the client to update the attributes of a single display ad, via its id.
+        /// update details for a page<br/>
+        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> PutDisplayAdsIdAsync(
+        public async global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesByIdAsync(
             int id,
-            object request,
+            global::Forem.Page request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: _httpClient);
-            PreparePutDisplayAdsIdArguments(
+            PreparePutPagesByIdArguments(
                 httpClient: _httpClient,
                 id: ref id,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/display_ads/{id}",
+                path: $"/pages/{id}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -68,7 +68,7 @@ namespace Forem
                     httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -78,7 +78,7 @@ namespace Forem
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PreparePutDisplayAdsIdRequest(
+            PreparePutPagesByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 id: id,
@@ -92,7 +92,7 @@ namespace Forem
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessPutDisplayAdsIdResponse(
+            ProcessPutPagesByIdResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -102,7 +102,7 @@ namespace Forem
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessPutDisplayAdsIdResponseContent(
+            ProcessPutPagesByIdResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -116,25 +116,66 @@ namespace Forem
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return __content;
+            return
+                global::Forem.Page.FromJson(__content, JsonSerializerContext) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
         /// <summary>
-        /// display ads<br/>
-        /// This endpoint allows the client to update the attributes of a single display ad, via its id.
+        /// update details for a page<br/>
+        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="title">
+        /// Title of the page
+        /// </param>
+        /// <param name="slug">
+        /// Used to link to this page in URLs, must be unique and URL-safe
+        /// </param>
+        /// <param name="description">
+        /// For internal use, helps similar pages from one another
+        /// </param>
+        /// <param name="bodyMarkdown">
+        /// The text (in markdown) of the ad (required)
+        /// </param>
+        /// <param name="bodyJson">
+        /// For JSON pages, the JSON body
+        /// </param>
+        /// <param name="isTopLevelPath">
+        /// If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution
+        /// </param>
+        /// <param name="socialImage"></param>
+        /// <param name="template">
+        /// Controls what kind of layout the page is rendered in<br/>
+        /// Default Value: contained
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> PutDisplayAdsIdAsync(
+        public async global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesByIdAsync(
             int id,
+            string title,
+            string slug,
+            string description,
+            global::Forem.PageTemplate template,
+            string? bodyMarkdown = default,
+            string? bodyJson = default,
+            bool? isTopLevelPath = default,
+            object? socialImage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new object
+            var request = new global::Forem.Page
             {
+                Title = title,
+                Slug = slug,
+                Description = description,
+                BodyMarkdown = bodyMarkdown,
+                BodyJson = bodyJson,
+                IsTopLevelPath = isTopLevelPath,
+                SocialImage = socialImage,
+                Template = template,
             };
 
-            return await PutDisplayAdsIdAsync(
+            return await PutPagesByIdAsync(
                 id: id,
                 request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -3,47 +3,54 @@
 
 namespace Forem
 {
-    public partial class PagesClient
+    public partial class DisplayAdsClient
     {
-        partial void PrepareGetPagesIdArguments(
+        partial void PreparePutDisplayAdsByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int id);
-        partial void PrepareGetPagesIdRequest(
+            ref int id,
+            object request);
+        partial void PreparePutDisplayAdsByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int id);
-        partial void ProcessGetPagesIdResponse(
+            int id,
+            object request);
+        partial void ProcessPutDisplayAdsByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetPagesIdResponseContent(
+        partial void ProcessPutDisplayAdsByIdResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// show details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// display ads<br/>
+        /// This endpoint allows the client to update the attributes of a single display ad, via its id.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Forem.Page> GetPagesIdAsync(
+        public async global::System.Threading.Tasks.Task<string> PutDisplayAdsByIdAsync(
             int id,
+            object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetPagesIdArguments(
+            PreparePutDisplayAdsByIdArguments(
                 httpClient: _httpClient,
-                id: ref id);
+                id: ref id,
+                request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/pages/{id}",
+                path: $"/display_ads/{id}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Get,
+                method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var _authorization in _authorizations)
@@ -61,14 +68,21 @@ namespace Forem
                     httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
                 }
             }
+            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext);
+            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                content: __httpRequestContentBody,
+                encoding: global::System.Text.Encoding.UTF8,
+                mediaType: "application/json");
+            httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetPagesIdRequest(
+            PreparePutDisplayAdsByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
-                id: id);
+                id: id,
+                request: request);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,
@@ -78,7 +92,7 @@ namespace Forem
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetPagesIdResponse(
+            ProcessPutDisplayAdsByIdResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -88,7 +102,7 @@ namespace Forem
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessGetPagesIdResponseContent(
+            ProcessPutDisplayAdsByIdResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);
@@ -102,9 +116,28 @@ namespace Forem
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Forem.Page.FromJson(__content, JsonSerializerContext) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
+        }
+
+        /// <summary>
+        /// display ads<br/>
+        /// This endpoint allows the client to update the attributes of a single display ad, via its id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Threading.Tasks.Task<string> PutDisplayAdsByIdAsync(
+            int id,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = new object
+            {
+            };
+
+            return await PutDisplayAdsByIdAsync(
+                id: id,
+                request: request,
+                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

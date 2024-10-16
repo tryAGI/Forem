@@ -5,14 +5,14 @@ namespace Forem
 {
     public partial class DisplayAdsClient
     {
-        partial void PrepareGetDisplayAdsIdArguments(
+        partial void PrepareGetDisplayAdsByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
-        partial void PrepareGetDisplayAdsIdRequest(
+        partial void PrepareGetDisplayAdsByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int id);
-        partial void ProcessGetDisplayAdsIdResponse(
+        partial void ProcessGetDisplayAdsByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
@@ -23,13 +23,13 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task GetDisplayAdsIdAsync(
+        public async global::System.Threading.Tasks.Task GetDisplayAdsByIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareGetDisplayAdsIdArguments(
+            PrepareGetDisplayAdsByIdArguments(
                 httpClient: _httpClient,
                 id: ref id);
 
@@ -60,7 +60,7 @@ namespace Forem
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareGetDisplayAdsIdRequest(
+            PrepareGetDisplayAdsByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 id: id);
@@ -73,7 +73,7 @@ namespace Forem
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessGetDisplayAdsIdResponse(
+            ProcessGetDisplayAdsByIdResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
             response.EnsureSuccessStatusCode();

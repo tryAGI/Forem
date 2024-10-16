@@ -12,7 +12,7 @@ namespace Forem
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesIdAsync(
+        global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesByIdAsync(
             int id,
             global::Forem.Page request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -47,7 +47,7 @@ namespace Forem
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesIdAsync(
+        global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesByIdAsync(
             int id,
             string title,
             string slug,
