@@ -3,42 +3,47 @@
 
 namespace Forem
 {
-    public partial class DisplayAdsClient
+    public partial class PagesClient
     {
-        partial void PreparePutDisplayAdsIdUnpublishArguments(
+        partial void PrepareGetPagesByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
-        partial void PreparePutDisplayAdsIdUnpublishRequest(
+        partial void PrepareGetPagesByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int id);
-        partial void ProcessPutDisplayAdsIdUnpublishResponse(
+        partial void ProcessGetPagesByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessGetPagesByIdResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
-        /// unpublish<br/>
-        /// This endpoint allows the client to remove a display ad from rotation by un-publishing it.
+        /// show details for a page<br/>
+        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task PutDisplayAdsIdUnpublishAsync(
+        public async global::System.Threading.Tasks.Task<global::Forem.Page> GetPagesByIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PreparePutDisplayAdsIdUnpublishArguments(
+            PrepareGetPagesByIdArguments(
                 httpClient: _httpClient,
                 id: ref id);
 
             var __pathBuilder = new PathBuilder(
-                path: $"/display_ads/{id}/unpublish",
+                path: $"/pages/{id}",
                 baseUri: _httpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: global::System.Net.Http.HttpMethod.Put,
+                method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             foreach (var _authorization in _authorizations)
@@ -60,7 +65,7 @@ namespace Forem
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PreparePutDisplayAdsIdUnpublishRequest(
+            PrepareGetPagesByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 id: id);
@@ -73,10 +78,33 @@ namespace Forem
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessPutDisplayAdsIdUnpublishResponse(
+            ProcessGetPagesByIdResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+
+            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+            ProcessResponseContent(
+                client: _httpClient,
+                response: response,
+                content: ref __content);
+            ProcessGetPagesByIdResponseContent(
+                httpClient: _httpClient,
+                httpResponseMessage: response,
+                content: ref __content);
+
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException ex)
+            {
+                throw new global::System.InvalidOperationException(__content, ex);
+            }
+
+            return
+                global::Forem.Page.FromJson(__content, JsonSerializerContext) ??
+                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
 }

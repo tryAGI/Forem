@@ -11,7 +11,7 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task GetDisplayAdsIdAsync(
+        global::System.Threading.Tasks.Task GetDisplayAdsByIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

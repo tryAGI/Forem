@@ -5,18 +5,18 @@ namespace Forem
 {
     public partial class PagesClient
     {
-        partial void PrepareDeletePagesIdArguments(
+        partial void PrepareDeletePagesByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
-        partial void PrepareDeletePagesIdRequest(
+        partial void PrepareDeletePagesByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int id);
-        partial void ProcessDeletePagesIdResponse(
+        partial void ProcessDeletePagesByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeletePagesIdResponseContent(
+        partial void ProcessDeletePagesByIdResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -28,13 +28,13 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Forem.Page> DeletePagesIdAsync(
+        public async global::System.Threading.Tasks.Task<global::Forem.Page> DeletePagesByIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
-            PrepareDeletePagesIdArguments(
+            PrepareDeletePagesByIdArguments(
                 httpClient: _httpClient,
                 id: ref id);
 
@@ -65,7 +65,7 @@ namespace Forem
             PrepareRequest(
                 client: _httpClient,
                 request: httpRequest);
-            PrepareDeletePagesIdRequest(
+            PrepareDeletePagesByIdRequest(
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 id: id);
@@ -78,7 +78,7 @@ namespace Forem
             ProcessResponse(
                 client: _httpClient,
                 response: response);
-            ProcessDeletePagesIdResponse(
+            ProcessDeletePagesByIdResponse(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
 
@@ -88,7 +88,7 @@ namespace Forem
                 client: _httpClient,
                 response: response,
                 content: ref __content);
-            ProcessDeletePagesIdResponseContent(
+            ProcessDeletePagesByIdResponseContent(
                 httpClient: _httpClient,
                 httpResponseMessage: response,
                 content: ref __content);

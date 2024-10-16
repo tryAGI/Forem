@@ -2,16 +2,16 @@
 
 namespace Forem
 {
-    public partial interface IPagesClient
+    public partial interface IDisplayAdsClient
     {
         /// <summary>
-        /// remove a page<br/>
-        /// This endpoint allows the client to delete a single Page object, specified by ID.
+        /// unpublish<br/>
+        /// This endpoint allows the client to remove a display ad from rotation by un-publishing it.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::Forem.Page> DeletePagesIdAsync(
+        global::System.Threading.Tasks.Task PutDisplayAdsByIdUnpublishAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

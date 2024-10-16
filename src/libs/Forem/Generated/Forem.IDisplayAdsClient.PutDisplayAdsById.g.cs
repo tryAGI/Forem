@@ -12,7 +12,7 @@ namespace Forem
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> PutDisplayAdsIdAsync(
+        global::System.Threading.Tasks.Task<string> PutDisplayAdsByIdAsync(
             int id,
             object request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -24,7 +24,7 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> PutDisplayAdsIdAsync(
+        global::System.Threading.Tasks.Task<string> PutDisplayAdsByIdAsync(
             int id,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
