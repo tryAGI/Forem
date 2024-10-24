@@ -20,8 +20,8 @@ namespace Forem
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>> GetOrgArticlesAsync(
             string username,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

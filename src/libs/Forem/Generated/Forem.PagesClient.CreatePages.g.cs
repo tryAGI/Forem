@@ -122,7 +122,7 @@ namespace Forem
             string? bodyMarkdown = default,
             string? bodyJson = default,
             bool? isTopLevelPath = default,
-            global::Forem.RequestTemplate? template = global::Forem.RequestTemplate.Contained,
+            global::Forem.RequestTemplate? template = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Forem.Request3

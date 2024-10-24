@@ -19,8 +19,8 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.VideoArticle>> VideosAsync(
-            int? page = 1,
-            int? perPage = 24,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
