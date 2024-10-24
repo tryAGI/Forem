@@ -60,7 +60,7 @@ namespace Forem
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Forem.JsonConverters.PageTemplateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Forem.PageTemplate Template { get; set; }
+        public required global::Forem.PageTemplate Template { get; set; } = global::Forem.PageTemplate.Contained;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

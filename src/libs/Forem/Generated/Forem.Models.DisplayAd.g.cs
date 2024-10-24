@@ -85,7 +85,7 @@ namespace Forem
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_to")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Forem.JsonConverters.DisplayAdDisplayToJsonConverter))]
-        public global::Forem.DisplayAdDisplayTo? DisplayTo { get; set; } = global::Forem.DisplayAdDisplayTo.All;
+        public global::Forem.DisplayAdDisplayTo? DisplayTo { get; set; }
 
         /// <summary>
         /// Types of the billboards:<br/>
@@ -96,7 +96,7 @@ namespace Forem
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type_of")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Forem.JsonConverters.DisplayAdTypeOfJsonConverter))]
-        public global::Forem.DisplayAdTypeOf? TypeOf { get; set; } = global::Forem.DisplayAdTypeOf.InHouse;
+        public global::Forem.DisplayAdTypeOf? TypeOf { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

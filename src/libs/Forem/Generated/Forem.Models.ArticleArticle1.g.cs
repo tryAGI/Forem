@@ -24,7 +24,7 @@ namespace Forem
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("published")]
-        public bool? Published { get; set; } = false;
+        public bool? Published { get; set; }
 
         /// <summary>
         /// 

@@ -41,8 +41,8 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.GetFollowersResponseItem>> GetFollowersAsync(
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             string? sort = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
