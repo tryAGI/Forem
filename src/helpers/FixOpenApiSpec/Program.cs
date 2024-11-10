@@ -14,7 +14,19 @@ text = text
 
 var openApiDocument = new OpenApiStringReader().Read(text, out var diagnostics);
 
-//openApiDocument.Components.Schemas["GenerateCompletionRequest"]!.Properties["stream"]!.Default = new OpenApiBoolean(true);
+foreach (var (_, pathItem) in openApiDocument.Paths)
+{
+    foreach (var (_, operation) in pathItem.Operations)
+    {
+        foreach (var (_, response) in operation.Responses)
+        {
+            foreach (var (_, mediaType) in response.Content)
+            {
+                mediaType.Example = null;
+            }
+        }
+    }
+}
 
 text = openApiDocument.SerializeAsYaml(OpenApiSpecVersion.OpenApi3_0);
 _ = new OpenApiStringReader().Read(text, out diagnostics);
