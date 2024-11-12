@@ -16,7 +16,7 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="note"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task UnpublishArticleAsync(
             int id,
             string? note = default,

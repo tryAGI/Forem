@@ -31,6 +31,12 @@ namespace Forem
         public global::System.Collections.Generic.List<global::Forem.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the response content should be read as a string.
+        /// True by default in debug builds, false otherwise.
+        /// </summary>
+        public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }

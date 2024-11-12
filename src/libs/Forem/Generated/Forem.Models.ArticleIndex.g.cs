@@ -187,91 +187,104 @@ namespace Forem
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="ArticleIndex" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="typeOf"></param>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="coverImage"></param>
+        /// <param name="readablePublishDate"></param>
+        /// <param name="socialImage"></param>
+        /// <param name="tagList"></param>
+        /// <param name="tags"></param>
+        /// <param name="slug"></param>
+        /// <param name="path"></param>
+        /// <param name="url"></param>
+        /// <param name="canonicalUrl"></param>
+        /// <param name="positiveReactionsCount"></param>
+        /// <param name="publicReactionsCount"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="editedAt"></param>
+        /// <param name="crosspostedAt"></param>
+        /// <param name="publishedAt"></param>
+        /// <param name="lastCommentAt"></param>
+        /// <param name="publishedTimestamp">
+        /// Crossposting or published date time
+        /// </param>
+        /// <param name="readingTimeMinutes">
+        /// Reading time, in minutes
+        /// </param>
+        /// <param name="user">
+        /// The resource creator
+        /// </param>
+        /// <param name="flareTag">
+        /// Flare tag of the article
+        /// </param>
+        /// <param name="organization">
+        /// The organization the resource belongs to
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ArticleIndex(
+            string typeOf,
+            int id,
+            string title,
+            string description,
+            string? coverImage,
+            string readablePublishDate,
+            string socialImage,
+            global::System.Collections.Generic.IList<string> tagList,
+            string tags,
+            string slug,
+            string path,
+            string url,
+            string canonicalUrl,
+            int positiveReactionsCount,
+            int publicReactionsCount,
+            global::System.DateTime createdAt,
+            global::System.DateTime? editedAt,
+            global::System.DateTime? crosspostedAt,
+            global::System.DateTime publishedAt,
+            global::System.DateTime lastCommentAt,
+            global::System.DateTime publishedTimestamp,
+            int readingTimeMinutes,
+            global::Forem.SharedUser user,
+            global::Forem.ArticleFlareTag? flareTag,
+            global::Forem.SharedOrganization? organization)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.TypeOf = typeOf ?? throw new global::System.ArgumentNullException(nameof(typeOf));
+            this.Id = id;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.CoverImage = coverImage ?? throw new global::System.ArgumentNullException(nameof(coverImage));
+            this.ReadablePublishDate = readablePublishDate ?? throw new global::System.ArgumentNullException(nameof(readablePublishDate));
+            this.SocialImage = socialImage ?? throw new global::System.ArgumentNullException(nameof(socialImage));
+            this.TagList = tagList ?? throw new global::System.ArgumentNullException(nameof(tagList));
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CanonicalUrl = canonicalUrl ?? throw new global::System.ArgumentNullException(nameof(canonicalUrl));
+            this.PositiveReactionsCount = positiveReactionsCount;
+            this.PublicReactionsCount = publicReactionsCount;
+            this.CreatedAt = createdAt;
+            this.EditedAt = editedAt;
+            this.CrosspostedAt = crosspostedAt;
+            this.PublishedAt = publishedAt;
+            this.LastCommentAt = lastCommentAt;
+            this.PublishedTimestamp = publishedTimestamp;
+            this.ReadingTimeMinutes = readingTimeMinutes;
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.FlareTag = flareTag;
+            this.Organization = organization;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="ArticleIndex" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public ArticleIndex()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Forem.ArticleIndex? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Forem.ArticleIndex),
-                jsonSerializerContext) as global::Forem.ArticleIndex;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Forem.ArticleIndex? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Forem.ArticleIndex>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Forem.ArticleIndex?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Forem.ArticleIndex),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Forem.ArticleIndex;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Forem.ArticleIndex?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Forem.ArticleIndex?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

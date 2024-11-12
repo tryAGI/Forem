@@ -24,7 +24,7 @@ namespace Forem
         /// This endpoint allows the client to retrieve information about the authenticated user
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> GetUserMeAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -75,28 +75,93 @@ namespace Forem
             ProcessGetUserMeResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessGetUserMeResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
-
-            try
+            // Unauthorized
+            if ((int)__response.StatusCode == 401)
             {
-                __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::System.InvalidOperationException(__content, __ex);
+                string? __content_401 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                }
+                else
+                {
+                    var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                }
+
+                throw new global::Forem.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
             }
 
-            return __content;
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessGetUserMeResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::Forem.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+                    return __content;
+            }
+            else
+            {
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::Forem.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
+                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+
+                var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof(string), JsonSerializerContext).ConfigureAwait(false) as string;
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
     }
 }
