@@ -11,7 +11,7 @@ namespace Forem
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task PostAdminUsersCreateAsync(
             global::Forem.UserInviteParam request,
             global::System.Threading.CancellationToken cancellationToken = default);

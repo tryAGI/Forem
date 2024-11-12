@@ -12,7 +12,7 @@ namespace Forem
         /// <param name="aId"></param>
         /// <param name="pId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.Comment>> GetCommentsByArticleIdAsync(
             string? aId = default,
             string? pId = default,

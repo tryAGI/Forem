@@ -104,91 +104,89 @@ namespace Forem
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
+        /// Initializes a new instance of the <see cref="DisplayAd" /> class.
         /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        /// <param name="id">
+        /// The ID of the Display Ad
+        /// </param>
+        /// <param name="name">
+        /// For internal use, helps distinguish ads from one another
+        /// </param>
+        /// <param name="bodyMarkdown">
+        /// The text (in markdown) of the ad (required)
+        /// </param>
+        /// <param name="approved">
+        /// Ad must be both published and approved to be in rotation
+        /// </param>
+        /// <param name="published">
+        /// Ad must be both published and approved to be in rotation
+        /// </param>
+        /// <param name="organizationId">
+        /// Identifies the organization to which the ad belongs
+        /// </param>
+        /// <param name="creatorId">
+        /// Identifies the user who created the ad.
+        /// </param>
+        /// <param name="placementArea">
+        /// Identifies which area of site layout the ad can appear in
+        /// </param>
+        /// <param name="tagList">
+        /// Tags on which this ad can be displayed (blank is all/any tags)
+        /// </param>
+        /// <param name="articleExcludeIds">
+        /// Articles this ad should *not* appear on (blank means no articles are disallowed, and this ad can appear next to any/all articles). Comma-separated list of integer Article IDs
+        /// </param>
+        /// <param name="audienceSegmentType">
+        /// Specifies an group of users to show this ad to (only works with logged-in users)
+        /// </param>
+        /// <param name="displayTo">
+        /// Potentially limits visitors to whom the ad is visible<br/>
+        /// Default Value: all
+        /// </param>
+        /// <param name="typeOf">
+        /// Types of the billboards:<br/>
+        /// in_house (created by admins),<br/>
+        /// community (created by an entity, appears on entity's content),<br/>
+        /// external ( created by an entity, or a non-entity, can appear everywhere)<br/>
+        /// Default Value: in_house
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DisplayAd(
+            string name,
+            string bodyMarkdown,
+            global::Forem.DisplayAdPlacementArea placementArea,
+            int? id,
+            bool? approved,
+            bool? published,
+            int? organizationId,
+            int? creatorId,
+            string? tagList,
+            string? articleExcludeIds,
+            global::Forem.DisplayAdAudienceSegmentType? audienceSegmentType,
+            global::Forem.DisplayAdDisplayTo? displayTo,
+            global::Forem.DisplayAdTypeOf? typeOf)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.BodyMarkdown = bodyMarkdown ?? throw new global::System.ArgumentNullException(nameof(bodyMarkdown));
+            this.PlacementArea = placementArea;
+            this.Id = id;
+            this.Approved = approved;
+            this.Published = published;
+            this.OrganizationId = organizationId;
+            this.CreatorId = creatorId;
+            this.TagList = tagList;
+            this.ArticleExcludeIds = articleExcludeIds;
+            this.AudienceSegmentType = audienceSegmentType;
+            this.DisplayTo = displayTo;
+            this.TypeOf = typeOf;
         }
 
         /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
+        /// Initializes a new instance of the <see cref="DisplayAd" /> class.
         /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        public DisplayAd()
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                jsonSerializerOptions);
         }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::Forem.DisplayAd? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::Forem.DisplayAd),
-                jsonSerializerContext) as global::Forem.DisplayAd;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::Forem.DisplayAd? FromJson(
-            string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Forem.DisplayAd>(
-                json,
-                jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerContext.
-        /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Forem.DisplayAd?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
-                jsonStream,
-                typeof(global::Forem.DisplayAd),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Forem.DisplayAd;
-        }
-
-        /// <summary>
-        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
-        /// </summary>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
-        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
-#endif
-        public static global::System.Threading.Tasks.ValueTask<global::Forem.DisplayAd?> FromJsonStream(
-            global::System.IO.Stream jsonStream,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-        {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Forem.DisplayAd?>(
-                jsonStream,
-                jsonSerializerOptions);
-        }
-
     }
 }

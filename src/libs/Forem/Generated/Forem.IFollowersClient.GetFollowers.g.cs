@@ -18,7 +18,7 @@ namespace Forem
         /// </param>
         /// <param name="sort"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.GetFollowersResponseItem>> GetFollowersAsync(
             int? page = default,
             int? perPage = default,

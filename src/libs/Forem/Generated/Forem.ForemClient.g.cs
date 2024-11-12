@@ -31,6 +31,11 @@ namespace Forem
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::Forem.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +47,7 @@ namespace Forem
         /// </summary>
         public ArticlesClient Articles => new ArticlesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -50,6 +56,7 @@ namespace Forem
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -58,6 +65,7 @@ namespace Forem
         /// </summary>
         public CommentsClient Comments => new CommentsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -66,6 +74,7 @@ namespace Forem
         /// </summary>
         public DisplayAdsClient DisplayAds => new DisplayAdsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -74,6 +83,7 @@ namespace Forem
         /// </summary>
         public FollowedTagsClient FollowedTags => new FollowedTagsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -82,6 +92,7 @@ namespace Forem
         /// </summary>
         public TagsClient Tags => new TagsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -90,6 +101,7 @@ namespace Forem
         /// </summary>
         public FollowersClient Followers => new FollowersClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -98,6 +110,7 @@ namespace Forem
         /// </summary>
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -106,6 +119,7 @@ namespace Forem
         /// </summary>
         public PagesClient Pages => new PagesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -114,6 +128,7 @@ namespace Forem
         /// </summary>
         public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -122,6 +137,7 @@ namespace Forem
         /// </summary>
         public ProfileImagesClient ProfileImages => new ProfileImagesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -130,6 +146,7 @@ namespace Forem
         /// </summary>
         public ReactionsClient Reactions => new ReactionsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -138,6 +155,7 @@ namespace Forem
         /// </summary>
         public ReadinglistClient Readinglist => new ReadinglistClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 
@@ -146,6 +164,7 @@ namespace Forem
         /// </summary>
         public VideosClient Videos => new VideosClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
         };
 

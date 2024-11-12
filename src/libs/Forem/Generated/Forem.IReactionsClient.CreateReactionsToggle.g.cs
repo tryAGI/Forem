@@ -14,7 +14,7 @@ namespace Forem
         /// <param name="reactableId"></param>
         /// <param name="reactableType"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateReactionsToggleAsync(
             global::Forem.Category category,
             int reactableId,

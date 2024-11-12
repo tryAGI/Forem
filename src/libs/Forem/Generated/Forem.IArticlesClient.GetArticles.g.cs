@@ -28,7 +28,7 @@ namespace Forem
         /// <param name="top"></param>
         /// <param name="collectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>> GetArticlesAsync(
             int? page = default,
             int? perPage = default,

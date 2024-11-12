@@ -25,6 +25,11 @@ namespace Forem
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::Forem.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
