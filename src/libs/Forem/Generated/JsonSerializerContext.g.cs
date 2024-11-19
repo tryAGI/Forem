@@ -35,6 +35,7 @@ namespace Forem
             typeof(global::Forem.JsonConverters.Category2NullableJsonConverter),
             typeof(global::Forem.JsonConverters.ReactableType2JsonConverter),
             typeof(global::Forem.JsonConverters.ReactableType2NullableJsonConverter),
+            typeof(global::Forem.JsonConverters.UnixTimestampJsonConverter),
         })]
 
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.JsonSerializerContextTypes))]
