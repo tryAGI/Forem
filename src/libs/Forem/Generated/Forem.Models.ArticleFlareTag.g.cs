@@ -42,7 +42,9 @@ namespace Forem
         /// <param name="textColorHex">
         /// Text color (hexadecimal)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArticleFlareTag(
             string? name,
             string? bgColorHex,

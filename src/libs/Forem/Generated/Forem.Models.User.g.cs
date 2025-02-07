@@ -94,7 +94,9 @@ namespace Forem
         /// <param name="location"></param>
         /// <param name="joinedAt"></param>
         /// <param name="profileImage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public User(
             string? typeOf,
             long? id,

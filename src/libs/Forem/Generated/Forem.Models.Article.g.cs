@@ -24,7 +24,9 @@ namespace Forem
         /// Initializes a new instance of the <see cref="Article" /> class.
         /// </summary>
         /// <param name="article1"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Article(
             global::Forem.ArticleArticle1? article1)
         {

@@ -82,7 +82,9 @@ namespace Forem
         /// <param name="user">
         /// Author of the article
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VideoArticle(
             string? typeOf,
             long? id,

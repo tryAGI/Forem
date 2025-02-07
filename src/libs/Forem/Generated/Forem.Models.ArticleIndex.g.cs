@@ -225,7 +225,9 @@ namespace Forem
         /// <param name="organization">
         /// The organization the resource belongs to
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArticleIndex(
             string typeOf,
             int id,

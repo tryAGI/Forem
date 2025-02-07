@@ -77,7 +77,9 @@ namespace Forem
         /// <param name="podcast">
         /// The podcast that the resource belongs to
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PodcastEpisodeIndex(
             string typeOf,
             int id,
