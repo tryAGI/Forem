@@ -69,7 +69,9 @@ namespace Forem
         /// <param name="profileImage">
         /// Profile image (640x640)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetFollowersResponseItem(
             string? typeOf,
             int? id,

@@ -43,7 +43,9 @@ namespace Forem
         /// </param>
         /// <param name="name"></param>
         /// <param name="points"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FollowedTag(
             long id,
             string name,

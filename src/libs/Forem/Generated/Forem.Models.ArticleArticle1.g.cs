@@ -82,7 +82,9 @@ namespace Forem
         /// <param name="description"></param>
         /// <param name="tags"></param>
         /// <param name="organizationId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArticleArticle1(
             string? title,
             string? bodyMarkdown,

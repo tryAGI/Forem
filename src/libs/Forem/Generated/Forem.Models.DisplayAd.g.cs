@@ -151,7 +151,9 @@ namespace Forem
         /// external ( created by an entity, or a non-entity, can appear everywhere)<br/>
         /// Default Value: in_house
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DisplayAd(
             string name,
             string bodyMarkdown,

@@ -101,7 +101,9 @@ namespace Forem
         /// <param name="techStack"></param>
         /// <param name="tagLine"></param>
         /// <param name="story"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Organization(
             string? typeOf,
             string? username,

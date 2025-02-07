@@ -53,7 +53,9 @@ namespace Forem
         /// <param name="profileImage90">
         /// Profile image (90x90)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProfileImage(
             string? typeOf,
             string? imageOf,
