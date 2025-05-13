@@ -28,6 +28,10 @@ namespace Forem.JsonConverters
                     var numValue = reader.GetInt32();
                     return (global::Forem.ReactableType2)numValue;
                 }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Forem.ReactableType2);
+                }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
             }
