@@ -44,7 +44,7 @@ namespace Forem
                 aId: ref aId,
                 pId: ref pId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/comments",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -40,7 +40,7 @@ namespace Forem
                 httpClient: HttpClient,
                 request: request);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/display_ads",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();

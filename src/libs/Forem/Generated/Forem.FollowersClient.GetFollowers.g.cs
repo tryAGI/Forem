@@ -54,7 +54,7 @@ namespace Forem
                 perPage: ref perPage,
                 sort: ref sort);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/followers/users",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

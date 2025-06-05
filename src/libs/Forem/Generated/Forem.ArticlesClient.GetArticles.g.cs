@@ -88,7 +88,7 @@ namespace Forem
                 top: ref top,
                 collectionId: ref collectionId);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/articles",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

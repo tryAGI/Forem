@@ -43,7 +43,7 @@ namespace Forem
                 username: ref username,
                 slug: ref slug);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/articles/{username}/{slug}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
