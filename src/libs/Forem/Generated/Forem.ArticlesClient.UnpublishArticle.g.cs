@@ -43,7 +43,7 @@ namespace Forem
                 id: ref id,
                 note: ref note);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/articles/{id}/unpublish",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

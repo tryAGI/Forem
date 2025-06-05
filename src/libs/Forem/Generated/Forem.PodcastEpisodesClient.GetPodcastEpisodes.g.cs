@@ -55,7 +55,7 @@ namespace Forem
                 perPage: ref perPage,
                 username: ref username);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/podcast_episodes",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -45,7 +45,7 @@ namespace Forem
                 reactableId: ref reactableId,
                 reactableType: ref reactableType);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/reactions",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

@@ -50,7 +50,7 @@ namespace Forem
                 page: ref page,
                 perPage: ref perPage);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/articles/me/unpublished",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 

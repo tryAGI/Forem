@@ -42,7 +42,7 @@ namespace Forem
                 httpClient: HttpClient,
                 id: ref id);
 
-            var __pathBuilder = new PathBuilder(
+            var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/users/{id}/unpublish",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
