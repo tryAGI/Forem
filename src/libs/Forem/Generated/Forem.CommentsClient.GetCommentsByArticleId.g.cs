@@ -47,8 +47,8 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/comments",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("a_id", aId) 
+            __pathBuilder
+                .AddOptionalParameter("a_id", aId)
                 .AddOptionalParameter("p_id", pId) 
                 ; 
             var __path = __pathBuilder.ToString();
