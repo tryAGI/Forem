@@ -57,9 +57,9 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/followers/users",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("sort", sort) 
                 ; 
             var __path = __pathBuilder.ToString();

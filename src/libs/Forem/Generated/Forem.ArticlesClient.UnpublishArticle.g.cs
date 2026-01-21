@@ -46,7 +46,7 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/articles/{id}/unpublish",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
+            __pathBuilder
                 .AddOptionalParameter("note", note) 
                 ; 
             var __path = __pathBuilder.ToString();
