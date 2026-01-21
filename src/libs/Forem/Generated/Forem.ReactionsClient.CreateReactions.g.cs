@@ -48,9 +48,9 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/reactions",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddRequiredParameter("category", category.ToValueString()) 
-                .AddRequiredParameter("reactable_id", reactableId.ToString()) 
+            __pathBuilder
+                .AddRequiredParameter("category", category.ToValueString())
+                .AddRequiredParameter("reactable_id", reactableId.ToString())
                 .AddRequiredParameter("reactable_type", reactableType.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
