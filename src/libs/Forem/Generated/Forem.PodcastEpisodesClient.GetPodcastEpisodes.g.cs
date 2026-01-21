@@ -58,9 +58,9 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/podcast_episodes",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("username", username) 
                 ; 
             var __path = __pathBuilder.ToString();
