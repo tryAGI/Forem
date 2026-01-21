@@ -91,15 +91,15 @@ namespace Forem
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/articles",
                 baseUri: HttpClient.BaseAddress); 
-            __pathBuilder 
-                .AddOptionalParameter("page", page?.ToString()) 
-                .AddOptionalParameter("per_page", perPage?.ToString()) 
-                .AddOptionalParameter("tag", tag) 
-                .AddOptionalParameter("tags", tags) 
-                .AddOptionalParameter("tags_exclude", tagsExclude) 
-                .AddOptionalParameter("username", username) 
-                .AddOptionalParameter("state", state?.ToValueString()) 
-                .AddOptionalParameter("top", top?.ToString()) 
+            __pathBuilder
+                .AddOptionalParameter("page", page?.ToString())
+                .AddOptionalParameter("per_page", perPage?.ToString())
+                .AddOptionalParameter("tag", tag)
+                .AddOptionalParameter("tags", tags)
+                .AddOptionalParameter("tags_exclude", tagsExclude)
+                .AddOptionalParameter("username", username)
+                .AddOptionalParameter("state", state?.ToValueString())
+                .AddOptionalParameter("top", top?.ToString())
                 .AddOptionalParameter("collection_id", collectionId?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
