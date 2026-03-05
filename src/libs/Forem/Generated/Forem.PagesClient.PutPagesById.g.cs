@@ -33,6 +33,7 @@ namespace Forem
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Forem.Page> PutPagesByIdAsync(
             int id,
+
             global::Forem.Page request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -273,11 +274,11 @@ namespace Forem
             string title,
             string slug,
             string description,
-            global::Forem.PageTemplate template,
             string? bodyMarkdown = default,
             string? bodyJson = default,
             bool? isTopLevelPath = default,
             object? socialImage = default,
+            global::Forem.PageTemplate template = global::Forem.PageTemplate.Contained,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Forem.Page

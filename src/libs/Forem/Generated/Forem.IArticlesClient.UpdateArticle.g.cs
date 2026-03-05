@@ -15,6 +15,7 @@ namespace Forem
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task UpdateArticleAsync(
             int id,
+
             global::Forem.Article request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
