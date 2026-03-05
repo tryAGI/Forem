@@ -33,6 +33,7 @@ namespace Forem
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> PutDisplayAdsByIdAsync(
             int id,
+
             object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

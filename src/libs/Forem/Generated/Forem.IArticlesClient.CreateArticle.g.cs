@@ -13,6 +13,7 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateArticleAsync(
+
             global::Forem.Article request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
