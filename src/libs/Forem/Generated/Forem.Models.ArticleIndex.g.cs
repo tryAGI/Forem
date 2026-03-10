@@ -40,8 +40,7 @@ namespace Forem
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cover_image")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string? CoverImage { get; set; }
+        public string? CoverImage { get; set; }
 
         /// <summary>
         /// 
@@ -124,15 +123,13 @@ namespace Forem
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("edited_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? EditedAt { get; set; }
+        public global::System.DateTime? EditedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("crossposted_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime? CrosspostedAt { get; set; }
+        public global::System.DateTime? CrosspostedAt { get; set; }
 
         /// <summary>
         /// 
@@ -233,7 +230,6 @@ namespace Forem
             int id,
             string title,
             string description,
-            string? coverImage,
             string readablePublishDate,
             string socialImage,
             global::System.Collections.Generic.IList<string> tagList,
@@ -245,13 +241,14 @@ namespace Forem
             int positiveReactionsCount,
             int publicReactionsCount,
             global::System.DateTime createdAt,
-            global::System.DateTime? editedAt,
-            global::System.DateTime? crosspostedAt,
             global::System.DateTime publishedAt,
             global::System.DateTime lastCommentAt,
             global::System.DateTime publishedTimestamp,
             int readingTimeMinutes,
             global::Forem.SharedUser user,
+            string? coverImage,
+            global::System.DateTime? editedAt,
+            global::System.DateTime? crosspostedAt,
             global::Forem.ArticleFlareTag? flareTag,
             global::Forem.SharedOrganization? organization)
         {
@@ -259,7 +256,6 @@ namespace Forem
             this.Id = id;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.CoverImage = coverImage ?? throw new global::System.ArgumentNullException(nameof(coverImage));
             this.ReadablePublishDate = readablePublishDate ?? throw new global::System.ArgumentNullException(nameof(readablePublishDate));
             this.SocialImage = socialImage ?? throw new global::System.ArgumentNullException(nameof(socialImage));
             this.TagList = tagList ?? throw new global::System.ArgumentNullException(nameof(tagList));
@@ -271,13 +267,14 @@ namespace Forem
             this.PositiveReactionsCount = positiveReactionsCount;
             this.PublicReactionsCount = publicReactionsCount;
             this.CreatedAt = createdAt;
-            this.EditedAt = editedAt;
-            this.CrosspostedAt = crosspostedAt;
             this.PublishedAt = publishedAt;
             this.LastCommentAt = lastCommentAt;
             this.PublishedTimestamp = publishedTimestamp;
             this.ReadingTimeMinutes = readingTimeMinutes;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.CoverImage = coverImage;
+            this.EditedAt = editedAt;
+            this.CrosspostedAt = crosspostedAt;
             this.FlareTag = flareTag;
             this.Organization = organization;
         }
