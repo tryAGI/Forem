@@ -10,10 +10,10 @@ C# SDK for the [Forem](https://www.forem.com/) platform API (powers dev.to and o
 
 ```bash
 # Build the solution
-dotnet build Forem.sln
+dotnet build Forem.slnx
 
 # Build for release (also produces NuGet package)
-dotnet build Forem.sln -c Release
+dotnet build Forem.slnx -c Release
 
 # Run integration tests (requires FOREM_API_KEY env var)
 dotnet test src/tests/IntegrationTests/Forem.IntegrationTests.csproj
