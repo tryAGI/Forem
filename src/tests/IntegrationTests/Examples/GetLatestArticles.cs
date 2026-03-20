@@ -26,7 +26,7 @@ public partial class Tests
         {
             Console.WriteLine($"Title: {article.Title}");
             Console.WriteLine($"  Published: {article.PublishedAt}");
-            Console.WriteLine($"  Comments: {article.CommentsCount}");
+            Console.WriteLine($"  Reactions: {article.PublicReactionsCount}");
             Console.WriteLine();
         }
     }
