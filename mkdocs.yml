@@ -3,7 +3,10 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
-  - Test: samples/Test.md
+  - Test: examples/test.md
+  - List Articles: examples/list-articles.md
+  - List Tags: examples/list-tags.md
+  - Get Latest Articles: examples/get-latest-articles.md
 # EXAMPLES:END
         
 theme:
