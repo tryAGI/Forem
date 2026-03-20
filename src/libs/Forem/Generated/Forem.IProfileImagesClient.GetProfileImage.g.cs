@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IProfileImagesClient
     {
-
         /// <summary>
         /// A Users or organizations profile image<br/>
         /// This endpoint allows the client to retrieve a user or organization profile image information by its<br/>

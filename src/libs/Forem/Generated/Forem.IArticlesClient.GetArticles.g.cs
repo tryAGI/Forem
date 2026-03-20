@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IArticlesClient
     {
-
         /// <summary>
         /// Published articles<br/>
         /// This endpoint allows the client to retrieve a list of articles.<br/>

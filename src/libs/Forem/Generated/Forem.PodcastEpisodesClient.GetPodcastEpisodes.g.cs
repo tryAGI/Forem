@@ -25,7 +25,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Podcast Episodes<br/>
         /// This endpoint allows the client to retrieve a list of podcast episodes.<br/>

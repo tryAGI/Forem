@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// Unpublish a User's Articles and Comments<br/>
         /// This endpoint allows the client to unpublish all of the articles and<br/>

@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// A User<br/>
         /// This endpoint allows the client to retrieve a single user, either by id<br/>

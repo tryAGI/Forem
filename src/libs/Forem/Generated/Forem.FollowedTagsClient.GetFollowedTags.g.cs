@@ -19,7 +19,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Followed Tags<br/>
         /// This endpoint allows the client to retrieve a list of the tags they follow.

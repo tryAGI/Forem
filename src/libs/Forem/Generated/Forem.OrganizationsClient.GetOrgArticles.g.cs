@@ -25,7 +25,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Organization's Articles<br/>
         /// This endpoint allows the client to retrieve a list of Articles belonging to the organization<br/>

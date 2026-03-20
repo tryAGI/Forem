@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IReactionsClient
     {
-
         /// <summary>
         /// create reaction<br/>
         /// This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>

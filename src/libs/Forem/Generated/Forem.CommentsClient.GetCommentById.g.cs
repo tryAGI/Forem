@@ -16,7 +16,6 @@ namespace Forem
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Comment by id<br/>
         /// This endpoint allows the client to retrieve a comment as well as his descendants comments.<br/>

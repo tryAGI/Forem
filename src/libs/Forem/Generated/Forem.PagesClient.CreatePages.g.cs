@@ -16,12 +16,10 @@ namespace Forem
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// pages<br/>
         /// This endpoint allows the client to create a new page.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
@@ -233,7 +231,6 @@ namespace Forem
                 }
             }
         }
-
         /// <summary>
         /// pages<br/>
         /// This endpoint allows the client to create a new page.

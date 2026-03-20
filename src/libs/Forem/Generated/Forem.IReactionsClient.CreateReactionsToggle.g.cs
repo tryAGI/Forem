@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IReactionsClient
     {
-
         /// <summary>
         /// toggle reaction<br/>
         /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>

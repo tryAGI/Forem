@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IPagesClient
     {
-
         /// <summary>
         /// remove a page<br/>
         /// This endpoint allows the client to delete a single Page object, specified by ID.
