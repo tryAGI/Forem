@@ -16,7 +16,6 @@ namespace Forem
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// Unpublish a User's Articles and Comments<br/>
         /// This endpoint allows the client to unpublish all of the articles and<br/>

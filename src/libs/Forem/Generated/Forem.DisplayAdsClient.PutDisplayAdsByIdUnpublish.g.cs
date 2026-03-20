@@ -16,7 +16,6 @@ namespace Forem
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// unpublish<br/>
         /// This endpoint allows the client to remove a display ad from rotation by un-publishing it.

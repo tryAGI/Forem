@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IReadinglistClient
     {
-
         /// <summary>
         /// Readinglist<br/>
         /// This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.<br/>

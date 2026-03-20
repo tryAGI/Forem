@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IUsersClient
     {
-
         /// <summary>
         /// The authenticated user<br/>
         /// This endpoint allows the client to retrieve information about the authenticated user

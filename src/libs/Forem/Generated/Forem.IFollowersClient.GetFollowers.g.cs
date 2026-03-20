@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface IFollowersClient
     {
-
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>

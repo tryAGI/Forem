@@ -21,7 +21,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// A User<br/>
         /// This endpoint allows the client to retrieve a single user, either by id<br/>

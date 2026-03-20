@@ -25,7 +25,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>

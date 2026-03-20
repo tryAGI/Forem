@@ -16,7 +16,6 @@ namespace Forem
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-
         /// <summary>
         /// display ad<br/>
         /// This endpoint allows the client to retrieve a single display ad, via its id.

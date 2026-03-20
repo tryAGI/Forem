@@ -23,7 +23,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Comments<br/>
         /// This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.<br/>

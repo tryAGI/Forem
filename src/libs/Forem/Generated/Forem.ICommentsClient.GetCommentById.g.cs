@@ -4,7 +4,6 @@ namespace Forem
 {
     public partial interface ICommentsClient
     {
-
         /// <summary>
         /// Comment by id<br/>
         /// This endpoint allows the client to retrieve a comment as well as his descendants comments.<br/>

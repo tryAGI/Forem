@@ -21,7 +21,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Published article by id<br/>
         /// This endpoint allows the client to retrieve a single published article given its `id`.

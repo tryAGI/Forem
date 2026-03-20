@@ -19,7 +19,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// show details for all pages<br/>
         /// This endpoint allows the client to retrieve details for all Page objects.

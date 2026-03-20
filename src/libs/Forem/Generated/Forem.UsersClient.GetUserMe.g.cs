@@ -19,7 +19,6 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// The authenticated user<br/>
         /// This endpoint allows the client to retrieve information about the authenticated user
