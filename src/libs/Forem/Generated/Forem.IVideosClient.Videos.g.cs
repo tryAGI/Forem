@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IVideosClient
     {
+
         /// <summary>
         /// Articles with a video<br/>
         /// This endpoint allows the client to retrieve a list of articles that are uploaded with a video.<br/>

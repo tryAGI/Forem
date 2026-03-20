@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IPagesClient
     {
+
         /// <summary>
         /// show details for a page<br/>
         /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.

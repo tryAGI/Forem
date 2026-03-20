@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IOrganizationsClient
     {
+
         /// <summary>
         /// An organization<br/>
         /// This endpoint allows the client to retrieve a single organization by their username

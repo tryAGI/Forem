@@ -23,6 +23,7 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// User's published articles<br/>
         /// This endpoint allows the client to retrieve a list of published articles on behalf of an authenticated user.<br/>

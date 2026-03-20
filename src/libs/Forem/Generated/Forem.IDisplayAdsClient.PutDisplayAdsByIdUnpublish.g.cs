@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IDisplayAdsClient
     {
+
         /// <summary>
         /// unpublish<br/>
         /// This endpoint allows the client to remove a display ad from rotation by un-publishing it.

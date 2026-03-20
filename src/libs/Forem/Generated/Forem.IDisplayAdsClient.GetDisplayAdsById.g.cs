@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IDisplayAdsClient
     {
+
         /// <summary>
         /// display ad<br/>
         /// This endpoint allows the client to retrieve a single display ad, via its id.

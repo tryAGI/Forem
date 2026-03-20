@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IArticlesClient
     {
+
         /// <summary>
         /// User's unpublished articles<br/>
         /// This endpoint allows the client to retrieve a list of unpublished articles on behalf of an authenticated user.<br/>

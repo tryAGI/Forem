@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface ITagsClient
     {
+
         /// <summary>
         /// Tags<br/>
         /// This endpoint allows the client to retrieve a list of tags that can be used to tag articles.<br/>

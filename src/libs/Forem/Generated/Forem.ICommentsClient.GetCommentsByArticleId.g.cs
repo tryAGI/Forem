@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface ICommentsClient
     {
+
         /// <summary>
         /// Comments<br/>
         /// This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.<br/>
