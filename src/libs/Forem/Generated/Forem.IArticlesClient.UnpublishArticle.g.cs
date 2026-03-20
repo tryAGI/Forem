@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IArticlesClient
     {
+
         /// <summary>
         /// Unpublish an article<br/>
         /// This endpoint allows the client to unpublish an article.<br/>

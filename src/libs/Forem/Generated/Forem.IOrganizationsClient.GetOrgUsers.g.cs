@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IOrganizationsClient
     {
+
         /// <summary>
         /// Organization's users<br/>
         /// This endpoint allows the client to retrieve a list of users belonging to the organization<br/>

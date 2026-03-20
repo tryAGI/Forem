@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IArticlesClient
     {
+
         /// <summary>
         /// Published articles sorted by published date<br/>
         /// This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.<br/>

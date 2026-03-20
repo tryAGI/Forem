@@ -4,6 +4,7 @@ namespace Forem
 {
     public partial interface IUsersClient
     {
+
         /// <summary>
         /// Suspend a User<br/>
         /// This endpoint allows the client to suspend a user.<br/>

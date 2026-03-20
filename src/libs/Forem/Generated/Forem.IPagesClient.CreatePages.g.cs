@@ -4,10 +4,12 @@ namespace Forem
 {
     public partial interface IPagesClient
     {
+
         /// <summary>
         /// pages<br/>
         /// This endpoint allows the client to create a new page.
         /// </summary>
+
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>

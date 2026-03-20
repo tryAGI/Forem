@@ -23,6 +23,7 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// Tags<br/>
         /// This endpoint allows the client to retrieve a list of tags that can be used to tag articles.<br/>

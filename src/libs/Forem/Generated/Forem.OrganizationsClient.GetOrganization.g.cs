@@ -21,6 +21,7 @@ namespace Forem
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
+
         /// <summary>
         /// An organization<br/>
         /// This endpoint allows the client to retrieve a single organization by their username
