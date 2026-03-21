@@ -7,15 +7,15 @@ namespace Forem
     {
         partial void PrepareCreateReactionsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Forem.Category2 category,
+            ref global::Forem.CreateReactionsCategory category,
             ref int reactableId,
-            ref global::Forem.ReactableType2 reactableType);
+            ref global::Forem.CreateReactionsReactableType reactableType);
         partial void PrepareCreateReactionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Forem.Category2 category,
+            global::Forem.CreateReactionsCategory category,
             int reactableId,
-            global::Forem.ReactableType2 reactableType);
+            global::Forem.CreateReactionsReactableType reactableType);
         partial void ProcessCreateReactionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,9 +32,9 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreateReactionsAsync(
-            global::Forem.Category2 category,
+            global::Forem.CreateReactionsCategory category,
             int reactableId,
-            global::Forem.ReactableType2 reactableType,
+            global::Forem.CreateReactionsReactableType reactableType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

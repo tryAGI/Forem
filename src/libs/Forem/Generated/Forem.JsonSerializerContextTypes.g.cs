@@ -156,11 +156,11 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Request3? Type32 { get; set; }
+        public global::Forem.CreatePagesRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.RequestTemplate? Type33 { get; set; }
+        public global::Forem.CreatePagesRequestTemplate? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -168,19 +168,19 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Category? Type35 { get; set; }
+        public global::Forem.CreateReactionsToggleCategory? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.ReactableType? Type36 { get; set; }
+        public global::Forem.CreateReactionsToggleReactableType? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.Category2? Type37 { get; set; }
+        public global::Forem.CreateReactionsCategory? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Forem.ReactableType2? Type38 { get; set; }
+        public global::Forem.CreateReactionsReactableType? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>

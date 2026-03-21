@@ -33,29 +33,29 @@ namespace Forem
 
             typeof(global::Forem.JsonConverters.DisplayAdTypeOfNullableJsonConverter),
 
-            typeof(global::Forem.JsonConverters.RequestTemplateJsonConverter),
+            typeof(global::Forem.JsonConverters.CreatePagesRequestTemplateJsonConverter),
 
-            typeof(global::Forem.JsonConverters.RequestTemplateNullableJsonConverter),
+            typeof(global::Forem.JsonConverters.CreatePagesRequestTemplateNullableJsonConverter),
 
             typeof(global::Forem.JsonConverters.GetArticlesStateJsonConverter),
 
             typeof(global::Forem.JsonConverters.GetArticlesStateNullableJsonConverter),
 
-            typeof(global::Forem.JsonConverters.CategoryJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsToggleCategoryJsonConverter),
 
-            typeof(global::Forem.JsonConverters.CategoryNullableJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsToggleCategoryNullableJsonConverter),
 
-            typeof(global::Forem.JsonConverters.ReactableTypeJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsToggleReactableTypeJsonConverter),
 
-            typeof(global::Forem.JsonConverters.ReactableTypeNullableJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsToggleReactableTypeNullableJsonConverter),
 
-            typeof(global::Forem.JsonConverters.Category2JsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsCategoryJsonConverter),
 
-            typeof(global::Forem.JsonConverters.Category2NullableJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsCategoryNullableJsonConverter),
 
-            typeof(global::Forem.JsonConverters.ReactableType2JsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsReactableTypeJsonConverter),
 
-            typeof(global::Forem.JsonConverters.ReactableType2NullableJsonConverter),
+            typeof(global::Forem.JsonConverters.CreateReactionsReactableTypeNullableJsonConverter),
 
             typeof(global::Forem.JsonConverters.UnixTimestampJsonConverter),
         })]
@@ -92,13 +92,13 @@ namespace Forem
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.DisplayAdAudienceSegmentType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.DisplayAdDisplayTo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.DisplayAdTypeOf))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.Request3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.RequestTemplate))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreatePagesRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreatePagesRequestTemplate))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.GetArticlesState))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.Category))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.ReactableType))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.Category2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.ReactableType2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreateReactionsToggleCategory))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreateReactionsToggleReactableType))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreateReactionsCategory))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Forem.CreateReactionsReactableType))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Forem.ArticleIndex>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Forem.Comment>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Forem.DisplayAd>))]

@@ -6,7 +6,7 @@ namespace Forem
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Request
+    public sealed partial class PutDisplayAdsResponse
     {
 
         /// <summary>

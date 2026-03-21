@@ -7,15 +7,15 @@ namespace Forem
     {
         partial void PrepareCreateReactionsToggleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::Forem.Category category,
+            ref global::Forem.CreateReactionsToggleCategory category,
             ref int reactableId,
-            ref global::Forem.ReactableType reactableType);
+            ref global::Forem.CreateReactionsToggleReactableType reactableType);
         partial void PrepareCreateReactionsToggleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Forem.Category category,
+            global::Forem.CreateReactionsToggleCategory category,
             int reactableId,
-            global::Forem.ReactableType reactableType);
+            global::Forem.CreateReactionsToggleReactableType reactableType);
         partial void ProcessCreateReactionsToggleResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,9 +32,9 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreateReactionsToggleAsync(
-            global::Forem.Category category,
+            global::Forem.CreateReactionsToggleCategory category,
             int reactableId,
-            global::Forem.ReactableType reactableType,
+            global::Forem.CreateReactionsToggleReactableType reactableType,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

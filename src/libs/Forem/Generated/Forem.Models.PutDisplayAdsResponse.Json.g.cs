@@ -2,7 +2,7 @@
 
 namespace Forem
 {
-    public sealed partial class Response2
+    public sealed partial class PutDisplayAdsResponse
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Forem
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Forem.Response2? FromJson(
+        public static global::Forem.PutDisplayAdsResponse? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Forem.Response2),
-                jsonSerializerContext) as global::Forem.Response2;
+                typeof(global::Forem.PutDisplayAdsResponse),
+                jsonSerializerContext) as global::Forem.PutDisplayAdsResponse;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Forem
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Forem.Response2? FromJson(
+        public static global::Forem.PutDisplayAdsResponse? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Forem.Response2>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Forem.PutDisplayAdsResponse>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Forem
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Forem.Response2?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Forem.PutDisplayAdsResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Forem.Response2),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Forem.Response2;
+                typeof(global::Forem.PutDisplayAdsResponse),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Forem.PutDisplayAdsResponse;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Forem
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Forem.Response2?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Forem.PutDisplayAdsResponse?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Forem.Response2?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Forem.PutDisplayAdsResponse?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

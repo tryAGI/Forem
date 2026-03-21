@@ -16,9 +16,9 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task CreateReactionsToggleAsync(
-            global::Forem.Category category,
+            global::Forem.CreateReactionsToggleCategory category,
             int reactableId,
-            global::Forem.ReactableType reactableType,
+            global::Forem.CreateReactionsToggleReactableType reactableType,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

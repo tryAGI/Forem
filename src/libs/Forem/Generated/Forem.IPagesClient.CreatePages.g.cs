@@ -13,7 +13,7 @@ namespace Forem
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task CreatePagesAsync(
 
-            global::Forem.Request3 request,
+            global::Forem.CreatePagesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// pages<br/>
@@ -50,7 +50,7 @@ namespace Forem
             string? bodyMarkdown = default,
             string? bodyJson = default,
             bool? isTopLevelPath = default,
-            global::Forem.RequestTemplate? template = default,
+            global::Forem.CreatePagesRequestTemplate? template = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

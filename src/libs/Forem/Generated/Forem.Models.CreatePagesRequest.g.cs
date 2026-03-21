@@ -6,7 +6,7 @@ namespace Forem
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Request3
+    public sealed partial class CreatePagesRequest
     {
         /// <summary>
         /// Title of the page
@@ -49,8 +49,8 @@ namespace Forem
         /// Default Value: contained
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Forem.JsonConverters.RequestTemplateJsonConverter))]
-        public global::Forem.RequestTemplate? Template { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Forem.JsonConverters.CreatePagesRequestTemplateJsonConverter))]
+        public global::Forem.CreatePagesRequestTemplate? Template { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +59,7 @@ namespace Forem
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Request3" /> class.
+        /// Initializes a new instance of the <see cref="CreatePagesRequest" /> class.
         /// </summary>
         /// <param name="title">
         /// Title of the page
@@ -86,14 +86,14 @@ namespace Forem
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Request3(
+        public CreatePagesRequest(
             string? title,
             string? slug,
             string? description,
             string? bodyMarkdown,
             string? bodyJson,
             bool? isTopLevelPath,
-            global::Forem.RequestTemplate? template)
+            global::Forem.CreatePagesRequestTemplate? template)
         {
             this.Title = title;
             this.Slug = slug;
@@ -105,9 +105,9 @@ namespace Forem
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Request3" /> class.
+        /// Initializes a new instance of the <see cref="CreatePagesRequest" /> class.
         /// </summary>
-        public Request3()
+        public CreatePagesRequest()
         {
         }
     }

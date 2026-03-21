@@ -3,10 +3,10 @@
 namespace Forem.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ReactableTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Forem.ReactableType?>
+    public sealed class CreateReactionsToggleCategoryJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Forem.CreateReactionsToggleCategory>
     {
         /// <inheritdoc />
-        public override global::Forem.ReactableType? Read(
+        public override global::Forem.CreateReactionsToggleCategory Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Forem.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Forem.ReactableTypeExtensions.ToEnum(stringValue);
+                        return global::Forem.CreateReactionsToggleCategoryExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Forem.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Forem.ReactableType)numValue;
+                    return (global::Forem.CreateReactionsToggleCategory)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Forem.ReactableType?);
+                    return default(global::Forem.CreateReactionsToggleCategory);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,19 +42,12 @@ namespace Forem.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Forem.ReactableType? value,
+            global::Forem.CreateReactionsToggleCategory value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::Forem.ReactableTypeExtensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::Forem.CreateReactionsToggleCategoryExtensions.ToValueString(value));
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Forem
     /// Controls what kind of layout the page is rendered in<br/>
     /// Default Value: contained
     /// </summary>
-    public enum RequestTemplate
+    public enum CreatePagesRequestTemplate
     {
         /// <summary>
         /// 
@@ -30,33 +30,33 @@ namespace Forem
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class RequestTemplateExtensions
+    public static class CreatePagesRequestTemplateExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this RequestTemplate value)
+        public static string ToValueString(this CreatePagesRequestTemplate value)
         {
             return value switch
             {
-                RequestTemplate.Contained => "contained",
-                RequestTemplate.FullWithinLayout => "full_within_layout",
-                RequestTemplate.NavBarIncluded => "nav_bar_included",
-                RequestTemplate.Json => "json",
+                CreatePagesRequestTemplate.Contained => "contained",
+                CreatePagesRequestTemplate.FullWithinLayout => "full_within_layout",
+                CreatePagesRequestTemplate.NavBarIncluded => "nav_bar_included",
+                CreatePagesRequestTemplate.Json => "json",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static RequestTemplate? ToEnum(string value)
+        public static CreatePagesRequestTemplate? ToEnum(string value)
         {
             return value switch
             {
-                "contained" => RequestTemplate.Contained,
-                "full_within_layout" => RequestTemplate.FullWithinLayout,
-                "nav_bar_included" => RequestTemplate.NavBarIncluded,
-                "json" => RequestTemplate.Json,
+                "contained" => CreatePagesRequestTemplate.Contained,
+                "full_within_layout" => CreatePagesRequestTemplate.FullWithinLayout,
+                "nav_bar_included" => CreatePagesRequestTemplate.NavBarIncluded,
+                "json" => CreatePagesRequestTemplate.Json,
                 _ => null,
             };
         }
