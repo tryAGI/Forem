@@ -6,7 +6,7 @@ namespace Forem
     /// <summary>
     /// 
     /// </summary>
-    public enum Category2
+    public enum CreateReactionsCategory
     {
         /// <summary>
         /// 
@@ -33,35 +33,35 @@ namespace Forem
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class Category2Extensions
+    public static class CreateReactionsCategoryExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this Category2 value)
+        public static string ToValueString(this CreateReactionsCategory value)
         {
             return value switch
             {
-                Category2.Like => "like",
-                Category2.Unicorn => "unicorn",
-                Category2.ExplodingHead => "exploding_head",
-                Category2.RaisedHands => "raised_hands",
-                Category2.Fire => "fire",
+                CreateReactionsCategory.Like => "like",
+                CreateReactionsCategory.Unicorn => "unicorn",
+                CreateReactionsCategory.ExplodingHead => "exploding_head",
+                CreateReactionsCategory.RaisedHands => "raised_hands",
+                CreateReactionsCategory.Fire => "fire",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static Category2? ToEnum(string value)
+        public static CreateReactionsCategory? ToEnum(string value)
         {
             return value switch
             {
-                "like" => Category2.Like,
-                "unicorn" => Category2.Unicorn,
-                "exploding_head" => Category2.ExplodingHead,
-                "raised_hands" => Category2.RaisedHands,
-                "fire" => Category2.Fire,
+                "like" => CreateReactionsCategory.Like,
+                "unicorn" => CreateReactionsCategory.Unicorn,
+                "exploding_head" => CreateReactionsCategory.ExplodingHead,
+                "raised_hands" => CreateReactionsCategory.RaisedHands,
+                "fire" => CreateReactionsCategory.Fire,
                 _ => null,
             };
         }

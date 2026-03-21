@@ -7,11 +7,11 @@ namespace Forem
     {
         partial void PrepareCreatePagesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Forem.Request3 request);
+            global::Forem.CreatePagesRequest request);
         partial void PrepareCreatePagesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Forem.Request3 request);
+            global::Forem.CreatePagesRequest request);
         partial void ProcessCreatePagesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -25,7 +25,7 @@ namespace Forem
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreatePagesAsync(
 
-            global::Forem.Request3 request,
+            global::Forem.CreatePagesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -266,10 +266,10 @@ namespace Forem
             string? bodyMarkdown = default,
             string? bodyJson = default,
             bool? isTopLevelPath = default,
-            global::Forem.RequestTemplate? template = default,
+            global::Forem.CreatePagesRequestTemplate? template = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Forem.Request3
+            var __request = new global::Forem.CreatePagesRequest
             {
                 Title = title,
                 Slug = slug,

@@ -6,7 +6,7 @@ namespace Forem
     /// <summary>
     /// 
     /// </summary>
-    public enum ReactableType
+    public enum CreateReactionsToggleReactableType
     {
         /// <summary>
         /// 
@@ -25,31 +25,31 @@ namespace Forem
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ReactableTypeExtensions
+    public static class CreateReactionsToggleReactableTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ReactableType value)
+        public static string ToValueString(this CreateReactionsToggleReactableType value)
         {
             return value switch
             {
-                ReactableType.Comment => "Comment",
-                ReactableType.Article => "Article",
-                ReactableType.User => "User",
+                CreateReactionsToggleReactableType.Comment => "Comment",
+                CreateReactionsToggleReactableType.Article => "Article",
+                CreateReactionsToggleReactableType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ReactableType? ToEnum(string value)
+        public static CreateReactionsToggleReactableType? ToEnum(string value)
         {
             return value switch
             {
-                "Comment" => ReactableType.Comment,
-                "Article" => ReactableType.Article,
-                "User" => ReactableType.User,
+                "Comment" => CreateReactionsToggleReactableType.Comment,
+                "Article" => CreateReactionsToggleReactableType.Article,
+                "User" => CreateReactionsToggleReactableType.User,
                 _ => null,
             };
         }
