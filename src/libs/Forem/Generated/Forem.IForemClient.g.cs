@@ -53,11 +53,6 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public UsersClient Users { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public CommentsClient Comments { get; }
 
         /// <summary>
@@ -69,11 +64,6 @@ namespace Forem
         /// 
         /// </summary>
         public FollowedTagsClient FollowedTags { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TagsClient Tags { get; }
 
         /// <summary>
         /// 
@@ -109,6 +99,16 @@ namespace Forem
         /// 
         /// </summary>
         public ReadinglistClient Readinglist { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TagsClient Tags { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users { get; }
 
         /// <summary>
         /// 
