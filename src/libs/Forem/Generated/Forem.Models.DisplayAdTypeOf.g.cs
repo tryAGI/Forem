@@ -15,15 +15,15 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        InHouse,
-        /// <summary>
-        /// 
-        /// </summary>
         Community,
         /// <summary>
         /// 
         /// </summary>
         External,
+        /// <summary>
+        /// 
+        /// </summary>
+        InHouse,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace Forem
         {
             return value switch
             {
-                DisplayAdTypeOf.InHouse => "in_house",
                 DisplayAdTypeOf.Community => "community",
                 DisplayAdTypeOf.External => "external",
+                DisplayAdTypeOf.InHouse => "in_house",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace Forem
         {
             return value switch
             {
-                "in_house" => DisplayAdTypeOf.InHouse,
                 "community" => DisplayAdTypeOf.Community,
                 "external" => DisplayAdTypeOf.External,
+                "in_house" => DisplayAdTypeOf.InHouse,
                 _ => null,
             };
         }

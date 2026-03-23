@@ -11,15 +11,15 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        Like,
-        /// <summary>
-        /// 
-        /// </summary>
-        Unicorn,
-        /// <summary>
-        /// 
-        /// </summary>
         ExplodingHead,
+        /// <summary>
+        /// 
+        /// </summary>
+        Fire,
+        /// <summary>
+        /// 
+        /// </summary>
+        Like,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        Fire,
+        Unicorn,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Forem
         {
             return value switch
             {
-                CreateReactionsToggleCategory.Like => "like",
-                CreateReactionsToggleCategory.Unicorn => "unicorn",
                 CreateReactionsToggleCategory.ExplodingHead => "exploding_head",
-                CreateReactionsToggleCategory.RaisedHands => "raised_hands",
                 CreateReactionsToggleCategory.Fire => "fire",
+                CreateReactionsToggleCategory.Like => "like",
+                CreateReactionsToggleCategory.RaisedHands => "raised_hands",
+                CreateReactionsToggleCategory.Unicorn => "unicorn",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Forem
         {
             return value switch
             {
-                "like" => CreateReactionsToggleCategory.Like,
-                "unicorn" => CreateReactionsToggleCategory.Unicorn,
                 "exploding_head" => CreateReactionsToggleCategory.ExplodingHead,
-                "raised_hands" => CreateReactionsToggleCategory.RaisedHands,
                 "fire" => CreateReactionsToggleCategory.Fire,
+                "like" => CreateReactionsToggleCategory.Like,
+                "raised_hands" => CreateReactionsToggleCategory.RaisedHands,
+                "unicorn" => CreateReactionsToggleCategory.Unicorn,
                 _ => null,
             };
         }

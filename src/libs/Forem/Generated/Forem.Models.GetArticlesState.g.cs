@@ -11,15 +11,15 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
+        All,
+        /// <summary>
+        /// 
+        /// </summary>
         Fresh,
         /// <summary>
         /// 
         /// </summary>
         Rising,
-        /// <summary>
-        /// 
-        /// </summary>
-        All,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace Forem
         {
             return value switch
             {
+                GetArticlesState.All => "all",
                 GetArticlesState.Fresh => "fresh",
                 GetArticlesState.Rising => "rising",
-                GetArticlesState.All => "all",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace Forem
         {
             return value switch
             {
+                "all" => GetArticlesState.All,
                 "fresh" => GetArticlesState.Fresh,
                 "rising" => GetArticlesState.Rising,
-                "all" => GetArticlesState.All,
                 _ => null,
             };
         }

@@ -11,15 +11,15 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        Like,
-        /// <summary>
-        /// 
-        /// </summary>
-        Unicorn,
-        /// <summary>
-        /// 
-        /// </summary>
         ExplodingHead,
+        /// <summary>
+        /// 
+        /// </summary>
+        Fire,
+        /// <summary>
+        /// 
+        /// </summary>
+        Like,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        Fire,
+        Unicorn,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Forem
         {
             return value switch
             {
-                CreateReactionsCategory.Like => "like",
-                CreateReactionsCategory.Unicorn => "unicorn",
                 CreateReactionsCategory.ExplodingHead => "exploding_head",
-                CreateReactionsCategory.RaisedHands => "raised_hands",
                 CreateReactionsCategory.Fire => "fire",
+                CreateReactionsCategory.Like => "like",
+                CreateReactionsCategory.RaisedHands => "raised_hands",
+                CreateReactionsCategory.Unicorn => "unicorn",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Forem
         {
             return value switch
             {
-                "like" => CreateReactionsCategory.Like,
-                "unicorn" => CreateReactionsCategory.Unicorn,
                 "exploding_head" => CreateReactionsCategory.ExplodingHead,
-                "raised_hands" => CreateReactionsCategory.RaisedHands,
                 "fire" => CreateReactionsCategory.Fire,
+                "like" => CreateReactionsCategory.Like,
+                "raised_hands" => CreateReactionsCategory.RaisedHands,
+                "unicorn" => CreateReactionsCategory.Unicorn,
                 _ => null,
             };
         }
