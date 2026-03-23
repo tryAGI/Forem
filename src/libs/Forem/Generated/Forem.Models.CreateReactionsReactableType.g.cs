@@ -11,11 +11,11 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        Comment,
+        Article,
         /// <summary>
         /// 
         /// </summary>
-        Article,
+        Comment,
         /// <summary>
         /// 
         /// </summary>
@@ -34,8 +34,8 @@ namespace Forem
         {
             return value switch
             {
-                CreateReactionsReactableType.Comment => "Comment",
                 CreateReactionsReactableType.Article => "Article",
+                CreateReactionsReactableType.Comment => "Comment",
                 CreateReactionsReactableType.User => "User",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -47,8 +47,8 @@ namespace Forem
         {
             return value switch
             {
-                "Comment" => CreateReactionsReactableType.Comment,
                 "Article" => CreateReactionsReactableType.Article,
+                "Comment" => CreateReactionsReactableType.Comment,
                 "User" => CreateReactionsReactableType.User,
                 _ => null,
             };

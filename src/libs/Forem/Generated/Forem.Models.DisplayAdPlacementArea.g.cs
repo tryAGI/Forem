@@ -11,18 +11,6 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        SidebarLeft,
-        /// <summary>
-        /// 
-        /// </summary>
-        SidebarLeft2,
-        /// <summary>
-        /// 
-        /// </summary>
-        SidebarRight,
-        /// <summary>
-        /// 
-        /// </summary>
         FeedFirst,
         /// <summary>
         /// 
@@ -35,11 +23,23 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
+        PostComments,
+        /// <summary>
+        /// 
+        /// </summary>
         PostSidebar,
         /// <summary>
         /// 
         /// </summary>
-        PostComments,
+        SidebarLeft,
+        /// <summary>
+        /// 
+        /// </summary>
+        SidebarLeft2,
+        /// <summary>
+        /// 
+        /// </summary>
+        SidebarRight,
     }
 
     /// <summary>
@@ -54,14 +54,14 @@ namespace Forem
         {
             return value switch
             {
-                DisplayAdPlacementArea.SidebarLeft => "sidebar_left",
-                DisplayAdPlacementArea.SidebarLeft2 => "sidebar_left_2",
-                DisplayAdPlacementArea.SidebarRight => "sidebar_right",
                 DisplayAdPlacementArea.FeedFirst => "feed_first",
                 DisplayAdPlacementArea.FeedSecond => "feed_second",
                 DisplayAdPlacementArea.FeedThird => "feed_third",
-                DisplayAdPlacementArea.PostSidebar => "post_sidebar",
                 DisplayAdPlacementArea.PostComments => "post_comments",
+                DisplayAdPlacementArea.PostSidebar => "post_sidebar",
+                DisplayAdPlacementArea.SidebarLeft => "sidebar_left",
+                DisplayAdPlacementArea.SidebarLeft2 => "sidebar_left_2",
+                DisplayAdPlacementArea.SidebarRight => "sidebar_right",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -72,14 +72,14 @@ namespace Forem
         {
             return value switch
             {
-                "sidebar_left" => DisplayAdPlacementArea.SidebarLeft,
-                "sidebar_left_2" => DisplayAdPlacementArea.SidebarLeft2,
-                "sidebar_right" => DisplayAdPlacementArea.SidebarRight,
                 "feed_first" => DisplayAdPlacementArea.FeedFirst,
                 "feed_second" => DisplayAdPlacementArea.FeedSecond,
                 "feed_third" => DisplayAdPlacementArea.FeedThird,
-                "post_sidebar" => DisplayAdPlacementArea.PostSidebar,
                 "post_comments" => DisplayAdPlacementArea.PostComments,
+                "post_sidebar" => DisplayAdPlacementArea.PostSidebar,
+                "sidebar_left" => DisplayAdPlacementArea.SidebarLeft,
+                "sidebar_left_2" => DisplayAdPlacementArea.SidebarLeft2,
+                "sidebar_right" => DisplayAdPlacementArea.SidebarRight,
                 _ => null,
             };
         }

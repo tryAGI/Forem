@@ -20,11 +20,11 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        NavBarIncluded,
+        Json,
         /// <summary>
         /// 
         /// </summary>
-        Json,
+        NavBarIncluded,
     }
 
     /// <summary>
@@ -41,8 +41,8 @@ namespace Forem
             {
                 PageTemplate.Contained => "contained",
                 PageTemplate.FullWithinLayout => "full_within_layout",
-                PageTemplate.NavBarIncluded => "nav_bar_included",
                 PageTemplate.Json => "json",
+                PageTemplate.NavBarIncluded => "nav_bar_included",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,8 +55,8 @@ namespace Forem
             {
                 "contained" => PageTemplate.Contained,
                 "full_within_layout" => PageTemplate.FullWithinLayout,
-                "nav_bar_included" => PageTemplate.NavBarIncluded,
                 "json" => PageTemplate.Json,
+                "nav_bar_included" => PageTemplate.NavBarIncluded,
                 _ => null,
             };
         }
