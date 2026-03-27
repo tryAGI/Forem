@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1115206893015662663?label=Discord&logo=discord&logoColor=white&color=d82679)](https://discord.gg/Ca2xhfBf3v)
 
 ## Features 🔥
-- Fully generated C# SDK based on [official Forem OpenAPI specification](https://raw.githubusercontent.com/Forem/assemblyai-api-spec/main/openapi.yml) using [AutoSDK](https://github.com/HavenDV/AutoSDK)
+- Fully generated C# SDK based on [official Forem OpenAPI specification](https://developers.forem.com/redocusaurus/plugin-redoc-1.yaml) using [AutoSDK](https://github.com/HavenDV/AutoSDK)
 - Same day update to support new features
 - Updated and supported automatically if there are no breaking changes
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
