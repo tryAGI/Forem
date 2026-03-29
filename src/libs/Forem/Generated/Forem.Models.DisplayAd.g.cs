@@ -107,14 +107,17 @@ namespace Forem
         /// <summary>
         /// Initializes a new instance of the <see cref="DisplayAd" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the Display Ad
-        /// </param>
         /// <param name="name">
         /// For internal use, helps distinguish ads from one another
         /// </param>
         /// <param name="bodyMarkdown">
         /// The text (in markdown) of the ad (required)
+        /// </param>
+        /// <param name="placementArea">
+        /// Identifies which area of site layout the ad can appear in
+        /// </param>
+        /// <param name="id">
+        /// The ID of the Display Ad
         /// </param>
         /// <param name="approved">
         /// Ad must be both published and approved to be in rotation
@@ -127,9 +130,6 @@ namespace Forem
         /// </param>
         /// <param name="creatorId">
         /// Identifies the user who created the ad.
-        /// </param>
-        /// <param name="placementArea">
-        /// Identifies which area of site layout the ad can appear in
         /// </param>
         /// <param name="tagList">
         /// Tags on which this ad can be displayed (blank is all/any tags)
@@ -169,14 +169,14 @@ namespace Forem
             global::Forem.DisplayAdDisplayTo? displayTo,
             global::Forem.DisplayAdTypeOf? typeOf)
         {
+            this.Id = id;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.BodyMarkdown = bodyMarkdown ?? throw new global::System.ArgumentNullException(nameof(bodyMarkdown));
-            this.PlacementArea = placementArea;
-            this.Id = id;
             this.Approved = approved;
             this.Published = published;
             this.OrganizationId = organizationId;
             this.CreatorId = creatorId;
+            this.PlacementArea = placementArea;
             this.TagList = tagList;
             this.ArticleExcludeIds = articleExcludeIds;
             this.AudienceSegmentType = audienceSegmentType;

@@ -81,6 +81,10 @@ namespace Forem
         /// <param name="description">
         /// For internal use, helps similar pages from one another
         /// </param>
+        /// <param name="template">
+        /// Controls what kind of layout the page is rendered in<br/>
+        /// Default Value: contained
+        /// </param>
         /// <param name="bodyMarkdown">
         /// The text (in markdown) of the ad (required)
         /// </param>
@@ -91,10 +95,6 @@ namespace Forem
         /// If true, the page is available at '/{slug}' instead of '/page/{slug}', use with caution
         /// </param>
         /// <param name="socialImage"></param>
-        /// <param name="template">
-        /// Controls what kind of layout the page is rendered in<br/>
-        /// Default Value: contained
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,11 +111,11 @@ namespace Forem
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Template = template;
             this.BodyMarkdown = bodyMarkdown;
             this.BodyJson = bodyJson;
             this.IsTopLevelPath = isTopLevelPath;
             this.SocialImage = socialImage;
+            this.Template = template;
         }
 
         /// <summary>

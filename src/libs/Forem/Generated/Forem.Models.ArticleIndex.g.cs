@@ -191,7 +191,6 @@ namespace Forem
         /// <param name="id"></param>
         /// <param name="title"></param>
         /// <param name="description"></param>
-        /// <param name="coverImage"></param>
         /// <param name="readablePublishDate"></param>
         /// <param name="socialImage"></param>
         /// <param name="tagList"></param>
@@ -203,8 +202,6 @@ namespace Forem
         /// <param name="positiveReactionsCount"></param>
         /// <param name="publicReactionsCount"></param>
         /// <param name="createdAt"></param>
-        /// <param name="editedAt"></param>
-        /// <param name="crosspostedAt"></param>
         /// <param name="publishedAt"></param>
         /// <param name="lastCommentAt"></param>
         /// <param name="publishedTimestamp">
@@ -216,6 +213,9 @@ namespace Forem
         /// <param name="user">
         /// The resource creator
         /// </param>
+        /// <param name="coverImage"></param>
+        /// <param name="editedAt"></param>
+        /// <param name="crosspostedAt"></param>
         /// <param name="flareTag">
         /// Flare tag of the article
         /// </param>
@@ -256,6 +256,7 @@ namespace Forem
             this.Id = id;
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.CoverImage = coverImage;
             this.ReadablePublishDate = readablePublishDate ?? throw new global::System.ArgumentNullException(nameof(readablePublishDate));
             this.SocialImage = socialImage ?? throw new global::System.ArgumentNullException(nameof(socialImage));
             this.TagList = tagList ?? throw new global::System.ArgumentNullException(nameof(tagList));
@@ -267,14 +268,13 @@ namespace Forem
             this.PositiveReactionsCount = positiveReactionsCount;
             this.PublicReactionsCount = publicReactionsCount;
             this.CreatedAt = createdAt;
+            this.EditedAt = editedAt;
+            this.CrosspostedAt = crosspostedAt;
             this.PublishedAt = publishedAt;
             this.LastCommentAt = lastCommentAt;
             this.PublishedTimestamp = publishedTimestamp;
             this.ReadingTimeMinutes = readingTimeMinutes;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
-            this.CoverImage = coverImage;
-            this.EditedAt = editedAt;
-            this.CrosspostedAt = crosspostedAt;
             this.FlareTag = flareTag;
             this.Organization = organization;
         }
