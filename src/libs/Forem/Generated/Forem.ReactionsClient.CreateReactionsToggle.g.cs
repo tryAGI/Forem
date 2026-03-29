@@ -50,7 +50,7 @@ namespace Forem
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddRequiredParameter("category", category.ToValueString())
-                .AddRequiredParameter("reactable_id", reactableId.ToString())
+                .AddRequiredParameter("reactable_id", reactableId.ToString()!)
                 .AddRequiredParameter("reactable_type", reactableType.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
