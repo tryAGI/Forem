@@ -294,6 +294,7 @@ namespace Forem
             global::Forem.PageTemplate template = global::Forem.PageTemplate.Contained,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Forem.Page
             {
                 Title = title,

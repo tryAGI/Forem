@@ -269,6 +269,7 @@ namespace Forem
             global::Forem.CreatePagesRequestTemplate? template = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Forem.CreatePagesRequest
             {
                 Title = title,
