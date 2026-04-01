@@ -244,7 +244,6 @@ namespace Forem
             global::Forem.ArticleArticle1? article1 = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Forem.Article
             {
                 Article1 = article1,
