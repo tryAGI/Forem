@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_GetUserMeSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_GetUserMeSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_GetUserMeSecurityRequirement0,
+            };
         partial void PrepareGetUserMeArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareGetUserMeRequest(
@@ -33,9 +52,15 @@ namespace Forem
             PrepareGetUserMeArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetUserMeSecurityRequirements,
+                operationName: "GetUserMeAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/users/me",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class ReactionsClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_CreateReactionsSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_CreateReactionsSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_CreateReactionsSecurityRequirement0,
+            };
         partial void PrepareCreateReactionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::Forem.CreateReactionsCategory category,
@@ -45,6 +64,12 @@ namespace Forem
                 reactableId: ref reactableId,
                 reactableType: ref reactableType);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateReactionsSecurityRequirements,
+                operationName: "CreateReactionsAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/reactions",
                 baseUri: HttpClient.BaseAddress); 
@@ -52,7 +77,7 @@ namespace Forem
                 .AddRequiredParameter("category", category.ToValueString())
                 .AddRequiredParameter("reactable_id", reactableId.ToString()!)
                 .AddRequiredParameter("reactable_type", reactableType.ToValueString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -62,7 +87,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
