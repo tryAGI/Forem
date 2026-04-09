@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class UsersClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_UnpublishUserSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_UnpublishUserSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_UnpublishUserSecurityRequirement0,
+            };
         partial void PrepareUnpublishUserArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
@@ -42,9 +61,15 @@ namespace Forem
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UnpublishUserSecurityRequirements,
+                operationName: "UnpublishUserAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/users/{id}/unpublish",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -54,7 +79,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

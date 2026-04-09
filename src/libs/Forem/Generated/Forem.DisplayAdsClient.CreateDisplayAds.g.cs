@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class DisplayAdsClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_CreateDisplayAdsSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_CreateDisplayAdsSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_CreateDisplayAdsSecurityRequirement0,
+            };
         partial void PrepareCreateDisplayAdsArguments(
             global::System.Net.Http.HttpClient httpClient,
             object request);
@@ -41,9 +60,15 @@ namespace Forem
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateDisplayAdsSecurityRequirements,
+                operationName: "CreateDisplayAdsAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/display_ads",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -53,7 +78,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

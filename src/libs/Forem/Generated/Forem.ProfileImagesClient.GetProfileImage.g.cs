@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class ProfileImagesClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_GetProfileImageSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_GetProfileImageSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_GetProfileImageSecurityRequirement0,
+            };
         partial void PrepareGetProfileImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string username);
@@ -39,9 +58,15 @@ namespace Forem
                 httpClient: HttpClient,
                 username: ref username);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetProfileImageSecurityRequirements,
+                operationName: "GetProfileImageAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/profile_images/{username}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -51,7 +76,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class DisplayAdsClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_GetDisplayAdsByIdSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_GetDisplayAdsByIdSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_GetDisplayAdsByIdSecurityRequirement0,
+            };
         partial void PrepareGetDisplayAdsByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int id);
@@ -33,9 +52,15 @@ namespace Forem
                 httpClient: HttpClient,
                 id: ref id);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetDisplayAdsByIdSecurityRequirements,
+                operationName: "GetDisplayAdsByIdAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: $"/display_ads/{id}",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

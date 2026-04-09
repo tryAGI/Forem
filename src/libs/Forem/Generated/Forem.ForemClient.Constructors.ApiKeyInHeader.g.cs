@@ -6,6 +6,7 @@ namespace Forem
     public sealed partial class ForemClient
     {
         /// <inheritdoc cref="ForemClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Forem.EndPointAuthorization}?, bool)"/>
+
         public ForemClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,

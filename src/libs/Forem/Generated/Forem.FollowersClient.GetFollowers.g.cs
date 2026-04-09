@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class FollowersClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_GetFollowersSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_GetFollowersSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_GetFollowersSecurityRequirement0,
+            };
         partial void PrepareGetFollowersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -54,6 +73,12 @@ namespace Forem
                 perPage: ref perPage,
                 sort: ref sort);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetFollowersSecurityRequirements,
+                operationName: "GetFollowersAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/followers/users",
                 baseUri: HttpClient.BaseAddress); 
@@ -61,7 +86,7 @@ namespace Forem
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString())
                 .AddOptionalParameter("sort", sort) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -71,7 +96,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

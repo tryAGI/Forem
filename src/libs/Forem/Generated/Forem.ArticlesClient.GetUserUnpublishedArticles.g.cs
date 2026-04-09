@@ -5,6 +5,25 @@ namespace Forem
 {
     public partial class ArticlesClient
     {
+
+
+        private static readonly global::Forem.EndPointSecurityRequirement s_GetUserUnpublishedArticlesSecurityRequirement0 =
+            new global::Forem.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Forem.EndPointAuthorizationRequirement[]
+                {                    new global::Forem.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Forem.EndPointSecurityRequirement[] s_GetUserUnpublishedArticlesSecurityRequirements =
+            new global::Forem.EndPointSecurityRequirement[]
+            {                s_GetUserUnpublishedArticlesSecurityRequirement0,
+            };
         partial void PrepareGetUserUnpublishedArticlesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? page,
@@ -50,13 +69,19 @@ namespace Forem
                 page: ref page,
                 perPage: ref perPage);
 
+
+            var __authorizations = global::Forem.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetUserUnpublishedArticlesSecurityRequirements,
+                operationName: "GetUserUnpublishedArticlesAsync");
+
             var __pathBuilder = new global::Forem.PathBuilder(
                 path: "/articles/me/unpublished",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("page", page?.ToString())
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -66,7 +91,7 @@ namespace Forem
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
