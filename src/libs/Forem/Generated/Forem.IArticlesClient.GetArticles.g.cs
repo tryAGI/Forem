@@ -27,6 +27,7 @@ namespace Forem
         /// <param name="state"></param>
         /// <param name="top"></param>
         /// <param name="collectionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>> GetArticlesAsync(
@@ -39,6 +40,7 @@ namespace Forem
             global::Forem.GetArticlesState? state = default,
             int? top = default,
             int? collectionId = default,
+            global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
