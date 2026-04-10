@@ -26,6 +26,7 @@ namespace Forem
             Authorizations.Add(new global::Forem.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApiKey",
                 Location = "Header",
                 Name = "api-key",
                 Value = apiKey,
