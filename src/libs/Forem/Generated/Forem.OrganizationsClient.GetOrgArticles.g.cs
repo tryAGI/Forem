@@ -101,7 +101,7 @@ namespace Forem
                 PrepareGetOrgArticlesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username,
+                    username: username!,
                     page: page,
                     perPage: perPage);
 

@@ -137,9 +137,9 @@ namespace Forem
                 PrepareCreateReactionsToggleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    category: category,
-                    reactableId: reactableId,
-                    reactableType: reactableType);
+                    category: category!,
+                    reactableId: reactableId!,
+                    reactableType: reactableType!);
 
                 return __httpRequest;
             }

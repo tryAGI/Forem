@@ -87,8 +87,8 @@ namespace Forem
                 PrepareGetArticleByPathRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username,
-                    slug: slug);
+                    username: username!,
+                    slug: slug!);
 
                 return __httpRequest;
             }
