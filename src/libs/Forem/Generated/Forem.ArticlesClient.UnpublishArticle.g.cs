@@ -133,7 +133,7 @@ namespace Forem
                 PrepareUnpublishArticleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id,
+                    id: id!,
                     note: note);
 
                 return __httpRequest;

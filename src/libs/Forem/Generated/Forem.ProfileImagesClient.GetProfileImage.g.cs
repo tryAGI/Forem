@@ -126,7 +126,7 @@ namespace Forem
                 PrepareGetProfileImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username);
+                    username: username!);
 
                 return __httpRequest;
             }
