@@ -23,6 +23,20 @@ namespace Forem
         /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
         ///         It requires a token from a user with `super_admin` privileges.
         /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Forem.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse> PostAdminUsersCreateAsResponseAsync(
+
+            global::Forem.UserInviteParam request,
+            global::Forem.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Invite a User<br/>
+        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
+        ///         It requires a token from a user with `super_admin` privileges.
+        /// </summary>
         /// <param name="email"></param>
         /// <param name="name"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
