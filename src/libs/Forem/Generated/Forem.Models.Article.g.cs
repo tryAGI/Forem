@@ -39,5 +39,6 @@ namespace Forem
         public Article()
         {
         }
+
     }
 }

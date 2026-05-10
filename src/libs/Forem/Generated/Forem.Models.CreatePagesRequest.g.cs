@@ -110,5 +110,6 @@ namespace Forem
         public CreatePagesRequest()
         {
         }
+
     }
 }

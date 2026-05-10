@@ -62,5 +62,6 @@ namespace Forem
         public FollowedTag()
         {
         }
+
     }
 }

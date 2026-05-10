@@ -68,5 +68,6 @@ namespace Forem
         public Comment()
         {
         }
+
     }
 }

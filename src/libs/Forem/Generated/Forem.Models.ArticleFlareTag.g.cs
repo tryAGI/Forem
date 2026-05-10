@@ -61,5 +61,6 @@ namespace Forem
         public ArticleFlareTag()
         {
         }
+
     }
 }

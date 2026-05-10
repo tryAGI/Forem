@@ -74,5 +74,6 @@ namespace Forem
         public ProfileImage()
         {
         }
+
     }
 }

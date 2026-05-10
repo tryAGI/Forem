@@ -113,5 +113,6 @@ namespace Forem
         public VideoArticle()
         {
         }
+
     }
 }

@@ -48,5 +48,6 @@ namespace Forem
         public UserInviteParam()
         {
         }
+
     }
 }
