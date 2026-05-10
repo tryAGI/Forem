@@ -129,5 +129,6 @@ namespace Forem
         public User()
         {
         }
+
     }
 }

@@ -138,5 +138,6 @@ namespace Forem
         public Organization()
         {
         }
+
     }
 }

@@ -285,5 +285,6 @@ namespace Forem
         public ArticleIndex()
         {
         }
+
     }
 }
