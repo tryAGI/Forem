@@ -59,6 +59,33 @@ namespace Forem
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            await CreateReactionsToggleAsResponseAsync(
+                category: category,
+                reactableId: reactableId,
+                reactableType: reactableType,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// toggle reaction<br/>
+        /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
+        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
+        ///         * "Like"ing that Article a second time will remove the "like" from the user
+        /// </summary>
+        /// <param name="category"></param>
+        /// <param name="reactableId"></param>
+        /// <param name="reactableType"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Forem.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse> CreateReactionsToggleAsResponseAsync(
+            global::Forem.CreateReactionsToggleCategory category,
+            int reactableId,
+            global::Forem.CreateReactionsToggleReactableType reactableType,
+            global::Forem.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateReactionsToggleArguments(
@@ -89,13 +116,14 @@ namespace Forem
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Forem.PathBuilder(
                                 path: "/reactions/toggle",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("category", category.ToValueString())
                                 .AddRequiredParameter("reactable_id", reactableId.ToString()!)
-                                .AddRequiredParameter("reactable_type", reactableType.ToValueString()) 
+                                .AddRequiredParameter("reactable_type", reactableType.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -169,6 +197,8 @@ namespace Forem
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -179,6 +209,11 @@ namespace Forem
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Forem.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Forem.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -196,6 +231,8 @@ namespace Forem
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -205,8 +242,7 @@ namespace Forem
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Forem.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -215,6 +251,11 @@ namespace Forem
                         __attempt < __maxAttempts &&
                         global::Forem.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Forem.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Forem.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -231,14 +272,15 @@ namespace Forem
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Forem.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -278,6 +320,8 @@ namespace Forem
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -298,6 +342,8 @@ namespace Forem
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // unauthorized
@@ -351,6 +397,10 @@ namespace Forem
                                 {
                                     __response.EnsureSuccessStatusCode();
 
+                return new global::Forem.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Forem.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -372,6 +422,10 @@ namespace Forem
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
+                                    return new global::Forem.AutoSDKHttpResponse(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Forem.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

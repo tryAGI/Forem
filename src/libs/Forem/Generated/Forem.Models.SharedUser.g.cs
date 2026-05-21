@@ -97,5 +97,6 @@ namespace Forem
         public SharedUser()
         {
         }
+
     }
 }

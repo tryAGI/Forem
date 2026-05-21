@@ -124,5 +124,6 @@ namespace Forem
         public Page()
         {
         }
+
     }
 }
