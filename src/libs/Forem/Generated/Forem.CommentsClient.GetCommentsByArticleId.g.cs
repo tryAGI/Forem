@@ -7,13 +7,19 @@ namespace Forem
     {
         partial void PrepareGetCommentsByArticleIdArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? page,
+            ref int? perPage,
             ref string? aId,
-            ref string? pId);
+            ref string? pId,
+            ref string? page2);
         partial void PrepareGetCommentsByArticleIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? page,
+            int? perPage,
             string? aId,
-            string? pId);
+            string? pId,
+            string? page2);
         partial void ProcessGetCommentsByArticleIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,22 +32,39 @@ namespace Forem
         /// <summary>
         /// Comments<br/>
         /// This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.<br/>
-        /// It will return the all top level comments with their nested comments as threads. See the format specification for further details.
+        /// ### Threaded Structure &amp; Pagination Tips:<br/>
+        /// - **Threaded Format**: Comments are returned as a tree structure (nested arrays of replies). Each top-level comment contains its nested child comments recursively.<br/>
+        /// - **Query Constraints**: You must provide either `a_id` (Article ID) OR `p_id` (Podcast Episode ID) to fetch comments. Specifying both is not supported.<br/>
+        /// - **Pagination**: When paginating, the `page` parameter filters the *top-level* comments only. All replies to those top-level comments are returned nested inline, regardless of page index.<br/>
+        /// - If the `page` parameter is omitted, the response returns the full comment tree in a single payload.
         /// </summary>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
         /// <param name="aId"></param>
         /// <param name="pId"></param>
+        /// <param name="page2"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.Comment>> GetCommentsByArticleIdAsync(
+            int? page = default,
+            int? perPage = default,
             string? aId = default,
             string? pId = default,
+            string? page2 = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetCommentsByArticleIdAsResponseAsync(
+                page: page,
+                perPage: perPage,
                 aId: aId,
                 pId: pId,
+                page2: page2,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -51,16 +74,30 @@ namespace Forem
         /// <summary>
         /// Comments<br/>
         /// This endpoint allows the client to retrieve all comments belonging to an article or podcast episode as threaded conversations.<br/>
-        /// It will return the all top level comments with their nested comments as threads. See the format specification for further details.
+        /// ### Threaded Structure &amp; Pagination Tips:<br/>
+        /// - **Threaded Format**: Comments are returned as a tree structure (nested arrays of replies). Each top-level comment contains its nested child comments recursively.<br/>
+        /// - **Query Constraints**: You must provide either `a_id` (Article ID) OR `p_id` (Podcast Episode ID) to fetch comments. Specifying both is not supported.<br/>
+        /// - **Pagination**: When paginating, the `page` parameter filters the *top-level* comments only. All replies to those top-level comments are returned nested inline, regardless of page index.<br/>
+        /// - If the `page` parameter is omitted, the response returns the full comment tree in a single payload.
         /// </summary>
+        /// <param name="page">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="perPage">
+        /// Default Value: 30
+        /// </param>
         /// <param name="aId"></param>
         /// <param name="pId"></param>
+        /// <param name="page2"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Forem.Comment>>> GetCommentsByArticleIdAsResponseAsync(
+            int? page = default,
+            int? perPage = default,
             string? aId = default,
             string? pId = default,
+            string? page2 = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -68,8 +105,11 @@ namespace Forem
                 client: HttpClient);
             PrepareGetCommentsByArticleIdArguments(
                 httpClient: HttpClient,
+                page: ref page,
+                perPage: ref perPage,
                 aId: ref aId,
-                pId: ref pId);
+                pId: ref pId,
+                page2: ref page2);
 
             using var __timeoutCancellationTokenSource = global::Forem.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -89,11 +129,14 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/comments",
+                                path: "/api/comments",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("page", page?.ToString())
+                                .AddOptionalParameter("per_page", perPage?.ToString())
                                 .AddOptionalParameter("a_id", aId)
                                 .AddOptionalParameter("p_id", pId)
+                                .AddOptionalParameter("page", page2)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -118,8 +161,11 @@ namespace Forem
                 PrepareGetCommentsByArticleIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    page: page,
+                    perPage: perPage,
                     aId: aId,
-                    pId: pId);
+                    pId: pId,
+                    page2: page2);
 
                 return __httpRequest;
             }
@@ -138,7 +184,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentsByArticleId",
                                 methodName: "GetCommentsByArticleIdAsync",
-                                pathTemplate: "\"/comments\"",
+                                pathTemplate: "\"/api/comments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -172,7 +218,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentsByArticleId",
                                 methodName: "GetCommentsByArticleIdAsync",
-                                pathTemplate: "\"/comments\"",
+                                pathTemplate: "\"/api/comments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -213,7 +259,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentsByArticleId",
                                 methodName: "GetCommentsByArticleIdAsync",
-                                pathTemplate: "\"/comments\"",
+                                pathTemplate: "\"/api/comments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,7 +307,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentsByArticleId",
                                 methodName: "GetCommentsByArticleIdAsync",
-                                pathTemplate: "\"/comments\"",
+                                pathTemplate: "\"/api/comments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +329,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentsByArticleId",
                                 methodName: "GetCommentsByArticleIdAsync",
-                                pathTemplate: "\"/comments\"",
+                                pathTemplate: "\"/api/comments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -298,7 +344,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Resource Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

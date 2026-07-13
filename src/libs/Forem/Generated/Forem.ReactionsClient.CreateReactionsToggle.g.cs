@@ -42,9 +42,11 @@ namespace Forem
 
         /// <summary>
         /// toggle reaction<br/>
-        /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will remove the "like" from the user
+        /// Toggle a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Toggle Logic:<br/>
+        ///         - **First Request**: Creates a new reaction of the specified category on the reactable target.<br/>
+        ///         - **Second Request (with same parameters)**: Deletes the existing reaction.<br/>
+        ///         - Particularly useful for simple, interactive UI buttons like "Like", "Unicorn", or "Save" where clicking toggles the active state.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>
@@ -69,9 +71,11 @@ namespace Forem
         }
         /// <summary>
         /// toggle reaction<br/>
-        /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will remove the "like" from the user
+        /// Toggle a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Toggle Logic:<br/>
+        ///         - **First Request**: Creates a new reaction of the specified category on the reactable target.<br/>
+        ///         - **Second Request (with same parameters)**: Deletes the existing reaction.<br/>
+        ///         - Particularly useful for simple, interactive UI buttons like "Like", "Unicorn", or "Save" where clicking toggles the active state.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>
@@ -118,7 +122,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/reactions/toggle",
+                                path: "/api/reactions/toggle",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("category", category.ToValueString())
@@ -186,7 +190,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createReactionsToggle",
                                 methodName: "CreateReactionsToggleAsync",
-                                pathTemplate: "\"/reactions/toggle\"",
+                                pathTemplate: "\"/api/reactions/toggle\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -220,7 +224,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createReactionsToggle",
                                 methodName: "CreateReactionsToggleAsync",
-                                pathTemplate: "\"/reactions/toggle\"",
+                                pathTemplate: "\"/api/reactions/toggle\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,7 +265,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createReactionsToggle",
                                 methodName: "CreateReactionsToggleAsync",
-                                pathTemplate: "\"/reactions/toggle\"",
+                                pathTemplate: "\"/api/reactions/toggle\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -309,7 +313,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createReactionsToggle",
                                 methodName: "CreateReactionsToggleAsync",
-                                pathTemplate: "\"/reactions/toggle\"",
+                                pathTemplate: "\"/api/reactions/toggle\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -331,7 +335,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createReactionsToggle",
                                 methodName: "CreateReactionsToggleAsync",
-                                pathTemplate: "\"/reactions/toggle\"",
+                                pathTemplate: "\"/api/reactions/toggle\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -346,7 +350,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

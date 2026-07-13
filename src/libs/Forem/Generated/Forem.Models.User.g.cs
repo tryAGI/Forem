@@ -4,7 +4,7 @@
 namespace Forem
 {
     /// <summary>
-    /// The representation of a user
+    /// The representation of a user returned in a list
     /// </summary>
     public sealed partial class User
     {

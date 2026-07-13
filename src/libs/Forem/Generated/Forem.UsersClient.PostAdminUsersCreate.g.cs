@@ -38,8 +38,11 @@ namespace Forem
 
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -60,8 +63,11 @@ namespace Forem
         }
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -105,7 +111,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/admin/users",
+                                path: "/api/admin/users",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -172,7 +178,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PostAdminUsersCreate",
                                 methodName: "PostAdminUsersCreateAsync",
-                                pathTemplate: "\"/admin/users\"",
+                                pathTemplate: "\"/api/admin/users\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -206,7 +212,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PostAdminUsersCreate",
                                 methodName: "PostAdminUsersCreateAsync",
-                                pathTemplate: "\"/admin/users\"",
+                                pathTemplate: "\"/api/admin/users\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -247,7 +253,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PostAdminUsersCreate",
                                 methodName: "PostAdminUsersCreateAsync",
-                                pathTemplate: "\"/admin/users\"",
+                                pathTemplate: "\"/api/admin/users\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -295,7 +301,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PostAdminUsersCreate",
                                 methodName: "PostAdminUsersCreateAsync",
-                                pathTemplate: "\"/admin/users\"",
+                                pathTemplate: "\"/api/admin/users\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -317,7 +323,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "PostAdminUsersCreate",
                                 methodName: "PostAdminUsersCreateAsync",
-                                pathTemplate: "\"/admin/users\"",
+                                pathTemplate: "\"/api/admin/users\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -332,70 +338,6 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
-                            if ((int)__response.StatusCode == 401)
-                            {
-                                string? __content_401 = null;
-                                global::System.Exception? __exception_401 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_401 = __ex;
-                                }
-
-
-                                throw global::Forem.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_401,
-                                    responseBody: __content_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Unprocessable Entity
-                            if ((int)__response.StatusCode == 422)
-                            {
-                                string? __content_422 = null;
-                                global::System.Exception? __exception_422 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_422 = __ex;
-                                }
-
-
-                                throw global::Forem.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_422,
-                                    responseBody: __content_422,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -478,8 +420,11 @@ namespace Forem
         }
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="email"></param>
         /// <param name="name"></param>

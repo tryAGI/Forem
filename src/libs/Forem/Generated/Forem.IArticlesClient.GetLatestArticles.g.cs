@@ -6,8 +6,11 @@ namespace Forem
     {
         /// <summary>
         /// Published articles sorted by published date<br/>
-        /// This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.<br/>
-        /// It supports pagination, each page will contain 30 articles by default.
+        /// This endpoint allows the client to retrieve a list of articles ordered strictly by descending publication date.<br/>
+        /// ### Usage Tips:<br/>
+        /// - Bypasses all Forem/DEV feed personalization and popularity algorithms.<br/>
+        /// - Ideal for building RSS feeds, chronological timelines, or "latest posts" widgets.<br/>
+        /// - Supports standard `page` and `per_page` query parameters.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -25,8 +28,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Published articles sorted by published date<br/>
-        /// This endpoint allows the client to retrieve a list of articles. ordered by descending publish date.<br/>
-        /// It supports pagination, each page will contain 30 articles by default.
+        /// This endpoint allows the client to retrieve a list of articles ordered strictly by descending publication date.<br/>
+        /// ### Usage Tips:<br/>
+        /// - Bypasses all Forem/DEV feed personalization and popularity algorithms.<br/>
+        /// - Ideal for building RSS feeds, chronological timelines, or "latest posts" widgets.<br/>
+        /// - Supports standard `page` and `per_page` query parameters.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1

@@ -6,12 +6,12 @@ namespace Forem
     {
         /// <summary>
         /// Suspend a User<br/>
-        /// This endpoint allows the client to suspend a user.<br/>
-        /// The user associated with the API key must have any 'admin' or 'moderator' role.<br/>
-        /// This specified user will be assigned the 'suspended' role. Suspending a user will stop the<br/>
-        /// user from posting new posts and comments. It doesn't delete any of the user's content, just<br/>
-        /// prevents them from creating new content while suspended. Users are not notified of their suspension<br/>
-        /// in the UI, so if you want them to know about this, you must notify them.
+        /// Suspend a user's account.<br/>
+        /// ### Suspension Details:<br/>
+        /// - The user associated with the API key must have an `admin` or `moderator` role.<br/>
+        /// - Assigns the `suspended` role to the user, preventing them from posting new content (articles or comments) while suspended.<br/>
+        /// - Existing content is not deleted.<br/>
+        /// - Suspended users are not notified in the UI; if you want them to know, you must notify them explicitly.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -23,12 +23,12 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Suspend a User<br/>
-        /// This endpoint allows the client to suspend a user.<br/>
-        /// The user associated with the API key must have any 'admin' or 'moderator' role.<br/>
-        /// This specified user will be assigned the 'suspended' role. Suspending a user will stop the<br/>
-        /// user from posting new posts and comments. It doesn't delete any of the user's content, just<br/>
-        /// prevents them from creating new content while suspended. Users are not notified of their suspension<br/>
-        /// in the UI, so if you want them to know about this, you must notify them.
+        /// Suspend a user's account.<br/>
+        /// ### Suspension Details:<br/>
+        /// - The user associated with the API key must have an `admin` or `moderator` role.<br/>
+        /// - Assigns the `suspended` role to the user, preventing them from posting new content (articles or comments) while suspended.<br/>
+        /// - Existing content is not deleted.<br/>
+        /// - Suspended users are not notified in the UI; if you want them to know, you must notify them explicitly.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

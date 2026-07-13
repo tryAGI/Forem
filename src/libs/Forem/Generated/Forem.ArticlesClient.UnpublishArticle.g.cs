@@ -116,7 +116,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/articles/{id}/unpublish",
+                                path: $"/api/articles/{id}/unpublish",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("note", note)
@@ -181,7 +181,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishArticle",
                                 methodName: "UnpublishArticleAsync",
-                                pathTemplate: "$\"/articles/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/articles/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +215,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishArticle",
                                 methodName: "UnpublishArticleAsync",
-                                pathTemplate: "$\"/articles/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/articles/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -256,7 +256,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishArticle",
                                 methodName: "UnpublishArticleAsync",
-                                pathTemplate: "$\"/articles/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/articles/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -304,7 +304,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishArticle",
                                 methodName: "UnpublishArticleAsync",
-                                pathTemplate: "$\"/articles/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/articles/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,7 +326,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishArticle",
                                 methodName: "UnpublishArticleAsync",
-                                pathTemplate: "$\"/articles/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/articles/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -341,7 +341,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -373,7 +373,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Article Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

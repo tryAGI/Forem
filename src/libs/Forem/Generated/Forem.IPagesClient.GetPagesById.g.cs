@@ -6,7 +6,7 @@ namespace Forem
     {
         /// <summary>
         /// show details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Retrieve details for a single Page object specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// show details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Retrieve details for a single Page object specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

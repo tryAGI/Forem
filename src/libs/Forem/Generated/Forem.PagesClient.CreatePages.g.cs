@@ -38,7 +38,14 @@ namespace Forem
 
         /// <summary>
         /// pages<br/>
-        /// This endpoint allows the client to create a new page.
+        /// Create a new custom page. Requires administrative privileges.<br/>
+        ///         ### Body Parameter Guidelines:<br/>
+        ///         - **title**: Heading displayed at the top of the page.<br/>
+        ///         - **slug**: URL path identifier. Must be unique and URL-safe.<br/>
+        ///         - **body_markdown**: Content written in Markdown format.<br/>
+        ///         - **body_json**: Optional JSON payload for API-consumed/structured data pages.<br/>
+        ///         - **is_top_level_path**: Set to `true` to serve the page directly at the root (e.g. `/{slug}`) instead of under the default namespace `/page/{slug}`. Use with caution to avoid namespace collisions with core Forem paths.<br/>
+        ///         - **template**: Layout styling options (`contained` or custom layouts).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -59,7 +66,14 @@ namespace Forem
         }
         /// <summary>
         /// pages<br/>
-        /// This endpoint allows the client to create a new page.
+        /// Create a new custom page. Requires administrative privileges.<br/>
+        ///         ### Body Parameter Guidelines:<br/>
+        ///         - **title**: Heading displayed at the top of the page.<br/>
+        ///         - **slug**: URL path identifier. Must be unique and URL-safe.<br/>
+        ///         - **body_markdown**: Content written in Markdown format.<br/>
+        ///         - **body_json**: Optional JSON payload for API-consumed/structured data pages.<br/>
+        ///         - **is_top_level_path**: Set to `true` to serve the page directly at the root (e.g. `/{slug}`) instead of under the default namespace `/page/{slug}`. Use with caution to avoid namespace collisions with core Forem paths.<br/>
+        ///         - **template**: Layout styling options (`contained` or custom layouts).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -103,7 +117,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/pages",
+                                path: "/api/pages",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -170,7 +184,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createPages",
                                 methodName: "CreatePagesAsync",
-                                pathTemplate: "\"/pages\"",
+                                pathTemplate: "\"/api/pages\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -204,7 +218,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createPages",
                                 methodName: "CreatePagesAsync",
-                                pathTemplate: "\"/pages\"",
+                                pathTemplate: "\"/api/pages\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -245,7 +259,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createPages",
                                 methodName: "CreatePagesAsync",
-                                pathTemplate: "\"/pages\"",
+                                pathTemplate: "\"/api/pages\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,7 +307,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createPages",
                                 methodName: "CreatePagesAsync",
-                                pathTemplate: "\"/pages\"",
+                                pathTemplate: "\"/api/pages\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -315,7 +329,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "createPages",
                                 methodName: "CreatePagesAsync",
-                                pathTemplate: "\"/pages\"",
+                                pathTemplate: "\"/api/pages\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -330,7 +344,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -362,7 +376,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // unprocessable
+                            // 
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -476,7 +490,14 @@ namespace Forem
         }
         /// <summary>
         /// pages<br/>
-        /// This endpoint allows the client to create a new page.
+        /// Create a new custom page. Requires administrative privileges.<br/>
+        ///         ### Body Parameter Guidelines:<br/>
+        ///         - **title**: Heading displayed at the top of the page.<br/>
+        ///         - **slug**: URL path identifier. Must be unique and URL-safe.<br/>
+        ///         - **body_markdown**: Content written in Markdown format.<br/>
+        ///         - **body_json**: Optional JSON payload for API-consumed/structured data pages.<br/>
+        ///         - **is_top_level_path**: Set to `true` to serve the page directly at the root (e.g. `/{slug}`) instead of under the default namespace `/page/{slug}`. Use with caution to avoid namespace collisions with core Forem paths.<br/>
+        ///         - **template**: Layout styling options (`contained` or custom layouts).
         /// </summary>
         /// <param name="title">
         /// Title of the page
@@ -488,7 +509,7 @@ namespace Forem
         /// For internal use, helps similar pages from one another
         /// </param>
         /// <param name="bodyMarkdown">
-        /// The text (in markdown) of the ad (required)
+        /// The text (in markdown) of the page (required)
         /// </param>
         /// <param name="bodyJson">
         /// For JSON pages, the JSON body

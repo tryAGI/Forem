@@ -43,8 +43,10 @@ namespace Forem
 
         /// <summary>
         /// A Users or organizations profile image<br/>
-        /// This endpoint allows the client to retrieve a user or organization profile image information by its<br/>
-        ///         corresponding username.
+        /// Retrieve the profile image URL and configuration for a user or organization by username.<br/>
+        ///         ### Integration Details:<br/>
+        ///         - Bypasses authentication.<br/>
+        ///         - Convenient for quickly displaying avatars/icons in comments lists, headers, or sidebar elements without requesting the full user profile model.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -65,8 +67,10 @@ namespace Forem
         }
         /// <summary>
         /// A Users or organizations profile image<br/>
-        /// This endpoint allows the client to retrieve a user or organization profile image information by its<br/>
-        ///         corresponding username.
+        /// Retrieve the profile image URL and configuration for a user or organization by username.<br/>
+        ///         ### Integration Details:<br/>
+        ///         - Bypasses authentication.<br/>
+        ///         - Convenient for quickly displaying avatars/icons in comments lists, headers, or sidebar elements without requesting the full user profile model.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -107,7 +111,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/profile_images/{username}",
+                                path: $"/api/profile_images/{username}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -168,7 +172,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetProfileImage",
                                 methodName: "GetProfileImageAsync",
-                                pathTemplate: "$\"/profile_images/{username}\"",
+                                pathTemplate: "$\"/api/profile_images/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -202,7 +206,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetProfileImage",
                                 methodName: "GetProfileImageAsync",
-                                pathTemplate: "$\"/profile_images/{username}\"",
+                                pathTemplate: "$\"/api/profile_images/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -243,7 +247,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetProfileImage",
                                 methodName: "GetProfileImageAsync",
-                                pathTemplate: "$\"/profile_images/{username}\"",
+                                pathTemplate: "$\"/api/profile_images/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -291,7 +295,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetProfileImage",
                                 methodName: "GetProfileImageAsync",
-                                pathTemplate: "$\"/profile_images/{username}\"",
+                                pathTemplate: "$\"/api/profile_images/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -313,7 +317,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetProfileImage",
                                 methodName: "GetProfileImageAsync",
-                                pathTemplate: "$\"/profile_images/{username}\"",
+                                pathTemplate: "$\"/api/profile_images/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -328,7 +332,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Resource Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

@@ -7,13 +7,13 @@ namespace Forem
     {
         partial void PrepareGetOrgUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string username,
+            ref string organizationIdOrUsername,
             ref int? page,
             ref int? perPage);
         partial void PrepareGetOrgUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string username,
+            string organizationIdOrUsername,
             int? page,
             int? perPage);
         partial void ProcessGetOrgUsersResponse(
@@ -27,10 +27,12 @@ namespace Forem
 
         /// <summary>
         /// Organization's users<br/>
-        /// This endpoint allows the client to retrieve a list of users belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of public user profiles associated with the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Ideal for displaying team member directory lists on organization/brand pages.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -41,14 +43,14 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.User>> GetOrgUsersAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetOrgUsersAsResponseAsync(
-                username: username,
+                organizationIdOrUsername: organizationIdOrUsername,
                 page: page,
                 perPage: perPage,
                 requestOptions: requestOptions,
@@ -59,10 +61,12 @@ namespace Forem
         }
         /// <summary>
         /// Organization's users<br/>
-        /// This endpoint allows the client to retrieve a list of users belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of public user profiles associated with the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Ideal for displaying team member directory lists on organization/brand pages.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -73,7 +77,7 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Forem.User>>> GetOrgUsersAsResponseAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
@@ -83,7 +87,7 @@ namespace Forem
                 client: HttpClient);
             PrepareGetOrgUsersArguments(
                 httpClient: HttpClient,
-                username: ref username,
+                organizationIdOrUsername: ref organizationIdOrUsername,
                 page: ref page,
                 perPage: ref perPage);
 
@@ -105,7 +109,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/organizations/{username}/users",
+                                path: $"/api/organizations/{organizationIdOrUsername}/users",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -134,7 +138,7 @@ namespace Forem
                 PrepareGetOrgUsersRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username!,
+                    organizationIdOrUsername: organizationIdOrUsername!,
                     page: page,
                     perPage: perPage);
 
@@ -155,7 +159,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgUsers",
                                 methodName: "GetOrgUsersAsync",
-                                pathTemplate: "$\"/organizations/{username}/users\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -189,7 +193,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgUsers",
                                 methodName: "GetOrgUsersAsync",
-                                pathTemplate: "$\"/organizations/{username}/users\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +234,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgUsers",
                                 methodName: "GetOrgUsersAsync",
-                                pathTemplate: "$\"/organizations/{username}/users\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -278,7 +282,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgUsers",
                                 methodName: "GetOrgUsersAsync",
-                                pathTemplate: "$\"/organizations/{username}/users\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -300,7 +304,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgUsers",
                                 methodName: "GetOrgUsersAsync",
-                                pathTemplate: "$\"/organizations/{username}/users\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -315,7 +319,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

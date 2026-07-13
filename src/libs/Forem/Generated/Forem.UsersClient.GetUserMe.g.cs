@@ -41,7 +41,10 @@ namespace Forem
 
         /// <summary>
         /// The authenticated user<br/>
-        /// This endpoint allows the client to retrieve information about the authenticated user
+        /// This endpoint allows the client to retrieve information about the authenticated user.<br/>
+        /// ### Usage Tips:<br/>
+        /// - Requires a valid `api-key` header to identify the user.<br/>
+        /// - Useful for checking permissions, verifying linking state, or retrieving user-specific profile settings.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,7 +62,10 @@ namespace Forem
         }
         /// <summary>
         /// The authenticated user<br/>
-        /// This endpoint allows the client to retrieve information about the authenticated user
+        /// This endpoint allows the client to retrieve information about the authenticated user.<br/>
+        /// ### Usage Tips:<br/>
+        /// - Requires a valid `api-key` header to identify the user.<br/>
+        /// - Useful for checking permissions, verifying linking state, or retrieving user-specific profile settings.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -97,7 +103,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/users/me",
+                                path: "/api/users/me",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -157,7 +163,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserMe",
                                 methodName: "GetUserMeAsync",
-                                pathTemplate: "\"/users/me\"",
+                                pathTemplate: "\"/api/users/me\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -191,7 +197,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserMe",
                                 methodName: "GetUserMeAsync",
-                                pathTemplate: "\"/users/me\"",
+                                pathTemplate: "\"/api/users/me\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,7 +238,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserMe",
                                 methodName: "GetUserMeAsync",
-                                pathTemplate: "\"/users/me\"",
+                                pathTemplate: "\"/api/users/me\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +286,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserMe",
                                 methodName: "GetUserMeAsync",
-                                pathTemplate: "\"/users/me\"",
+                                pathTemplate: "\"/api/users/me\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -302,7 +308,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserMe",
                                 methodName: "GetUserMeAsync",
-                                pathTemplate: "\"/users/me\"",
+                                pathTemplate: "\"/api/users/me\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -317,7 +323,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

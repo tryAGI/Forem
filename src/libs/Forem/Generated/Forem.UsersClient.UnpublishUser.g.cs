@@ -38,16 +38,11 @@ namespace Forem
 
         /// <summary>
         /// Unpublish a User's Articles and Comments<br/>
-        /// This endpoint allows the client to unpublish all of the articles and<br/>
-        /// comments created by a user.<br/>
-        /// The user associated with the API key must have any 'admin' or 'moderator' role.<br/>
-        /// This specified user's articles and comments will be unpublished and will no longer be<br/>
-        /// visible to the public. They will remain in the database and will set back to draft status<br/>
-        /// on the specified user's  dashboard. Any notifications associated with the specified user's<br/>
-        /// articles and comments will be deleted.<br/>
-        /// Note this endpoint unpublishes articles and comments asychronously: it will return a 204 NO CONTENT<br/>
-        /// status code immediately, but the articles and comments will not be unpublished until the<br/>
-        /// request is completed on the server.
+        /// This endpoint allows the client to unpublish all of the articles and comments created by a user.<br/>
+        /// ### Administrative Action:<br/>
+        /// - Requires the authenticated user to be an Administrator.<br/>
+        /// - This is a destructive administrative action that immediately unpublishes all posts/comments from public feeds.<br/>
+        /// - Ideal for handling spam accounts or cleanup operations.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,16 +61,11 @@ namespace Forem
         }
         /// <summary>
         /// Unpublish a User's Articles and Comments<br/>
-        /// This endpoint allows the client to unpublish all of the articles and<br/>
-        /// comments created by a user.<br/>
-        /// The user associated with the API key must have any 'admin' or 'moderator' role.<br/>
-        /// This specified user's articles and comments will be unpublished and will no longer be<br/>
-        /// visible to the public. They will remain in the database and will set back to draft status<br/>
-        /// on the specified user's  dashboard. Any notifications associated with the specified user's<br/>
-        /// articles and comments will be deleted.<br/>
-        /// Note this endpoint unpublishes articles and comments asychronously: it will return a 204 NO CONTENT<br/>
-        /// status code immediately, but the articles and comments will not be unpublished until the<br/>
-        /// request is completed on the server.
+        /// This endpoint allows the client to unpublish all of the articles and comments created by a user.<br/>
+        /// ### Administrative Action:<br/>
+        /// - Requires the authenticated user to be an Administrator.<br/>
+        /// - This is a destructive administrative action that immediately unpublishes all posts/comments from public feeds.<br/>
+        /// - Ideal for handling spam accounts or cleanup operations.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -116,7 +106,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/users/{id}/unpublish",
+                                path: $"/api/users/{id}/unpublish",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -177,7 +167,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishUser",
                                 methodName: "UnpublishUserAsync",
-                                pathTemplate: "$\"/users/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/users/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -211,7 +201,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishUser",
                                 methodName: "UnpublishUserAsync",
-                                pathTemplate: "$\"/users/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/users/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -252,7 +242,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishUser",
                                 methodName: "UnpublishUserAsync",
-                                pathTemplate: "$\"/users/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/users/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -300,7 +290,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishUser",
                                 methodName: "UnpublishUserAsync",
-                                pathTemplate: "$\"/users/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/users/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -322,7 +312,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UnpublishUser",
                                 methodName: "UnpublishUserAsync",
-                                pathTemplate: "$\"/users/{id}/unpublish\"",
+                                pathTemplate: "$\"/api/users/{id}/unpublish\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -337,70 +327,6 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
-                            if ((int)__response.StatusCode == 401)
-                            {
-                                string? __content_401 = null;
-                                global::System.Exception? __exception_401 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_401 = __ex;
-                                }
-
-
-                                throw global::Forem.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_401,
-                                    responseBody: __content_401,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
-                            // Unknown User ID (still accepted for async processing)
-                            if ((int)__response.StatusCode == 404)
-                            {
-                                string? __content_404 = null;
-                                global::System.Exception? __exception_404 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                    else
-                                    {
-                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_404 = __ex;
-                                }
-
-
-                                throw global::Forem.ApiException.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_404,
-                                    responseBody: __content_404,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
 
                             if (__effectiveReadResponseAsString)
                             {

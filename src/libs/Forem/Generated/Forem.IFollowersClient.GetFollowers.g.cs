@@ -7,8 +7,10 @@ namespace Forem
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>
-        ///         "Followers" are users that are following other users on the website.<br/>
-        ///         It supports pagination, each page will contain 80 followers by default.
+        ///         ### Integration &amp; Pagination Guidance:<br/>
+        ///         - "Followers" are other users registered on the platform who follow the authenticated user.<br/>
+        ///         - Supports pagination, defaulting to 80 followers per page.<br/>
+        ///         - The `sort` query parameter determines the sorting order based on when the follow relationship was established.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -29,8 +31,10 @@ namespace Forem
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>
-        ///         "Followers" are users that are following other users on the website.<br/>
-        ///         It supports pagination, each page will contain 80 followers by default.
+        ///         ### Integration &amp; Pagination Guidance:<br/>
+        ///         - "Followers" are other users registered on the platform who follow the authenticated user.<br/>
+        ///         - Supports pagination, defaulting to 80 followers per page.<br/>
+        ///         - The `sort` query parameter determines the sorting order based on when the follow relationship was established.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1

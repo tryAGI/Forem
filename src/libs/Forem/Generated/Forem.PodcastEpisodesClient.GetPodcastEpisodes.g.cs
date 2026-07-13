@@ -27,10 +27,13 @@ namespace Forem
 
         /// <summary>
         /// Podcast Episodes<br/>
-        /// This endpoint allows the client to retrieve a list of podcast episodes.<br/>
-        ///         "Podcast episodes" are episodes belonging to podcasts.<br/>
-        ///         It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.<br/>
-        ///         It supports pagination, each page will contain 30 articles by default.
+        /// Retrieve a list of podcast episodes published on the platform.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Bypasses authentication (can be accessed publicly).<br/>
+        ///         - Only returns active episodes belonging to published/reachable podcasts.<br/>
+        ///         - Episodes are returned in reverse chronological order based on their publication date.<br/>
+        ///         - The `username` query parameter is the unique slug of the podcast channel (e.g. `codenewbie`).<br/>
+        ///         It supports pagination, each page will contain 30 episodes by default.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -61,10 +64,13 @@ namespace Forem
         }
         /// <summary>
         /// Podcast Episodes<br/>
-        /// This endpoint allows the client to retrieve a list of podcast episodes.<br/>
-        ///         "Podcast episodes" are episodes belonging to podcasts.<br/>
-        ///         It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.<br/>
-        ///         It supports pagination, each page will contain 30 articles by default.
+        /// Retrieve a list of podcast episodes published on the platform.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Bypasses authentication (can be accessed publicly).<br/>
+        ///         - Only returns active episodes belonging to published/reachable podcasts.<br/>
+        ///         - Episodes are returned in reverse chronological order based on their publication date.<br/>
+        ///         - The `username` query parameter is the unique slug of the podcast channel (e.g. `codenewbie`).<br/>
+        ///         It supports pagination, each page will contain 30 episodes by default.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -109,7 +115,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/podcast_episodes",
+                                path: "/api/podcast_episodes",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -160,7 +166,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetPodcastEpisodes",
                                 methodName: "GetPodcastEpisodesAsync",
-                                pathTemplate: "\"/podcast_episodes\"",
+                                pathTemplate: "\"/api/podcast_episodes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -194,7 +200,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetPodcastEpisodes",
                                 methodName: "GetPodcastEpisodesAsync",
-                                pathTemplate: "\"/podcast_episodes\"",
+                                pathTemplate: "\"/api/podcast_episodes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -235,7 +241,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetPodcastEpisodes",
                                 methodName: "GetPodcastEpisodesAsync",
-                                pathTemplate: "\"/podcast_episodes\"",
+                                pathTemplate: "\"/api/podcast_episodes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +289,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetPodcastEpisodes",
                                 methodName: "GetPodcastEpisodesAsync",
-                                pathTemplate: "\"/podcast_episodes\"",
+                                pathTemplate: "\"/api/podcast_episodes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -305,7 +311,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetPodcastEpisodes",
                                 methodName: "GetPodcastEpisodesAsync",
-                                pathTemplate: "\"/podcast_episodes\"",
+                                pathTemplate: "\"/api/podcast_episodes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -320,7 +326,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unknown Podcast username
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

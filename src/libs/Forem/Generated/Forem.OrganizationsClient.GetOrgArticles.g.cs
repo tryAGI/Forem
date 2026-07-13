@@ -7,13 +7,13 @@ namespace Forem
     {
         partial void PrepareGetOrgArticlesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string username,
+            ref string organizationIdOrUsername,
             ref int? page,
             ref int? perPage);
         partial void PrepareGetOrgArticlesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string username,
+            string organizationIdOrUsername,
             int? page,
             int? perPage);
         partial void ProcessGetOrgArticlesResponse(
@@ -27,10 +27,13 @@ namespace Forem
 
         /// <summary>
         /// Organization's Articles<br/>
-        /// This endpoint allows the client to retrieve a list of Articles belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of articles published by the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Returns articles in reverse chronological publication order.<br/>
+        /// - Ideal for populating an organization's custom blog feed or publication listing.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -41,14 +44,14 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>> GetOrgArticlesAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await GetOrgArticlesAsResponseAsync(
-                username: username,
+                organizationIdOrUsername: organizationIdOrUsername,
                 page: page,
                 perPage: perPage,
                 requestOptions: requestOptions,
@@ -59,10 +62,13 @@ namespace Forem
         }
         /// <summary>
         /// Organization's Articles<br/>
-        /// This endpoint allows the client to retrieve a list of Articles belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of articles published by the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Returns articles in reverse chronological publication order.<br/>
+        /// - Ideal for populating an organization's custom blog feed or publication listing.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -73,7 +79,7 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Forem.ArticleIndex>>> GetOrgArticlesAsResponseAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
@@ -83,7 +89,7 @@ namespace Forem
                 client: HttpClient);
             PrepareGetOrgArticlesArguments(
                 httpClient: HttpClient,
-                username: ref username,
+                organizationIdOrUsername: ref organizationIdOrUsername,
                 page: ref page,
                 perPage: ref perPage);
 
@@ -105,7 +111,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/organizations/{username}/articles",
+                                path: $"/api/organizations/{organizationIdOrUsername}/articles",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -134,7 +140,7 @@ namespace Forem
                 PrepareGetOrgArticlesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username!,
+                    organizationIdOrUsername: organizationIdOrUsername!,
                     page: page,
                     perPage: perPage);
 
@@ -155,7 +161,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgArticles",
                                 methodName: "GetOrgArticlesAsync",
-                                pathTemplate: "$\"/organizations/{username}/articles\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/articles\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -189,7 +195,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgArticles",
                                 methodName: "GetOrgArticlesAsync",
-                                pathTemplate: "$\"/organizations/{username}/articles\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/articles\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -230,7 +236,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgArticles",
                                 methodName: "GetOrgArticlesAsync",
-                                pathTemplate: "$\"/organizations/{username}/articles\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/articles\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -278,7 +284,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgArticles",
                                 methodName: "GetOrgArticlesAsync",
-                                pathTemplate: "$\"/organizations/{username}/articles\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/articles\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -300,7 +306,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrgArticles",
                                 methodName: "GetOrgArticlesAsync",
-                                pathTemplate: "$\"/organizations/{username}/articles\"",
+                                pathTemplate: "$\"/api/organizations/{organizationIdOrUsername}/articles\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -315,7 +321,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

@@ -43,7 +43,7 @@ namespace Forem
 
         /// <summary>
         /// remove a page<br/>
-        /// This endpoint allows the client to delete a single Page object, specified by ID.
+        /// Delete a custom page from the system by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -64,7 +64,7 @@ namespace Forem
         }
         /// <summary>
         /// remove a page<br/>
-        /// This endpoint allows the client to delete a single Page object, specified by ID.
+        /// Delete a custom page from the system by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -105,7 +105,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/pages/{id}",
+                                path: $"/api/pages/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -166,7 +166,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "deletePagesById",
                                 methodName: "DeletePagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -200,7 +200,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "deletePagesById",
                                 methodName: "DeletePagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -241,7 +241,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "deletePagesById",
                                 methodName: "DeletePagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -289,7 +289,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "deletePagesById",
                                 methodName: "DeletePagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -311,7 +311,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "deletePagesById",
                                 methodName: "DeletePagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,7 +326,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -358,7 +358,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // unprocessable
+                            // 
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;

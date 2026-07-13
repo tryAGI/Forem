@@ -127,7 +127,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/articles/me/published",
+                                path: "/api/articles/me/published",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -193,7 +193,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserPublishedArticles",
                                 methodName: "GetUserPublishedArticlesAsync",
-                                pathTemplate: "\"/articles/me/published\"",
+                                pathTemplate: "\"/api/articles/me/published\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -227,7 +227,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserPublishedArticles",
                                 methodName: "GetUserPublishedArticlesAsync",
-                                pathTemplate: "\"/articles/me/published\"",
+                                pathTemplate: "\"/api/articles/me/published\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -268,7 +268,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserPublishedArticles",
                                 methodName: "GetUserPublishedArticlesAsync",
-                                pathTemplate: "\"/articles/me/published\"",
+                                pathTemplate: "\"/api/articles/me/published\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -316,7 +316,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserPublishedArticles",
                                 methodName: "GetUserPublishedArticlesAsync",
-                                pathTemplate: "\"/articles/me/published\"",
+                                pathTemplate: "\"/api/articles/me/published\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -338,7 +338,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetUserPublishedArticles",
                                 methodName: "GetUserPublishedArticlesAsync",
-                                pathTemplate: "\"/articles/me/published\"",
+                                pathTemplate: "\"/api/articles/me/published\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -353,7 +353,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

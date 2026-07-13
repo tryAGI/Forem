@@ -6,8 +6,11 @@ namespace Forem
     {
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -20,8 +23,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -34,8 +40,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Invite a User<br/>
-        /// This endpoint allows the client to trigger an invitation to the provided email address.<br/>
-        ///         It requires a token from a user with `super_admin` privileges.
+        /// Invite a new user to join the platform by email.<br/>
+        /// ### Super Admin Action:<br/>
+        /// - Requires Super Admin privileges.<br/>
+        /// - Triggers a system invitation flow and sends an invitation email containing a sign-up link.<br/>
+        /// - Handy for invite-only platforms or private enterprise instances.
         /// </summary>
         /// <param name="email"></param>
         /// <param name="name"></param>

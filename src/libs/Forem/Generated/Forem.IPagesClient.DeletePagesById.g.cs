@@ -6,7 +6,7 @@ namespace Forem
     {
         /// <summary>
         /// remove a page<br/>
-        /// This endpoint allows the client to delete a single Page object, specified by ID.
+        /// Delete a custom page from the system by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,7 +18,7 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// remove a page<br/>
-        /// This endpoint allows the client to delete a single Page object, specified by ID.
+        /// Delete a custom page from the system by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

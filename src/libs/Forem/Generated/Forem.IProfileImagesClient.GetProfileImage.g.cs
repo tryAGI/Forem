@@ -6,8 +6,10 @@ namespace Forem
     {
         /// <summary>
         /// A Users or organizations profile image<br/>
-        /// This endpoint allows the client to retrieve a user or organization profile image information by its<br/>
-        ///         corresponding username.
+        /// Retrieve the profile image URL and configuration for a user or organization by username.<br/>
+        ///         ### Integration Details:<br/>
+        ///         - Bypasses authentication.<br/>
+        ///         - Convenient for quickly displaying avatars/icons in comments lists, headers, or sidebar elements without requesting the full user profile model.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,8 +21,10 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// A Users or organizations profile image<br/>
-        /// This endpoint allows the client to retrieve a user or organization profile image information by its<br/>
-        ///         corresponding username.
+        /// Retrieve the profile image URL and configuration for a user or organization by username.<br/>
+        ///         ### Integration Details:<br/>
+        ///         - Bypasses authentication.<br/>
+        ///         - Convenient for quickly displaying avatars/icons in comments lists, headers, or sidebar elements without requesting the full user profile model.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

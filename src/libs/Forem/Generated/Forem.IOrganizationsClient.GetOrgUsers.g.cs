@@ -6,10 +6,12 @@ namespace Forem
     {
         /// <summary>
         /// Organization's users<br/>
-        /// This endpoint allows the client to retrieve a list of users belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of public user profiles associated with the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Ideal for displaying team member directory lists on organization/brand pages.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -20,17 +22,19 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::Forem.User>> GetOrgUsersAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Organization's users<br/>
-        /// This endpoint allows the client to retrieve a list of users belonging to the organization<br/>
-        /// It supports pagination, each page will contain `30` users by default.
+        /// Retrieve a list of public user profiles associated with the organization.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **organization_id_or_username**: Supports either the organization's unique numerical ID OR its string username (slug).<br/>
+        /// - Ideal for displaying team member directory lists on organization/brand pages.
         /// </summary>
-        /// <param name="username"></param>
+        /// <param name="organizationIdOrUsername"></param>
         /// <param name="page">
         /// Default Value: 1
         /// </param>
@@ -41,7 +45,7 @@ namespace Forem
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::Forem.User>>> GetOrgUsersAsResponseAsync(
-            string username,
+            string organizationIdOrUsername,
             int? page = default,
             int? perPage = default,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,

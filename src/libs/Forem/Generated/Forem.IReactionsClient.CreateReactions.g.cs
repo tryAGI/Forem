@@ -6,9 +6,9 @@ namespace Forem
     {
         /// <summary>
         /// create reaction<br/>
-        /// This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will return the previous "like"
+        /// Create a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Usage Details:<br/>
+        ///         - Unlike the toggle endpoint, this endpoint is idempotent: multiple requests to react with the same category to the same target will return the existing reaction without deleting it.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>
@@ -24,9 +24,9 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// create reaction<br/>
-        /// This endpoint allows the client to create a reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will return the previous "like"
+        /// Create a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Usage Details:<br/>
+        ///         - Unlike the toggle endpoint, this endpoint is idempotent: multiple requests to react with the same category to the same target will return the existing reaction without deleting it.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>

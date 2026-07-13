@@ -7,27 +7,27 @@ namespace Forem
     {
         partial void PrepareGetCommentByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref int id);
+            ref string id);
         partial void PrepareGetCommentByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            int id);
+            string id);
         partial void ProcessGetCommentByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
         /// Comment by id<br/>
-        /// This endpoint allows the client to retrieve a comment as well as his descendants comments.<br/>
-        ///   It will return the required comment (the root) with its nested descendants as a thread.<br/>
-        ///   See the format specification for further details.
+        /// This endpoint allows the client to retrieve a specific comment and all of its nested descendant replies.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Handy for linking directly to a deep comment thread or loading individual comment replies on demand.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task GetCommentByIdAsync(
-            int id,
+            string id,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -39,16 +39,16 @@ namespace Forem
         }
         /// <summary>
         /// Comment by id<br/>
-        /// This endpoint allows the client to retrieve a comment as well as his descendants comments.<br/>
-        ///   It will return the required comment (the root) with its nested descendants as a thread.<br/>
-        ///   See the format specification for further details.
+        /// This endpoint allows the client to retrieve a specific comment and all of its nested descendant replies.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Handy for linking directly to a deep comment thread or loading individual comment replies on demand.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Forem.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::Forem.AutoSDKHttpResponse> GetCommentByIdAsResponseAsync(
-            int id,
+            string id,
             global::Forem.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,7 +76,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/comments/{id}",
+                                path: $"/api/comments/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -120,7 +120,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentById",
                                 methodName: "GetCommentByIdAsync",
-                                pathTemplate: "$\"/comments/{id}\"",
+                                pathTemplate: "$\"/api/comments/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -154,7 +154,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentById",
                                 methodName: "GetCommentByIdAsync",
-                                pathTemplate: "$\"/comments/{id}\"",
+                                pathTemplate: "$\"/api/comments/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -195,7 +195,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentById",
                                 methodName: "GetCommentByIdAsync",
-                                pathTemplate: "$\"/comments/{id}\"",
+                                pathTemplate: "$\"/api/comments/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -243,7 +243,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentById",
                                 methodName: "GetCommentByIdAsync",
-                                pathTemplate: "$\"/comments/{id}\"",
+                                pathTemplate: "$\"/api/comments/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -265,7 +265,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetCommentById",
                                 methodName: "GetCommentByIdAsync",
-                                pathTemplate: "$\"/comments/{id}\"",
+                                pathTemplate: "$\"/api/comments/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +280,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Comment Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
