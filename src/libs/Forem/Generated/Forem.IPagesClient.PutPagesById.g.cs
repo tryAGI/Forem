@@ -6,7 +6,7 @@ namespace Forem
     {
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -21,7 +21,7 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -36,7 +36,7 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="title">

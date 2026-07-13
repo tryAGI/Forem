@@ -22,8 +22,11 @@ namespace Forem
             ref string content);
 
         /// <summary>
-        /// An organization<br/>
-        /// This endpoint allows the client to retrieve a single organization by their username
+        /// An organization (by username)<br/>
+        /// Retrieve public profile information for a single organization by its username.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Bypasses authentication.<br/>
+        /// - Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -43,8 +46,11 @@ namespace Forem
             return __response.Body;
         }
         /// <summary>
-        /// An organization<br/>
-        /// This endpoint allows the client to retrieve a single organization by their username
+        /// An organization (by username)<br/>
+        /// Retrieve public profile information for a single organization by its username.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Bypasses authentication.<br/>
+        /// - Returns details like Tech Stack, Tagline, Story, website URLs, and joined date.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +85,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/organizations/{username}",
+                                path: $"/api/organizations/{username}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -123,7 +129,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrganization",
                                 methodName: "GetOrganizationAsync",
-                                pathTemplate: "$\"/organizations/{username}\"",
+                                pathTemplate: "$\"/api/organizations/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -157,7 +163,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrganization",
                                 methodName: "GetOrganizationAsync",
-                                pathTemplate: "$\"/organizations/{username}\"",
+                                pathTemplate: "$\"/api/organizations/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -198,7 +204,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrganization",
                                 methodName: "GetOrganizationAsync",
-                                pathTemplate: "$\"/organizations/{username}\"",
+                                pathTemplate: "$\"/api/organizations/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,7 +252,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrganization",
                                 methodName: "GetOrganizationAsync",
-                                pathTemplate: "$\"/organizations/{username}\"",
+                                pathTemplate: "$\"/api/organizations/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -268,7 +274,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetOrganization",
                                 methodName: "GetOrganizationAsync",
-                                pathTemplate: "$\"/organizations/{username}\"",
+                                pathTemplate: "$\"/api/organizations/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +289,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

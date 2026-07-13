@@ -6,10 +6,13 @@ namespace Forem
     {
         /// <summary>
         /// Podcast Episodes<br/>
-        /// This endpoint allows the client to retrieve a list of podcast episodes.<br/>
-        ///         "Podcast episodes" are episodes belonging to podcasts.<br/>
-        ///         It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.<br/>
-        ///         It supports pagination, each page will contain 30 articles by default.
+        /// Retrieve a list of podcast episodes published on the platform.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Bypasses authentication (can be accessed publicly).<br/>
+        ///         - Only returns active episodes belonging to published/reachable podcasts.<br/>
+        ///         - Episodes are returned in reverse chronological order based on their publication date.<br/>
+        ///         - The `username` query parameter is the unique slug of the podcast channel (e.g. `codenewbie`).<br/>
+        ///         It supports pagination, each page will contain 30 episodes by default.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -29,10 +32,13 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Podcast Episodes<br/>
-        /// This endpoint allows the client to retrieve a list of podcast episodes.<br/>
-        ///         "Podcast episodes" are episodes belonging to podcasts.<br/>
-        ///         It will only return active (reachable) podcast episodes that belong to published podcasts available on the platform, ordered by descending publication date.<br/>
-        ///         It supports pagination, each page will contain 30 articles by default.
+        /// Retrieve a list of podcast episodes published on the platform.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Bypasses authentication (can be accessed publicly).<br/>
+        ///         - Only returns active episodes belonging to published/reachable podcasts.<br/>
+        ///         - Episodes are returned in reverse chronological order based on their publication date.<br/>
+        ///         - The `username` query parameter is the unique slug of the podcast channel (e.g. `codenewbie`).<br/>
+        ///         It supports pagination, each page will contain 30 episodes by default.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1

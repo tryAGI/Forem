@@ -12,7 +12,7 @@ namespace Forem
         /// <summary>
         /// Production server
         /// </summary>
-        public const string DefaultBaseUrl = "https://dev.to/api";
+        public const string DefaultBaseUrl = "https://dev.to/";
 
         private bool _disposeHttpClient = true;
 

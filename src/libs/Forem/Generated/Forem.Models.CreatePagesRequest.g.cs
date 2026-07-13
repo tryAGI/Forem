@@ -27,7 +27,7 @@ namespace Forem
         public string? Description { get; set; }
 
         /// <summary>
-        /// The text (in markdown) of the ad (required)
+        /// The text (in markdown) of the page (required)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_markdown")]
         public string? BodyMarkdown { get; set; }
@@ -71,7 +71,7 @@ namespace Forem
         /// For internal use, helps similar pages from one another
         /// </param>
         /// <param name="bodyMarkdown">
-        /// The text (in markdown) of the ad (required)
+        /// The text (in markdown) of the page (required)
         /// </param>
         /// <param name="bodyJson">
         /// For JSON pages, the JSON body

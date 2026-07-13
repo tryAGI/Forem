@@ -6,8 +6,12 @@ namespace Forem
     {
         /// <summary>
         /// Readinglist<br/>
-        /// This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.<br/>
-        ///         It supports pagination, each page will contain `30` articles by default
+        /// Retrieve the list of articles saved to the authenticated user's reading list.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Under the hood, this endpoint retrieves articles that the user has reacted to with the `"save"` reaction category.<br/>
+        ///         - Supports pagination, defaulting to 30 articles per page.<br/>
+        ///         - Returned objects conform to the standard `ArticleIndex` schema.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -25,8 +29,12 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Readinglist<br/>
-        /// This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.<br/>
-        ///         It supports pagination, each page will contain `30` articles by default
+        /// Retrieve the list of articles saved to the authenticated user's reading list.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Under the hood, this endpoint retrieves articles that the user has reacted to with the `"save"` reaction category.<br/>
+        ///         - Supports pagination, defaulting to 30 articles per page.<br/>
+        ///         - Returned objects conform to the standard `ArticleIndex` schema.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1

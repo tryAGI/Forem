@@ -45,7 +45,7 @@ namespace Forem
 
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -71,7 +71,7 @@ namespace Forem
         }
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -118,7 +118,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/pages/{id}",
+                                path: $"/api/pages/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -186,7 +186,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "putPagesById",
                                 methodName: "PutPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -220,7 +220,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "putPagesById",
                                 methodName: "PutPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -261,7 +261,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "putPagesById",
                                 methodName: "PutPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -309,7 +309,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "putPagesById",
                                 methodName: "PutPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -331,7 +331,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "putPagesById",
                                 methodName: "PutPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -346,7 +346,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -378,7 +378,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // unprocessable
+                            // 
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -508,7 +508,7 @@ namespace Forem
         }
         /// <summary>
         /// update details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Update an existing page's details by ID. Requires administrative privileges.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="title">

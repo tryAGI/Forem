@@ -6,9 +6,12 @@ namespace Forem
     {
         /// <summary>
         /// Articles with a video<br/>
-        /// This endpoint allows the client to retrieve a list of articles that are uploaded with a video.<br/>
-        /// It will only return published video articles ordered by descending popularity.<br/>
-        /// It supports pagination, each page will contain 24 articles by default.
+        /// Retrieve a list of articles that contain uploaded videos.<br/>
+        /// ### Videos Overview:<br/>
+        /// - Bypasses authentication (can be accessed publicly).<br/>
+        /// - Returns articles that are published and include a video asset.<br/>
+        /// - Articles are ordered by descending popularity (views, watch time, and reactions).<br/>
+        /// - By default, returns 24 video articles per page.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -26,9 +29,12 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Articles with a video<br/>
-        /// This endpoint allows the client to retrieve a list of articles that are uploaded with a video.<br/>
-        /// It will only return published video articles ordered by descending popularity.<br/>
-        /// It supports pagination, each page will contain 24 articles by default.
+        /// Retrieve a list of articles that contain uploaded videos.<br/>
+        /// ### Videos Overview:<br/>
+        /// - Bypasses authentication (can be accessed publicly).<br/>
+        /// - Returns articles that are published and include a video asset.<br/>
+        /// - Articles are ordered by descending popularity (views, watch time, and reactions).<br/>
+        /// - By default, returns 24 video articles per page.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1

@@ -1,0 +1,53 @@
+#nullable enable
+
+namespace Forem.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class PollVoteTypeOfJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Forem.PollVoteTypeOf>
+    {
+        /// <inheritdoc />
+        public override global::Forem.PollVoteTypeOf Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::Forem.PollVoteTypeOfExtensions.ToEnum(stringValue) ?? default;
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::Forem.PollVoteTypeOf)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::Forem.PollVoteTypeOf);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::Forem.PollVoteTypeOf value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            writer.WriteStringValue(global::Forem.PollVoteTypeOfExtensions.ToValueString(value));
+        }
+    }
+}

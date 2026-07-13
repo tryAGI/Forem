@@ -48,8 +48,10 @@ namespace Forem
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>
-        ///         "Followers" are users that are following other users on the website.<br/>
-        ///         It supports pagination, each page will contain 80 followers by default.
+        ///         ### Integration &amp; Pagination Guidance:<br/>
+        ///         - "Followers" are other users registered on the platform who follow the authenticated user.<br/>
+        ///         - Supports pagination, defaulting to 80 followers per page.<br/>
+        ///         - The `sort` query parameter determines the sorting order based on when the follow relationship was established.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -81,8 +83,10 @@ namespace Forem
         /// <summary>
         /// Followers<br/>
         /// This endpoint allows the client to retrieve a list of the followers they have.<br/>
-        ///         "Followers" are users that are following other users on the website.<br/>
-        ///         It supports pagination, each page will contain 80 followers by default.
+        ///         ### Integration &amp; Pagination Guidance:<br/>
+        ///         - "Followers" are other users registered on the platform who follow the authenticated user.<br/>
+        ///         - Supports pagination, defaulting to 80 followers per page.<br/>
+        ///         - The `sort` query parameter determines the sorting order based on when the follow relationship was established.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -133,7 +137,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/followers/users",
+                                path: "/api/followers/users",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -201,7 +205,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowers",
                                 methodName: "GetFollowersAsync",
-                                pathTemplate: "\"/followers/users\"",
+                                pathTemplate: "\"/api/followers/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -235,7 +239,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowers",
                                 methodName: "GetFollowersAsync",
-                                pathTemplate: "\"/followers/users\"",
+                                pathTemplate: "\"/api/followers/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -276,7 +280,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowers",
                                 methodName: "GetFollowersAsync",
-                                pathTemplate: "\"/followers/users\"",
+                                pathTemplate: "\"/api/followers/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -324,7 +328,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowers",
                                 methodName: "GetFollowersAsync",
-                                pathTemplate: "\"/followers/users\"",
+                                pathTemplate: "\"/api/followers/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -346,7 +350,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowers",
                                 methodName: "GetFollowersAsync",
-                                pathTemplate: "\"/followers/users\"",
+                                pathTemplate: "\"/api/followers/users\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -361,7 +365,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

@@ -40,8 +40,11 @@ namespace Forem
 
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -65,8 +68,11 @@ namespace Forem
         }
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -113,7 +119,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/articles/{id}",
+                                path: $"/api/articles/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -181,7 +187,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateArticle",
                                 methodName: "UpdateArticleAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -215,7 +221,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateArticle",
                                 methodName: "UpdateArticleAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -256,7 +262,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateArticle",
                                 methodName: "UpdateArticleAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -304,7 +310,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateArticle",
                                 methodName: "UpdateArticleAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -326,7 +332,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "UpdateArticle",
                                 methodName: "UpdateArticleAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -341,7 +347,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;
@@ -373,7 +379,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Article Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;
@@ -405,7 +411,7 @@ namespace Forem
                                         h => h.Key,
                                         h => h.Value));
                             }
-                            // Unprocessable Entity
+                            // 
                             if ((int)__response.StatusCode == 422)
                             {
                                 string? __content_422 = null;
@@ -519,8 +525,11 @@ namespace Forem
         }
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="article1"></param>

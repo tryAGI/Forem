@@ -6,8 +6,11 @@ namespace Forem
     {
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -22,8 +25,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="request"></param>
@@ -38,8 +44,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update an article by id<br/>
-        /// This endpoint allows the client to update an existing article.<br/>
-        /// "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
+        /// This endpoint allows the client to update an existing article by its unique numerical `id`.<br/>
+        /// ### Authorization Constraints:<br/>
+        /// - The API key provided must belong to the author of the article.<br/>
+        /// - Supports updating individual fields such as `title`, `body_markdown`, `published`, `tags`, etc.<br/>
+        /// - Setting `published: false` on an already published article will revert it to draft status.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="article1"></param>

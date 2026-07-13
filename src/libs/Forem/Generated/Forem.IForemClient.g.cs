@@ -53,7 +53,32 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
+        public AgentSessionsClient AgentSessions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AnalyticsClient Analytics { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ArticlesClient Articles { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BadgeAchievementsClient BadgeAchievements { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BadgesClient Badges { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BillboardsClient Billboards { get; }
 
         /// <summary>
         /// 
@@ -63,7 +88,12 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
-        public DisplayAdsClient DisplayAds { get; }
+        public ConceptsClient Concepts { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FeedbackMessagesClient FeedbackMessages { get; }
 
         /// <summary>
         /// 
@@ -74,6 +104,21 @@ namespace Forem
         /// 
         /// </summary>
         public FollowersClient Followers { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FollowsClient Follows { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public HealthChecksClient HealthChecks { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InstanceClient Instance { get; }
 
         /// <summary>
         /// 
@@ -108,7 +153,37 @@ namespace Forem
         /// <summary>
         /// 
         /// </summary>
+        public RecommendedArticlesListsClient RecommendedArticlesLists { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RequestRedirectsClient RequestRedirects { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SegmentsClient Segments { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SubforemsClient Subforems { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SurveysClient Surveys { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TagsClient Tags { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TrendsClient Trends { get; }
 
         /// <summary>
         /// 

@@ -25,8 +25,11 @@ namespace Forem
 
         /// <summary>
         /// Tags<br/>
-        /// This endpoint allows the client to retrieve a list of tags that can be used to tag articles.<br/>
-        /// It will return tags ordered by popularity.<br/>
+        /// Retrieve a list of tags used on the platform, ordered by popularity.<br/>
+        /// ### Integration Tips:<br/>
+        /// - Bypasses authentication (can be accessed publicly).<br/>
+        /// - Ordered by overall popularity/usage metrics on the platform.<br/>
+        /// - Useful for autocomplete inputs in article editors, tag selection screens in settings, or rendering global navigation/explore lists.<br/>
         /// It supports pagination, each page will contain 10 tags by default.
         /// </summary>
         /// <param name="page">
@@ -55,8 +58,11 @@ namespace Forem
         }
         /// <summary>
         /// Tags<br/>
-        /// This endpoint allows the client to retrieve a list of tags that can be used to tag articles.<br/>
-        /// It will return tags ordered by popularity.<br/>
+        /// Retrieve a list of tags used on the platform, ordered by popularity.<br/>
+        /// ### Integration Tips:<br/>
+        /// - Bypasses authentication (can be accessed publicly).<br/>
+        /// - Ordered by overall popularity/usage metrics on the platform.<br/>
+        /// - Useful for autocomplete inputs in article editors, tag selection screens in settings, or rendering global navigation/explore lists.<br/>
         /// It supports pagination, each page will contain 10 tags by default.
         /// </summary>
         /// <param name="page">
@@ -99,7 +105,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/tags",
+                                path: "/api/tags",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -148,7 +154,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTags",
                                 methodName: "GetTagsAsync",
-                                pathTemplate: "\"/tags\"",
+                                pathTemplate: "\"/api/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -182,7 +188,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTags",
                                 methodName: "GetTagsAsync",
-                                pathTemplate: "\"/tags\"",
+                                pathTemplate: "\"/api/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +229,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTags",
                                 methodName: "GetTagsAsync",
-                                pathTemplate: "\"/tags\"",
+                                pathTemplate: "\"/api/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -271,7 +277,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTags",
                                 methodName: "GetTagsAsync",
-                                pathTemplate: "\"/tags\"",
+                                pathTemplate: "\"/api/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -293,7 +299,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetTags",
                                 methodName: "GetTagsAsync",
-                                pathTemplate: "\"/tags\"",
+                                pathTemplate: "\"/api/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

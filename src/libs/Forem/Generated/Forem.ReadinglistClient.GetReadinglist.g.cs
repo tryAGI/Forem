@@ -45,8 +45,12 @@ namespace Forem
 
         /// <summary>
         /// Readinglist<br/>
-        /// This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.<br/>
-        ///         It supports pagination, each page will contain `30` articles by default
+        /// Retrieve the list of articles saved to the authenticated user's reading list.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Under the hood, this endpoint retrieves articles that the user has reacted to with the `"save"` reaction category.<br/>
+        ///         - Supports pagination, defaulting to 30 articles per page.<br/>
+        ///         - Returned objects conform to the standard `ArticleIndex` schema.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -74,8 +78,12 @@ namespace Forem
         }
         /// <summary>
         /// Readinglist<br/>
-        /// This endpoint allows the client to retrieve a list of articles that were saved to a Users readinglist.<br/>
-        ///         It supports pagination, each page will contain `30` articles by default
+        /// Retrieve the list of articles saved to the authenticated user's reading list.<br/>
+        ///         ### Integration Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Under the hood, this endpoint retrieves articles that the user has reacted to with the `"save"` reaction category.<br/>
+        ///         - Supports pagination, defaulting to 30 articles per page.<br/>
+        ///         - Returned objects conform to the standard `ArticleIndex` schema.
         /// </summary>
         /// <param name="page">
         /// Default Value: 1
@@ -123,7 +131,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/readinglist",
+                                path: "/api/readinglist",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
@@ -189,7 +197,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetReadinglist",
                                 methodName: "GetReadinglistAsync",
-                                pathTemplate: "\"/readinglist\"",
+                                pathTemplate: "\"/api/readinglist\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -223,7 +231,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetReadinglist",
                                 methodName: "GetReadinglistAsync",
-                                pathTemplate: "\"/readinglist\"",
+                                pathTemplate: "\"/api/readinglist\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -264,7 +272,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetReadinglist",
                                 methodName: "GetReadinglistAsync",
-                                pathTemplate: "\"/readinglist\"",
+                                pathTemplate: "\"/api/readinglist\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -312,7 +320,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetReadinglist",
                                 methodName: "GetReadinglistAsync",
-                                pathTemplate: "\"/readinglist\"",
+                                pathTemplate: "\"/api/readinglist\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -334,7 +342,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetReadinglist",
                                 methodName: "GetReadinglistAsync",
-                                pathTemplate: "\"/readinglist\"",
+                                pathTemplate: "\"/api/readinglist\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -349,7 +357,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

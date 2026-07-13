@@ -6,9 +6,10 @@ namespace Forem
     {
         /// <summary>
         /// A User<br/>
-        /// This endpoint allows the client to retrieve a single user, either by id<br/>
-        /// or by the user's username.<br/>
-        /// For complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser
+        /// This endpoint allows the client to retrieve a single user, either by id or by the user's username.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **id**: Can be either the user's unique numerical ID (e.g. `123`) OR the user's string username (e.g. `ben`).<br/>
+        /// - Note that the returned user object schema (`ExtendedUser`) includes extended profile statistics and social link details.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -20,9 +21,10 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// A User<br/>
-        /// This endpoint allows the client to retrieve a single user, either by id<br/>
-        /// or by the user's username.<br/>
-        /// For complete documentation, see the v0 API docs: https://developers.forem.com/api/v0#tag/users/operation/getUser
+        /// This endpoint allows the client to retrieve a single user, either by id or by the user's username.<br/>
+        /// ### Path Parameter Options:<br/>
+        /// - **id**: Can be either the user's unique numerical ID (e.g. `123`) OR the user's string username (e.g. `ben`).<br/>
+        /// - Note that the returned user object schema (`ExtendedUser`) includes extended profile statistics and social link details.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

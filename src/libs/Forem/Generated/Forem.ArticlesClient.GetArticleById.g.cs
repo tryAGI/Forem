@@ -23,7 +23,10 @@ namespace Forem
 
         /// <summary>
         /// Published article by id<br/>
-        /// This endpoint allows the client to retrieve a single published article given its `id`.
+        /// This endpoint allows the client to retrieve a single published article given its unique numerical `id`.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Returns the complete serialized article object including its HTML/markdown representation, tags, and author profile details.<br/>
+        /// - To retrieve an article using its URL path structure instead of its numeric ID, use the `/api/articles/{username}/{slug}` endpoint.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -44,7 +47,10 @@ namespace Forem
         }
         /// <summary>
         /// Published article by id<br/>
-        /// This endpoint allows the client to retrieve a single published article given its `id`.
+        /// This endpoint allows the client to retrieve a single published article given its unique numerical `id`.<br/>
+        /// ### Integration Tip:<br/>
+        /// - Returns the complete serialized article object including its HTML/markdown representation, tags, and author profile details.<br/>
+        /// - To retrieve an article using its URL path structure instead of its numeric ID, use the `/api/articles/{username}/{slug}` endpoint.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +85,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/articles/{id}",
+                                path: $"/api/articles/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -123,7 +129,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetArticleById",
                                 methodName: "GetArticleByIdAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -157,7 +163,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetArticleById",
                                 methodName: "GetArticleByIdAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -198,7 +204,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetArticleById",
                                 methodName: "GetArticleByIdAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,7 +252,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetArticleById",
                                 methodName: "GetArticleByIdAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -268,7 +274,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetArticleById",
                                 methodName: "GetArticleByIdAsync",
-                                pathTemplate: "$\"/articles/{id}\"",
+                                pathTemplate: "$\"/api/articles/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -283,7 +289,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Article Not Found
+                            // 
                             if ((int)__response.StatusCode == 404)
                             {
                                 string? __content_404 = null;

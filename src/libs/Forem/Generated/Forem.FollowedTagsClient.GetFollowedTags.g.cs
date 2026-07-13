@@ -41,7 +41,11 @@ namespace Forem
 
         /// <summary>
         /// Followed Tags<br/>
-        /// This endpoint allows the client to retrieve a list of the tags they follow.
+        /// Retrieve the list of tags followed by the authenticated user.<br/>
+        ///         ### Integration &amp; Personalization Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Returns tags in ascending/popularity order based on user interactions.<br/>
+        ///         - Useful for customizing the home feed interface, constructing personalized sidebar navigation, or displaying a user's customized topic preferences in a dashboard.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,7 +63,11 @@ namespace Forem
         }
         /// <summary>
         /// Followed Tags<br/>
-        /// This endpoint allows the client to retrieve a list of the tags they follow.
+        /// Retrieve the list of tags followed by the authenticated user.<br/>
+        ///         ### Integration &amp; Personalization Guidance:<br/>
+        ///         - Requires authentication.<br/>
+        ///         - Returns tags in ascending/popularity order based on user interactions.<br/>
+        ///         - Useful for customizing the home feed interface, constructing personalized sidebar navigation, or displaying a user's customized topic preferences in a dashboard.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -97,7 +105,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: "/follows/tags",
+                                path: "/api/follows/tags",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -157,7 +165,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowedTags",
                                 methodName: "GetFollowedTagsAsync",
-                                pathTemplate: "\"/follows/tags\"",
+                                pathTemplate: "\"/api/follows/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -191,7 +199,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowedTags",
                                 methodName: "GetFollowedTagsAsync",
-                                pathTemplate: "\"/follows/tags\"",
+                                pathTemplate: "\"/api/follows/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -232,7 +240,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowedTags",
                                 methodName: "GetFollowedTagsAsync",
-                                pathTemplate: "\"/follows/tags\"",
+                                pathTemplate: "\"/api/follows/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -280,7 +288,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowedTags",
                                 methodName: "GetFollowedTagsAsync",
-                                pathTemplate: "\"/follows/tags\"",
+                                pathTemplate: "\"/api/follows/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -302,7 +310,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "GetFollowedTags",
                                 methodName: "GetFollowedTagsAsync",
-                                pathTemplate: "\"/follows/tags\"",
+                                pathTemplate: "\"/api/follows/tags\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -317,7 +325,7 @@ namespace Forem
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // unauthorized
+                            // 
                             if ((int)__response.StatusCode == 401)
                             {
                                 string? __content_401 = null;

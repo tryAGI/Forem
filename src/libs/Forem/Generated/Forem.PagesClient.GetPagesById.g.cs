@@ -23,7 +23,7 @@ namespace Forem
 
         /// <summary>
         /// show details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Retrieve details for a single Page object specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -44,7 +44,7 @@ namespace Forem
         }
         /// <summary>
         /// show details for a page<br/>
-        /// This endpoint allows the client to retrieve details for a single Page object, specified by ID.
+        /// Retrieve details for a single Page object specified by ID.
         /// </summary>
         /// <param name="id"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -79,7 +79,7 @@ namespace Forem
             {
 
                             var __pathBuilder = new global::Forem.PathBuilder(
-                                path: $"/pages/{id}",
+                                path: $"/api/pages/{id}",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::Forem.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -123,7 +123,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "getPagesById",
                                 methodName: "GetPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -157,7 +157,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "getPagesById",
                                 methodName: "GetPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -198,7 +198,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "getPagesById",
                                 methodName: "GetPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -246,7 +246,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "getPagesById",
                                 methodName: "GetPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -268,7 +268,7 @@ namespace Forem
                             context: global::Forem.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "getPagesById",
                                 methodName: "GetPagesByIdAsync",
-                                pathTemplate: "$\"/pages/{id}\"",
+                                pathTemplate: "$\"/api/pages/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,

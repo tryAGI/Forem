@@ -6,9 +6,11 @@ namespace Forem
     {
         /// <summary>
         /// toggle reaction<br/>
-        /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will remove the "like" from the user
+        /// Toggle a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Toggle Logic:<br/>
+        ///         - **First Request**: Creates a new reaction of the specified category on the reactable target.<br/>
+        ///         - **Second Request (with same parameters)**: Deletes the existing reaction.<br/>
+        ///         - Particularly useful for simple, interactive UI buttons like "Like", "Unicorn", or "Save" where clicking toggles the active state.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>
@@ -24,9 +26,11 @@ namespace Forem
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// toggle reaction<br/>
-        /// This endpoint allows the client to toggle the user's reaction to a specified reactable (eg, Article, Comment, or User). For examples:<br/>
-        ///         * "Like"ing an Article will create a new "like" Reaction from the user for that Articles<br/>
-        ///         * "Like"ing that Article a second time will remove the "like" from the user
+        /// Toggle a reaction on a target resource (Article, Comment, or User) on behalf of the authenticated user.<br/>
+        ///         ### Toggle Logic:<br/>
+        ///         - **First Request**: Creates a new reaction of the specified category on the reactable target.<br/>
+        ///         - **Second Request (with same parameters)**: Deletes the existing reaction.<br/>
+        ///         - Particularly useful for simple, interactive UI buttons like "Like", "Unicorn", or "Save" where clicking toggles the active state.
         /// </summary>
         /// <param name="category"></param>
         /// <param name="reactableId"></param>
