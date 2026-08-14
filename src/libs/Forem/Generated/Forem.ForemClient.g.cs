@@ -39,10 +39,17 @@ namespace Forem
 
         /// <inheritdoc/>
         public global::Forem.AutoSDKClientOptions Options { get; }
+
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Forem.SourceGenerationContext.Default);
+
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::Forem.SourceGenerationContext.Default;
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
+        {
+            get => JsonSerializerContextProvider.Value;
+            set => JsonSerializerContextProvider = new(() => value);
+        }
 
 
         /// <summary>
@@ -51,7 +58,7 @@ namespace Forem
         public AgentSessionsClient AgentSessions => new AgentSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -60,7 +67,7 @@ namespace Forem
         public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -69,7 +76,7 @@ namespace Forem
         public ArticlesClient Articles => new ArticlesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -78,7 +85,7 @@ namespace Forem
         public BadgeAchievementsClient BadgeAchievements => new BadgeAchievementsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -87,7 +94,7 @@ namespace Forem
         public BadgesClient Badges => new BadgesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -96,7 +103,7 @@ namespace Forem
         public BillboardsClient Billboards => new BillboardsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -105,7 +112,7 @@ namespace Forem
         public CommentsClient Comments => new CommentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -114,7 +121,7 @@ namespace Forem
         public ConceptsClient Concepts => new ConceptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -123,7 +130,7 @@ namespace Forem
         public FeedbackMessagesClient FeedbackMessages => new FeedbackMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -132,7 +139,7 @@ namespace Forem
         public FollowedTagsClient FollowedTags => new FollowedTagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -141,7 +148,7 @@ namespace Forem
         public FollowersClient Followers => new FollowersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -150,7 +157,7 @@ namespace Forem
         public FollowsClient Follows => new FollowsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -159,7 +166,7 @@ namespace Forem
         public HealthChecksClient HealthChecks => new HealthChecksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -168,7 +175,7 @@ namespace Forem
         public InstanceClient Instance => new InstanceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -177,7 +184,7 @@ namespace Forem
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -186,7 +193,7 @@ namespace Forem
         public PagesClient Pages => new PagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -195,7 +202,7 @@ namespace Forem
         public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -204,7 +211,7 @@ namespace Forem
         public ProfileImagesClient ProfileImages => new ProfileImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -213,7 +220,7 @@ namespace Forem
         public ReactionsClient Reactions => new ReactionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -222,7 +229,7 @@ namespace Forem
         public ReadinglistClient Readinglist => new ReadinglistClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -231,7 +238,7 @@ namespace Forem
         public RecommendedArticlesListsClient RecommendedArticlesLists => new RecommendedArticlesListsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -240,7 +247,7 @@ namespace Forem
         public RequestRedirectsClient RequestRedirects => new RequestRedirectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -249,7 +256,7 @@ namespace Forem
         public SegmentsClient Segments => new SegmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -258,7 +265,7 @@ namespace Forem
         public SubforemsClient Subforems => new SubforemsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -267,7 +274,7 @@ namespace Forem
         public SurveysClient Surveys => new SurveysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -276,7 +283,7 @@ namespace Forem
         public TagsClient Tags => new TagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -285,7 +292,7 @@ namespace Forem
         public TrendsClient Trends => new TrendsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -294,7 +301,7 @@ namespace Forem
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
@@ -303,7 +310,7 @@ namespace Forem
         public VideosClient Videos => new VideosClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
