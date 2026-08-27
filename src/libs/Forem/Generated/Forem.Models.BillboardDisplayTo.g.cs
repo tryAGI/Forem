@@ -10,15 +10,15 @@ namespace Forem
     public enum BillboardDisplayTo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LoggedIn,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LoggedOut,
     }

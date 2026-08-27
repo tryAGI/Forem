@@ -9,42 +9,42 @@ namespace Forem
     public sealed partial class ConceptDailyMetric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("date")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime Date { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("articles_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ArticlesCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CommentsCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_views")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PageViews { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reactions_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReactionsCount { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("popularity_score")]
         [global::System.Text.Json.Serialization.JsonRequired]

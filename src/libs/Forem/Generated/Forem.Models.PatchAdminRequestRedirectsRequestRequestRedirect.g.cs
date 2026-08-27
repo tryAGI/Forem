@@ -4,24 +4,24 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PatchAdminRequestRedirectsRequestRequestRedirect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_url")]
         public string? OriginalUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destination_url")]
         public string? DestinationUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_domain")]
         public string? RequestDomain { get; set; }

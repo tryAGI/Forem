@@ -20,7 +20,7 @@ namespace Forem.JsonConverters
                     {
                         return global::Forem.CreateReactionsCategoryExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

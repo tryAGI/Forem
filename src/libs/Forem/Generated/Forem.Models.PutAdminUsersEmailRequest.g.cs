@@ -4,12 +4,12 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PutAdminUsersEmailRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]

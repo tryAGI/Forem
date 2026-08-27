@@ -9,7 +9,7 @@ namespace Forem
     public sealed partial class ArticleFlareTag
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }

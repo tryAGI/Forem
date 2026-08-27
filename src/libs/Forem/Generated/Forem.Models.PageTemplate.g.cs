@@ -10,27 +10,27 @@ namespace Forem
     public enum PageTemplate
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Contained,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Css,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FullWithinLayout,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NavBarIncluded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Txt,
     }

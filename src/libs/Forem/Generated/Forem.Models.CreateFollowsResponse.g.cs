@@ -4,12 +4,12 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateFollowsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outcome")]
         public string? Outcome { get; set; }

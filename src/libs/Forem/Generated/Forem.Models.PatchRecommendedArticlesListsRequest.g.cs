@@ -4,36 +4,36 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PatchRecommendedArticlesListsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("placement_area")]
         public string? PlacementArea { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
         public int? UserId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("article_ids")]
         public global::System.Collections.Generic.IList<int>? ArticleIds { get; set; }

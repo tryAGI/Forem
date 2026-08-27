@@ -4,12 +4,12 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateBadgeAchievementsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("badge_achievement")]
         public global::Forem.CreateBadgeAchievementsRequestBadgeAchievement? BadgeAchievement { get; set; }

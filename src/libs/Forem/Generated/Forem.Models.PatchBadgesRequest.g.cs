@@ -4,12 +4,12 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PatchBadgesRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("badge")]
         public global::Forem.PatchBadgesRequestBadge? Badge { get; set; }

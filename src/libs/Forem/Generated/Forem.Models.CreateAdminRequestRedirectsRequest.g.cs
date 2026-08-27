@@ -4,12 +4,12 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateAdminRequestRedirectsRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_redirect")]
         public global::Forem.CreateAdminRequestRedirectsRequestRequestRedirect? RequestRedirect { get; set; }

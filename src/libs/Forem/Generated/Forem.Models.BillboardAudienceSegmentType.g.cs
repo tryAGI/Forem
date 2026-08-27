@@ -9,51 +9,51 @@ namespace Forem
     public enum BillboardAudienceSegmentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DarkTheme,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experience1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experience2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experience3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experience4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Experience5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LightTheme,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoExperience,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoPostsYet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Posted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trusted,
     }

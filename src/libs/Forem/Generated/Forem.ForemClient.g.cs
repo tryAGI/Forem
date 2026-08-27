@@ -43,7 +43,7 @@ namespace Forem
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Forem.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -53,7 +53,7 @@ namespace Forem
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentSessionsClient AgentSessions => new AgentSessionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -62,7 +62,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -71,7 +71,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ArticlesClient Articles => new ArticlesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -80,7 +80,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BadgeAchievementsClient BadgeAchievements => new BadgeAchievementsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -89,7 +89,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BadgesClient Badges => new BadgesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -98,7 +98,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillboardsClient Billboards => new BillboardsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -107,7 +107,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CommentsClient Comments => new CommentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -116,7 +116,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConceptsClient Concepts => new ConceptsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -125,7 +125,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackMessagesClient FeedbackMessages => new FeedbackMessagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -134,7 +134,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowedTagsClient FollowedTags => new FollowedTagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -143,7 +143,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowersClient Followers => new FollowersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -152,7 +152,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowsClient Follows => new FollowsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -161,7 +161,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HealthChecksClient HealthChecks => new HealthChecksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -170,7 +170,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InstanceClient Instance => new InstanceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -179,7 +179,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationsClient Organizations => new OrganizationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -188,7 +188,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PagesClient Pages => new PagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -197,7 +197,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PodcastEpisodesClient PodcastEpisodes => new PodcastEpisodesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -206,7 +206,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProfileImagesClient ProfileImages => new ProfileImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -215,7 +215,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReactionsClient Reactions => new ReactionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -224,7 +224,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReadinglistClient Readinglist => new ReadinglistClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -233,7 +233,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendedArticlesListsClient RecommendedArticlesLists => new RecommendedArticlesListsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -242,7 +242,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RequestRedirectsClient RequestRedirects => new RequestRedirectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -251,7 +251,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentsClient Segments => new SegmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -260,7 +260,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubforemsClient Subforems => new SubforemsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -269,7 +269,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SurveysClient Surveys => new SurveysClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -278,7 +278,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TagsClient Tags => new TagsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -287,7 +287,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TrendsClient Trends => new TrendsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -296,7 +296,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -305,7 +305,7 @@ namespace Forem
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VideosClient Videos => new VideosClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

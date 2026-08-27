@@ -9,7 +9,7 @@ namespace Forem
     public sealed partial class Article
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("article")]
         public global::Forem.ArticleArticle1? Article1 { get; set; }

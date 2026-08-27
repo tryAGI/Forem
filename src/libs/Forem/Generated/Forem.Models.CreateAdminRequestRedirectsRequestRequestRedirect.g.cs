@@ -4,26 +4,26 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateAdminRequestRedirectsRequestRequestRedirect
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OriginalUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("destination_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DestinationUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("request_domain")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace Forem
     public enum SurveyTypeOf
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Survey,
     }

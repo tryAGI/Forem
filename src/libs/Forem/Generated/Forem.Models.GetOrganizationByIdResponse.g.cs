@@ -4,7 +4,7 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class GetOrganizationByIdResponse
     {
