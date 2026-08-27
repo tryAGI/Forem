@@ -4,20 +4,20 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateReactionsToggleReactableType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Article,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Comment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

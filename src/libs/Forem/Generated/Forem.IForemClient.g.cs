@@ -45,153 +45,153 @@ namespace Forem
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AgentSessionsClient AgentSessions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnalyticsClient Analytics { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ArticlesClient Articles { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BadgeAchievementsClient BadgeAchievements { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BadgesClient Badges { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BillboardsClient Billboards { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CommentsClient Comments { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ConceptsClient Concepts { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackMessagesClient FeedbackMessages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowedTagsClient FollowedTags { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowersClient Followers { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FollowsClient Follows { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HealthChecksClient HealthChecks { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InstanceClient Instance { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrganizationsClient Organizations { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PagesClient Pages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PodcastEpisodesClient PodcastEpisodes { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProfileImagesClient ProfileImages { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReactionsClient Reactions { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReadinglistClient Readinglist { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RecommendedArticlesListsClient RecommendedArticlesLists { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RequestRedirectsClient RequestRedirects { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SegmentsClient Segments { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SubforemsClient Subforems { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SurveysClient Surveys { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TagsClient Tags { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TrendsClient Trends { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VideosClient Videos { get; }
 

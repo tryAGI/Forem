@@ -9,7 +9,7 @@ namespace Forem
     public enum PollOptionTypeOf
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PollOption,
     }

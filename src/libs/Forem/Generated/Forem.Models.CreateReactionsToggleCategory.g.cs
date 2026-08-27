@@ -4,28 +4,28 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateReactionsToggleCategory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExplodingHead,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fire,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Like,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RaisedHands,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Unicorn,
     }

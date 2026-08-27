@@ -9,15 +9,15 @@ namespace Forem
     public enum SurveySurveyTypeOf
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CommunityPulse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Industry,
     }

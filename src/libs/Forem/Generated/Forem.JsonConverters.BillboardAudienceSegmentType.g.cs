@@ -20,7 +20,7 @@ namespace Forem.JsonConverters
                     {
                         return global::Forem.BillboardAudienceSegmentTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

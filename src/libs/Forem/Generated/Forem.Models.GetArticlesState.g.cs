@@ -4,20 +4,20 @@
 namespace Forem
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetArticlesState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fresh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rising,
     }

@@ -10,7 +10,7 @@ namespace Forem
     public enum SegmentTypeOf
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manual,
     }

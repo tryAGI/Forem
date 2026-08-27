@@ -16,7 +16,7 @@ namespace Forem
         public global::Forem.PollOptionTypeOf TypeOf { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

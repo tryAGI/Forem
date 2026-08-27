@@ -9,75 +9,75 @@ namespace Forem
     public enum BillboardPlacementArea
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestFirst,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigestSecond,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedFirst,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedSecond,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FeedThird,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Footer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         HomeHero,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PageFixedBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PostBodyBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PostComments,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PostCommentsMid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PostFixedBottom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PostSidebar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SidebarLeft,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SidebarLeft2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SidebarRight,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SidebarRightSecond,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SidebarRightThird,
     }

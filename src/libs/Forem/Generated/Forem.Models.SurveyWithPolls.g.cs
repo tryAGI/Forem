@@ -19,7 +19,7 @@ namespace Forem
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Survey))]
@@ -27,7 +27,7 @@ namespace Forem
         public bool IsSurvey => Survey != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSurvey(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Forem.Survey PickSurvey() => IsSurvey
             ? Survey!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Survey' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Forem.SurveyWithPollsVariant2? SurveyWithPollsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Forem
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SurveyWithPollsVariant2))]
@@ -64,7 +64,7 @@ namespace Forem
         public bool IsSurveyWithPollsVariant2 => SurveyWithPollsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSurveyWithPollsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Forem.SurveyWithPollsVariant2 PickSurveyWithPollsVariant2() => IsSurveyWithPollsVariant2
             ? SurveyWithPollsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SurveyWithPollsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SurveyWithPolls(global::Forem.Survey value) => new SurveyWithPolls((global::Forem.Survey?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Forem.Survey?(SurveyWithPolls @this) => @this.Survey;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SurveyWithPolls(global::Forem.Survey? value)
         {
@@ -101,22 +101,22 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SurveyWithPolls FromSurvey(global::Forem.Survey? value) => new SurveyWithPolls(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SurveyWithPolls(global::Forem.SurveyWithPollsVariant2 value) => new SurveyWithPolls((global::Forem.SurveyWithPollsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Forem.SurveyWithPollsVariant2?(SurveyWithPolls @this) => @this.SurveyWithPollsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SurveyWithPolls(global::Forem.SurveyWithPollsVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SurveyWithPolls FromSurveyWithPollsVariant2(global::Forem.SurveyWithPollsVariant2? value) => new SurveyWithPolls(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SurveyWithPolls(
             global::Forem.Survey? survey,
@@ -141,23 +141,23 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SurveyWithPollsVariant2 as object ??
-            Survey as object 
+            Survey as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Survey?.ToString() ??
-            SurveyWithPollsVariant2?.ToString() 
+            SurveyWithPollsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Forem.Survey, TResult>? survey = null,
@@ -190,7 +190,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Forem.Survey>? survey = null,
@@ -214,7 +214,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Forem.Survey>? survey = null,
@@ -237,7 +237,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SurveyWithPolls other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Forem.Survey?>.Default.Equals(Survey, other.Survey) &&
-                global::System.Collections.Generic.EqualityComparer<global::Forem.SurveyWithPollsVariant2?>.Default.Equals(SurveyWithPollsVariant2, other.SurveyWithPollsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Forem.SurveyWithPollsVariant2?>.Default.Equals(SurveyWithPollsVariant2, other.SurveyWithPollsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SurveyWithPolls obj1, SurveyWithPolls obj2)
         {
@@ -277,7 +277,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SurveyWithPolls obj1, SurveyWithPolls obj2)
         {
@@ -285,7 +285,7 @@ namespace Forem
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

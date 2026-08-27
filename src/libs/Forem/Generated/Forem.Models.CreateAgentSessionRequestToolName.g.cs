@@ -9,27 +9,27 @@ namespace Forem
     public enum CreateAgentSessionRequestToolName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClaudeCode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Codex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GeminiCli,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GithubCopilot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opencode,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pi,
     }

@@ -13,15 +13,15 @@ namespace Forem
     public enum BillboardTypeOf
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Community,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         External,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InHouse,
     }

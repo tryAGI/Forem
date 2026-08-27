@@ -48,7 +48,7 @@ namespace Forem
         public bool? IsTopLevelPath { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("social_image")]
         public object? SocialImage { get; set; }
