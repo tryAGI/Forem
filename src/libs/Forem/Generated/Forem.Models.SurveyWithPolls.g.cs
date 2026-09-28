@@ -42,8 +42,8 @@ namespace Forem
         /// <summary>
         ///
         /// </summary>
-        public global::Forem.Survey PickSurvey() => IsSurvey
-            ? Survey!
+        public global::Forem.Survey PickSurvey() => Survey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Survey' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Forem
         /// <summary>
         ///
         /// </summary>
-        public global::Forem.SurveyWithPollsVariant2 PickSurveyWithPollsVariant2() => IsSurveyWithPollsVariant2
-            ? SurveyWithPollsVariant2!
+        public global::Forem.SurveyWithPollsVariant2 PickSurveyWithPollsVariant2() => SurveyWithPollsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SurveyWithPollsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Forem
                 Validate();
             }
 
-            if (IsSurvey && survey != null)
+            if (Survey is { } __value0 && survey != null)
             {
-                return survey(Survey!);
+                return survey(__value0);
             }
-            else if (IsSurveyWithPollsVariant2 && surveyWithPollsVariant2 != null)
+            else if (SurveyWithPollsVariant2 is { } __value1 && surveyWithPollsVariant2 != null)
             {
-                return surveyWithPollsVariant2(SurveyWithPollsVariant2!);
+                return surveyWithPollsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Forem
                 Validate();
             }
 
-            if (IsSurvey)
+            if (Survey is { } __value0)
             {
-                survey?.Invoke(Survey!);
+                survey?.Invoke(__value0);
             }
-            else if (IsSurveyWithPollsVariant2)
+            else if (SurveyWithPollsVariant2 is { } __value1)
             {
-                surveyWithPollsVariant2?.Invoke(SurveyWithPollsVariant2!);
+                surveyWithPollsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Forem
                 Validate();
             }
 
-            if (IsSurvey)
+            if (Survey is { } __value0)
             {
-                survey?.Invoke(Survey!);
+                survey?.Invoke(__value0);
             }
-            else if (IsSurveyWithPollsVariant2)
+            else if (SurveyWithPollsVariant2 is { } __value1)
             {
-                surveyWithPollsVariant2?.Invoke(SurveyWithPollsVariant2!);
+                surveyWithPollsVariant2?.Invoke(__value1);
             }
         }
 

@@ -108,7 +108,7 @@ namespace Forem
                 PrepareGetTrendRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    idOrSlug: idOrSlug!);
+                    idOrSlug: idOrSlug);
 
                 return __httpRequest;
             }
@@ -130,7 +130,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/trends/{idOrSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -164,7 +164,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/trends/{idOrSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -205,7 +205,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/trends/{idOrSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/trends/{idOrSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -275,7 +275,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/trends/{idOrSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
