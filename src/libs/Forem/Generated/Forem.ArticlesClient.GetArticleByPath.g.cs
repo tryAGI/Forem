@@ -116,8 +116,8 @@ namespace Forem
                 PrepareGetArticleByPathRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username!,
-                    slug: slug!);
+                    username: username,
+                    slug: slug);
 
                 return __httpRequest;
             }
@@ -139,7 +139,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/articles/{username}/{slug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -173,7 +173,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/articles/{username}/{slug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -214,7 +214,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/articles/{username}/{slug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/articles/{username}/{slug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace Forem
                                 pathTemplate: "$\"/api/articles/{username}/{slug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
